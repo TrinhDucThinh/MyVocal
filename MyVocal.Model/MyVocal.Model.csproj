@@ -49,6 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\Auditable.cs" />
+    <Compile Include="Abstract\IAuditable.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\QuestionCategory.cs" />
+    <Compile Include="Models\Semantic.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\SubjectGroup.cs" />
+    <Compile Include="Models\Word.cs" />
+    <Compile Include="Models\WordCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,11 +69,8 @@
       <Project>{cf46c567-cf18-4a5f-a093-0b708ef0c79e}</Project>
       <Name>MyVocal.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MyVocal.Data\MyVocal.Data.csproj">
-      <Project>{e2eefb3e-3d42-46d1-8630-c4a0f257effb}</Project>
-      <Name>MyVocal.Data</Name>
-    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
