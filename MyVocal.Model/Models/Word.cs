@@ -25,7 +25,7 @@ namespace MyVocal.Model.Models
         [MaxLength(300)]
         public string Image { get; set; }
 
-        public bool? Status { get; set; }
+        public bool Status { get; set; }
 
         public int SubjectId { get; set; }
 

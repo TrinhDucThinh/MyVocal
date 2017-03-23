@@ -12,7 +12,7 @@ namespace MyVocal.Model.Models
 
         [MaxLength(200)]
         [Required]
-        public string QuesionCategoryName { get; set; }
+        public string QuestionCategoryName { get; set; }
 
         [MaxLength(300)]
         public string Description { get; set; }

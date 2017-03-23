@@ -2,15 +2,16 @@
 
 namespace MyVocal.Model.Models
 {
-    [Table("Question")]
+    [Table("Questions")]
     public class Question
     {
         public int QuestionId { get; set; }
 
         public string QuestionName { get; set; }
+   
+        public int QuestionCategoryId { get; set; }
 
-        public int QuestionCateroyId { get; set; }
-        [ForeignKey("QuestionCateroyId")]
+        [ForeignKey("QuestionCategoryId")]
         public virtual QuestionCategory QuestionCategory { get; set; }
 
         public string AnswerA { get; set; }

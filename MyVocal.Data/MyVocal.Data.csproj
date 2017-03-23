@@ -60,6 +60,18 @@
     <Compile Include="Migrations\201703191609171_InitialDb.Designer.cs">
       <DependentUpon>201703191609171_InitialDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703230807561_updateQuestions.cs" />
+    <Compile Include="Migrations\201703230807561_updateQuestions.Designer.cs">
+      <DependentUpon>201703230807561_updateQuestions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703230814042_updateForeginKey.cs" />
+    <Compile Include="Migrations\201703230814042_updateForeginKey.Designer.cs">
+      <DependentUpon>201703230814042_updateForeginKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703231708371_a.cs" />
+    <Compile Include="Migrations\201703231708371_a.Designer.cs">
+      <DependentUpon>201703231708371_a.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyVocalDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +97,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703191609171_InitialDb.resx">
       <DependentUpon>201703191609171_InitialDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703230807561_updateQuestions.resx">
+      <DependentUpon>201703230807561_updateQuestions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703230814042_updateForeginKey.resx">
+      <DependentUpon>201703230814042_updateForeginKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703231708371_a.resx">
+      <DependentUpon>201703231708371_a.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
