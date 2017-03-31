@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Abstract\Auditable.cs" />
     <Compile Include="Abstract\IAuditable.cs" />
+    <Compile Include="Models\Error.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\QuestionCategory.cs" />
     <Compile Include="Models\Semantic.cs" />

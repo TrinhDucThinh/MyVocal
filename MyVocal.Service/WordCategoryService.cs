@@ -21,6 +21,7 @@ namespace MyVocal.Service
     public class WordCategoryService : IWordCategoryService
     {
         IWordCategoryRepository _wordCategoryRepository;
+        
         IUnitOfWork _unitOfWork;
 
         public WordCategoryService(IWordCategoryRepository wordCategoryRepository, IUnitOfWork unitOfWork)

@@ -24,6 +24,8 @@ namespace MyVocal.Data
 
         public DbSet<WordCategory> WordCategories { get; set; }
 
+        public DbSet<Error> Errors { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }

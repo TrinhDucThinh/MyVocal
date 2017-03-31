@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyVocal.Data.Infrastructure
 {
-    public class Disposable
+    public class Disposable : IDisposable
     {
         private bool isDisposed;
 

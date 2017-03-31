@@ -1,5 +1,6 @@
 namespace MyVocal.Data.Migrations
 {
+    using Model.Models;
     using System.Data.Entity.Migrations;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MyVocal.Data.MyVocalDbContext>
@@ -23,6 +24,13 @@ namespace MyVocal.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.WordCategories.AddOrUpdate(
+                    new WordCategory { CategoryName = @"Danh từ", Identify = @"(n)" },
+                    new WordCategory { CategoryName = @"Động từ", Identify = @"(v)" },
+                    new WordCategory { CategoryName = @"Tính từ", Identify = @"(adj)" }
+                );
+           // context.Database.ExecuteSqlCommand("Delete FROM WordCategories;");
         }
     }
 }

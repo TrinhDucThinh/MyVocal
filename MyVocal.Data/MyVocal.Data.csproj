@@ -72,9 +72,22 @@
     <Compile Include="Migrations\201703231708371_a.Designer.cs">
       <DependentUpon>201703231708371_a.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703240729465_addError.cs" />
+    <Compile Include="Migrations\201703240729465_addError.Designer.cs">
+      <DependentUpon>201703240729465_addError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703252333367_InsertDataCategory.cs" />
+    <Compile Include="Migrations\201703252333367_InsertDataCategory.Designer.cs">
+      <DependentUpon>201703252333367_InsertDataCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703252334446_InsertDataCategorys.cs" />
+    <Compile Include="Migrations\201703252334446_InsertDataCategorys.Designer.cs">
+      <DependentUpon>201703252334446_InsertDataCategorys.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyVocalDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ErrorRepository.cs" />
     <Compile Include="Repository\QuestionCategoryRepository.cs" />
     <Compile Include="Repository\QuestionRepository.cs" />
     <Compile Include="Repository\SemanticRepository.cs" />
@@ -106,6 +119,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703231708371_a.resx">
       <DependentUpon>201703231708371_a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703240729465_addError.resx">
+      <DependentUpon>201703240729465_addError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703252333367_InsertDataCategory.resx">
+      <DependentUpon>201703252333367_InsertDataCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703252334446_InsertDataCategorys.resx">
+      <DependentUpon>201703252334446_InsertDataCategorys.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
