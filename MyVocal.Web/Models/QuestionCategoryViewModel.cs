@@ -7,7 +7,6 @@ namespace MyVocal.Web.Models
       
         public int QuestionCategoryId { get; set; }
 
-    
         public string QuestionCategoryName { get; set; }
 
         public string Description { get; set; }

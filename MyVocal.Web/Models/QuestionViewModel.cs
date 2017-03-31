@@ -13,7 +13,6 @@ namespace MyVocal.Web.Models
 
         public int QuestionCategoryId { get; set; }
 
-       
         public virtual QuestionCategoryViewModel QuestionCategory { get; set; }
 
         public string AnswerA { get; set; }
