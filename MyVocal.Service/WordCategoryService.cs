@@ -11,7 +11,7 @@ namespace MyVocal.Service
 {
     public interface IWordCategoryService
     {
-        void Add(WordCategory wordCategory);
+        WordCategory Add(WordCategory wordCategory);
         void Update(WordCategory wordCategory);
         void Delete(int id);
         IEnumerable<WordCategory> GetAll();
@@ -30,9 +30,9 @@ namespace MyVocal.Service
             this._unitOfWork = unitOfWork;
         }
 
-        public void Add(WordCategory wordCategory)
+        public WordCategory Add(WordCategory wordCategory)
         {
-            _wordCategoryRepository.Add(wordCategory);
+            return _wordCategoryRepository.Add(wordCategory);
         }
 
         public void Delete(int id)

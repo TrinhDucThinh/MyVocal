@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MyVocal.Web.Models
 {
@@ -20,7 +21,14 @@ namespace MyVocal.Web.Models
 
         public int SubjectId { get; set; }
 
- 
+        public DateTime? CreatedDate { get; set; }
+
+        public DateTime? UpdatedDate { get; set; }
+
+        public string CreatedBy { get; set; }
+
+        public string UpdateBy { get; set; }
+
         public virtual SubjectViewModel Subject { get; set; }
 
         public virtual IEnumerable<QuestionViewModel> Questions { get; set; }

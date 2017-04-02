@@ -1,9 +1,15 @@
-﻿using MyVocal.Model.Models;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MyVocal.Model.Models;
 
 namespace MyVocal.Data
 {
-    public class MyVocalDbContext : DbContext
+    public class MyVocalDbContext : IdentityDbContext<ApplicationUser>
     {
         public MyVocalDbContext() : base("MyVocalConnection")
         {
@@ -26,8 +32,15 @@ namespace MyVocal.Data
 
         public DbSet<Error> Errors { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        public static MyVocalDbContext Create()
         {
+            return new MyVocalDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder builder)
+        {
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
+            builder.Entity<IdentityUserLogin>().HasKey(i =>  i.UserId );
         }
     }
 }
