@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="myService">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Service</title>
+    <script src="~/Scripts/plugins/angular/angular.js"></script>
+    <script src="~/Scripts/spa/service.js"></script>
+</head>
+<body>
+    <div ng-controller="serviceController"> 
+        <input type="number" ng-model="num"/>
+        <button ng-click="CheckNumber()">CheckNumber</button>
+        {{message}}
+    </div>
+</body>
+</html>
