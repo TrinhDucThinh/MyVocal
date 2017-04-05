@@ -28,12 +28,14 @@ namespace MyVocal.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
-            context.WordCategories.AddOrUpdate(
+            if (context.WordCategories.Count() == 0) {
+                context.WordCategories.AddOrUpdate(
                     new WordCategory { CategoryName = @"Danh từ", Identify = @"(n)" },
                     new WordCategory { CategoryName = @"Động từ", Identify = @"(v)" },
                     new WordCategory { CategoryName = @"Tính từ", Identify = @"(adj)" }
                 );
+
+            }
 
             //  This method will be called after migrating to the latest version.
 

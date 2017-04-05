@@ -204,11 +204,11 @@
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                            <i class="fa fa-dashboard"></i> <span>Loại từ</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a ui-sref="word_categories"><i class="fa fa-circle-o"></i> Word categories list</a></li>
-                            <li><a ui-sref="word_categories_add"><i class="fa fa-circle-o"></i> Add new word category</a></li>
+                            <li><a ui-sref="word_categories"><i class="fa fa-circle-o"></i> Danh sách loại từ</a></li>
+                            <li><a ui-sref="word_categories_add"><i class="fa fa-circle-o"></i> Thêm loại từ</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -523,8 +523,13 @@
     <script src="~/Assets/admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
 
     <script src="~/app/shared/modules/myvocal.common.js"></script>
+    <script src="~/app/shared/services/apiService.js"></script>
+    <script src="~/app/shared/directives/pagerDirective.js"></script>
+
     <script src="~/app/components/word_categories/wordCategories.module.js"></script>
     <script src="~/app/app.js"></script>
+
+   
     <script src="~/app/components/word_categories/wordCategoriesAddController.js"></script>
     <script src="~/app/components/word_categories/wordCategoriesListController.js"></script>
     <script src="~/app/components/home/homeController.js"></script>

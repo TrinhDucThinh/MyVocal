@@ -4,7 +4,9 @@ using MyVocal.Service;
 using MyVocal.Web.Infrastructure.Core;
 using MyVocal.Web.Infrastructure.Extensions;
 using MyVocal.Web.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -14,7 +16,7 @@ namespace MyVocal.Web.Api
     [RoutePrefix("api/WordCategory")]
     public class WordCategoryController : ApiControllerBase
     {
-        IWordCategoryService _wordCategoryService;
+        private IWordCategoryService _wordCategoryService;
 
         public WordCategoryController(IErrorService errorService, IWordCategoryService wordCategoryService) :
             base(errorService)
@@ -23,17 +25,26 @@ namespace MyVocal.Web.Api
         }
 
         [Route("getall")]
-        public HttpResponseMessage Get(HttpRequestMessage request)
+        public HttpResponseMessage GetAll(HttpRequestMessage request,string keyword, int page, int pageSize = 20)
         {
-            
             return CreateHttpResponse(request, () =>
             {
-                var listCategory = _wordCategoryService.GetAll();
+                int totalRow = 0;
+                var model = _wordCategoryService.GetAll(keyword);
 
-                var listCategoryVm = Mapper.Map<List<WordCategoryViewModel>>(listCategory);
+                totalRow = model.Count();
+                var query = model.OrderByDescending(x => x.WordCategoryId).Skip(page * pageSize).Take(pageSize);
 
-                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listCategoryVm);
+                var responseData = Mapper.Map<IEnumerable<WordCategory>, IEnumerable<WordCategoryViewModel>>(query);
 
+                var paginationSet = new PaginationSet<WordCategoryViewModel>()
+                {
+                    Items = responseData,
+                    Page = page,
+                    TotalCount = totalRow,
+                    TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
+                };
+                var response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
                 return response;
             });
         }
@@ -54,11 +65,10 @@ namespace MyVocal.Web.Api
 
                     newWordCategory.UpdateWordCategory(wordCategoryVm);
 
-                    var category=_wordCategoryService.Add(newWordCategory);
+                    var category = _wordCategoryService.Add(newWordCategory);
                     _wordCategoryService.SaveChanges();
 
                     response = request.CreateResponse(HttpStatusCode.Created, newWordCategory);
-
                 }
                 return response;
             });
@@ -83,12 +93,11 @@ namespace MyVocal.Web.Api
                     _wordCategoryService.SaveChanges();
 
                     response = request.CreateResponse(HttpStatusCode.OK);
-
                 }
                 return response;
             });
         }
-        
+
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
             return CreateHttpResponse(request, () =>
@@ -104,7 +113,6 @@ namespace MyVocal.Web.Api
                     _wordCategoryService.SaveChanges();
 
                     response = request.CreateResponse(HttpStatusCode.OK);
-
                 }
                 return response;
             });

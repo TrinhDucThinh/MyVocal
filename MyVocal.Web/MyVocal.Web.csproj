@@ -229,6 +229,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
+    <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="Models\QuestionCategoryViewModel.cs" />
@@ -251,7 +252,11 @@
     <Content Include="app\components\word_categories\wordCategoriesListView.html" />
     <Content Include="app\components\word_categories\wordCategoryAddView.html" />
     <Content Include="app\components\word_categories\wordCategoryEditView.html" />
+    <Content Include="app\shared\directives\pagerDirective.html" />
+    <Content Include="app\shared\directives\pagerDirective.js" />
+    <Content Include="app\shared\filters\statusFilter.js" />
     <Content Include="app\shared\modules\myvocal.common.js" />
+    <Content Include="app\shared\services\apiService.js" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
     <Content Include="Assets\admin\css\skins\skin-black-light.css" />
@@ -506,7 +511,6 @@
     <Folder Include="app\components\word\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
-    <Folder Include="app\shared\services\" />
     <Folder Include="Assets\client\" />
   </ItemGroup>
   <ItemGroup>

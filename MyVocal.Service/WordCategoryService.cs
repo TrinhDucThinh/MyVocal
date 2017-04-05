@@ -15,6 +15,7 @@ namespace MyVocal.Service
         void Update(WordCategory wordCategory);
         void Delete(int id);
         IEnumerable<WordCategory> GetAll();
+        IEnumerable<WordCategory> GetAll(string keyword);
         WordCategory GetById(int id);
         void SaveChanges();
     }
@@ -58,6 +59,16 @@ namespace MyVocal.Service
         public void Update(WordCategory wordCategory)
         {
             _wordCategoryRepository.Update(wordCategory);
+        }
+
+        public IEnumerable<WordCategory> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                return _wordCategoryRepository.GetMulti(x=>x.CategoryName.Contains(keyword)|| x.Description.Contains(keyword));
+            }else
+                return _wordCategoryRepository.GetAll();
+
         }
     }
 }
