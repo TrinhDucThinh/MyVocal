@@ -12,54 +12,54 @@
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
-        <div class="box-body">
-            <div class="row" style="margin-bottom:23px">
-                <div class="col-lg-6"> 
-                    <div class="input-group">
-                        <input type="text" class="form-control" ng-model="keyword" placeholder="Please enter keyword">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" ng-click="search()" type="button">Tìm kiếm</button>
-                        </span>
-                    </div><!-- /input-group -->
+    <div class="box-body">
+        <div class="row" style="margin-bottom:23px">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-keyup="$event.keyCode == 13 ? search() : null" ng-model="keyword" placeholder="Please enter keyword">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" ng-click="search()" type="button">Tìm kiếm</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="box">
+
+                    <div class="box-body">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th style="width: 10px">Id</th>
+                                <th>Tên loại</th>
+                                <th>Viết tắt</th>
+                                <th>Mô tả</th>
+                                <th>Thao tác</th>
+                            </tr>
+                            <tr ng-repeat="item in wordCategories ">
+                                <td>{{item.WordCategoryId}}</td>
+                                <td>{{item.CategoryName}}</td>
+                                <td>{{item.Identify}}</td>
+                                <td>{{item.Description}}</td>
+                                <td>
+                                    <button class="btn-sm btn-primary"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5"><span class="pull-right">Trang: {{page+1}} - Tổng số kết quả: {{totalCount}}</span></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div><!-- /.box-body -->
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="box">
-                        
-                        <div class="box-body">
-                            <table class="table table-bordered">
-                                <tr>
-                                    <th style="width: 10px">Id</th>
-                                    <th>Tên loại</th>
-                                    <th>Viết tắt</th>
-                                    <th>Mô tả</th>
-                                    <th>Thao tác</th>
-                                </tr>
-
-                                <tr ng-repeat="item in wordCategories ">
-                                    <td>{{item.WordCategoryId}}</td>
-                                    <td>{{item.CategoryName}}</td>
-                                    <td>{{item.Identify}}</td>
-                                    <td>{{item.Description}}</td>
-                                    <td>
-                                        <button class="btn-sm btn-primary"><i class="fa fa-pencil"></i></button>
-                                        <button class="btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="5">Tổng số kết quả: {{totalCount}}</td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div><!-- /.box-body -->
-                    </div>
-                </div>
-            </div><!-- /.box-body -->
-           <div>
-               <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getWordCategories(page)"></pager-directive>
-           </div> <!--.box-footer-->
-        </div><!-- /.box -->
-
+        </div>
+        <!-- /.box-body -->
+        <div>
+            <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getWordCategories(page)"></pager-directive>
+        </div>
+        <!--.box-footer-->
+    </div><!-- /.box -->
 </section><!-- /.content -->
