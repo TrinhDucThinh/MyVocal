@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -216,6 +218,7 @@
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
     <Compile Include="Api\WordCategoryController.cs" />
+    <Compile Include="Api\WordController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -224,7 +227,10 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LibraryController.cs" />
+    <Compile Include="Controllers\TopicController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -245,6 +251,48 @@
     <Content Include="app\app.js" />
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeView.html" />
+    <Content Include="app\components\questions\questions.module.js" />
+    <Content Include="app\components\questions\questionsAddController.js" />
+    <Content Include="app\components\questions\questionsAddView.html" />
+    <Content Include="app\components\questions\questionsEditController.js" />
+    <Content Include="app\components\questions\questionsEditView.html" />
+    <Content Include="app\components\questions\questionsListController.js" />
+    <Content Include="app\components\questions\questionsListView.html" />
+    <Content Include="app\components\question_categories\question_categories.module.js" />
+    <Content Include="app\components\question_categories\question_categoriesAddController.js" />
+    <Content Include="app\components\question_categories\question_categoriesAddView.html" />
+    <Content Include="app\components\question_categories\question_categoriesEditController.js" />
+    <Content Include="app\components\question_categories\question_categoriesEditView.html" />
+    <Content Include="app\components\question_categories\question_categoriesListController.js" />
+    <Content Include="app\components\question_categories\question_categoriesListView.html" />
+    <Content Include="app\components\semantics\semantics.module.js" />
+    <Content Include="app\components\semantics\semanticsAddController.js" />
+    <Content Include="app\components\semantics\semanticsAddView.html" />
+    <Content Include="app\components\semantics\semanticsEditController.js" />
+    <Content Include="app\components\semantics\semanticsEditView.html" />
+    <Content Include="app\components\semantics\semanticsListController.js" />
+    <Content Include="app\components\semantics\semanticsListView.html" />
+    <Content Include="app\components\subjects\subject.module.js" />
+    <Content Include="app\components\subjects\subjectAddController.js" />
+    <Content Include="app\components\subjects\subjectEditController.js" />
+    <Content Include="app\components\subjects\subjectListController.js" />
+    <Content Include="app\components\subjects\subjectListView.html" />
+    <Content Include="app\components\subjects\subjectAddView.html" />
+    <Content Include="app\components\subjects\subjectEditView.html" />
+    <Content Include="app\components\subject_group\subject_group.module.js" />
+    <Content Include="app\components\subject_group\subject_groupAddController.js" />
+    <Content Include="app\components\subject_group\subject_groupAddView.html" />
+    <Content Include="app\components\subject_group\subject_groupEditController.js" />
+    <Content Include="app\components\subject_group\subject_groupEditView.html" />
+    <Content Include="app\components\subject_group\subject_groupListController.js" />
+    <Content Include="app\components\subject_group\subject_groupListView.html" />
+    <Content Include="app\components\words\word.module.js" />
+    <Content Include="app\components\words\wordAddController.js" />
+    <Content Include="app\components\words\wordEditController.js" />
+    <Content Include="app\components\words\wordListController.js" />
+    <Content Include="app\components\words\wordListView.html" />
+    <Content Include="app\components\words\wordAddView.html" />
+    <Content Include="app\components\words\wordEditView.html" />
     <Content Include="app\components\word_categories\wordCategories.module.js" />
     <Content Include="app\components\word_categories\wordCategoriesAddController.js" />
     <Content Include="app\components\word_categories\wordCategoriesEditController.js" />
@@ -336,6 +384,8 @@
     <Content Include="Assets\admin\libs\angular\angular.js" />
     <Content Include="Assets\admin\libs\angular\angular.min.js" />
     <Content Include="Assets\admin\libs\angular\index.js" />
+    <Content Include="Assets\admin\libs\bootbox\.gitignore" />
+    <Content Include="Assets\admin\libs\bootbox\bootbox.js" />
     <Content Include="Assets\admin\libs\bootstrap\dist\css\bootstrap-theme.css" />
     <Content Include="Assets\admin\libs\bootstrap\dist\css\bootstrap-theme.min.css" />
     <Content Include="Assets\admin\libs\bootstrap\dist\css\bootstrap.css" />
@@ -468,6 +518,18 @@
     <Content Include="Assets\admin\libs\jquery\src\var\support.js" />
     <Content Include="Assets\admin\libs\jquery\src\var\toString.js" />
     <Content Include="Assets\admin\libs\jquery\src\wrap.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\dist\ngBootbox.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\dist\ngBootbox.min.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-1\app.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-1\custom-dialog.tpl.html" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-1\index.html" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-2\app.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-2\index.html" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-2\main.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\example-2\require.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\examples\index.html" />
+    <Content Include="Assets\admin\libs\ngBootbox\gulpfile.js" />
+    <Content Include="Assets\admin\libs\ngBootbox\ngBootbox.js" />
     <Content Include="Assets\admin\libs\slimScroll\examples\allow-page-scroll.html" />
     <Content Include="Assets\admin\libs\slimScroll\examples\chaining.html" />
     <Content Include="Assets\admin\libs\slimScroll\examples\disable-fade-out.html" />
@@ -492,11 +554,44 @@
     <Content Include="Assets\admin\libs\toastr\toastr.js" />
     <Content Include="Assets\admin\libs\toastr\toastr.min.css" />
     <Content Include="Assets\admin\libs\toastr\toastr.min.js" />
+    <Content Include="Assets\client\css\library\list_library.css" />
+    <Content Include="Assets\client\css\library\detail_library.css" />
+    <Content Include="Assets\client\css\slippry.css" />
+    <Content Include="Assets\client\css\vocal_application.css" />
+    <Content Include="Assets\client\js\controllers\topicController.js" />
+    <Content Include="Assets\client\js\library.js" />
+    <Content Include="Assets\client\js\plugins\jquery.twbsPagination.min.js" />
+    <Content Include="Assets\client\js\plugins\mustache.min.js" />
+    <Content Include="Assets\client\js\Slippry.min.js" />
+    <Content Include="Assets\client\js\vocaConfig.js" />
+    <Content Include="Assets\client\js\vocal_application.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="UploadFiles\images\1_2.jpg" />
+    <Content Include="UploadFiles\images\3000 smart words.jpg" />
+    <Content Include="UploadFiles\images\3000-essential-words.jpg" />
+    <Content Include="UploadFiles\images\avatar_determination.png" />
+    <Content Include="UploadFiles\images\boboiboy-photos %281%29.jpg" />
+    <Content Include="UploadFiles\images\cup-image.png" />
+    <Content Include="UploadFiles\images\entertainment.jpg" />
+    <Content Include="UploadFiles\images\finalexam.jpg" />
+    <Content Include="UploadFiles\images\hobby.jpg" />
+    <Content Include="UploadFiles\images\holiday.jpg" />
+    <Content Include="UploadFiles\images\horizontal-bar.png" />
+    <Content Include="UploadFiles\images\images xuka.jpg" />
+    <Content Include="UploadFiles\images\img-successfull-idea.png" />
+    <Content Include="UploadFiles\images\job.jpg" />
+    <Content Include="UploadFiles\images\let%27s_go.png" />
+    <Content Include="UploadFiles\images\love.jpg" />
+    <Content Include="UploadFiles\images\nature.jpg" />
+    <Content Include="UploadFiles\images\place_around_town.jpeg" />
+    <Content Include="UploadFiles\images\rank-msg-img.png" />
+    <Content Include="UploadFiles\images\effort.jpg" />
+    <Content Include="UploadFiles\images\voca-instories-advanced.jpg" />
+    <Content Include="UploadFiles\images\voca-instories-improver.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -507,16 +602,10 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\components\questions\" />
-    <Folder Include="app\components\question_categories\" />
-    <Folder Include="app\components\semantics\" />
-    <Folder Include="app\components\Subjects\" />
-    <Folder Include="app\components\subject_groups\" />
     <Folder Include="app\components\users\" />
-    <Folder Include="app\components\word\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
-    <Folder Include="Assets\client\" />
+    <Folder Include="Assets\client\img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -553,6 +642,9 @@
     <Content Include="Views\Admin\Service.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Assets\admin\libs\angular-ui-router\.bower.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\bower.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\CHANGELOG.md" />
@@ -566,6 +658,15 @@
     <Content Include="Assets\admin\libs\angular\LICENSE.md" />
     <Content Include="Assets\admin\libs\angular\package.json" />
     <Content Include="Assets\admin\libs\angular\README.md" />
+    <Content Include="Assets\admin\libs\bootbox\.bower.json" />
+    <Content Include="Assets\admin\libs\bootbox\.jshintrc" />
+    <Content Include="Assets\admin\libs\bootbox\.npmignore" />
+    <Content Include="Assets\admin\libs\bootbox\.travis.yml" />
+    <Content Include="Assets\admin\libs\bootbox\bower.json" />
+    <Content Include="Assets\admin\libs\bootbox\CONTRIBUTING.md" />
+    <Content Include="Assets\admin\libs\bootbox\LICENSE.md" />
+    <Content Include="Assets\admin\libs\bootbox\package.json" />
+    <Content Include="Assets\admin\libs\bootbox\README.md" />
     <Content Include="Assets\admin\libs\bootstrap\.bower.json" />
     <Content Include="Assets\admin\libs\bootstrap\bower.json" />
     <Content Include="Assets\admin\libs\bootstrap\CHANGELOG.md" />
@@ -679,12 +780,15 @@
     <Content Include="Assets\admin\libs\jquery\external\sizzle\dist\sizzle.min.map" />
     <Content Include="Assets\admin\libs\jquery\README.md" />
     <Content Include="Assets\admin\libs\jquery\src\.jshintrc" />
+    <Content Include="Assets\admin\libs\ngBootbox\.bower.json" />
+    <Content Include="Assets\admin\libs\ngBootbox\bower.json" />
+    <Content Include="Assets\admin\libs\ngBootbox\package.json" />
+    <Content Include="Assets\admin\libs\ngBootbox\README.md" />
+    <Content Include="Assets\admin\libs\ngBootbox\tsd.json" />
     <Content Include="Assets\admin\libs\slimScroll\.bower.json" />
     <Content Include="Assets\admin\libs\slimScroll\bower.json" />
     <Content Include="Assets\admin\libs\slimScroll\package.json" />
     <Content Include="Assets\admin\libs\slimScroll\README.md" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Assets\admin\libs\toastr\.bower.json" />
     <Content Include="Assets\admin\libs\toastr\bower.json" />
     <Content Include="Assets\admin\libs\toastr\LICENSE" />
@@ -693,11 +797,35 @@
     <Content Include="Assets\admin\libs\toastr\toastr.less" />
     <Content Include="Assets\admin\libs\toastr\toastr.scss" />
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Assets\admin\libs\ngBootbox\typings\tsd.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Library\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Library\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Chart\PieChart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Chart\PieChartCanvas.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Topic\Index.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

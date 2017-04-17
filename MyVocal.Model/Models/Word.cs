@@ -12,6 +12,9 @@ namespace MyVocal.Model.Models
         public int WordId { get; set; }
 
         [MaxLength(40)]
+        public string WordName { get; set; }
+
+        [MaxLength(40)]
         public string Transcription { get; set; }
 
         public int WordCategoryId { get; set; }

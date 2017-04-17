@@ -32,6 +32,9 @@ namespace MyVocal.Data
 
         public DbSet<Error> Errors { get; set; }
 
+        public DbSet<ApplicationUser_Subject> ApplicationUser_Subjects { get; set; }
+        
+
         public static MyVocalDbContext Create()
         {
             return new MyVocalDbContext();

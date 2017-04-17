@@ -1,0 +1,162 @@
+﻿.background-all-blog{
+    background-color:white;
+}
+
+.topic-image {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.topics-description{
+    font-family: OpenSansRegular;
+    font-size: 15px;
+    color: #555555;
+}
+p {
+    margin: 0 0 10px;
+}
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.topics-statistic {
+    font-family: opensansSEMIbold;
+    font-size: 14px;
+    font-weight:bold;
+    margin-bottom: 0px;
+    color: #212121;
+}
+.topics-finish span{
+  color:#e04a31;
+}
+.topics-not-finish span{
+  color:#FF5722;
+}
+.topics-times span{
+  color:blue;
+}
+.topics-name {
+    font-size: 16px;
+    color: #4c87ed;
+}
+.topics-times, .topics-finish, .topics-not-finish {
+    margin-right: 10px;
+}
+
+.topics-times span{
+  color:#4c87ed;
+}
+
+.topics-item:hover {
+    cursor: pointer;
+    background: #eef5ff;
+}
+.topics-item {
+    margin-top: 0px;
+    padding: 18px 0px;
+    border: 1px solid;
+    border-bottom-color: #DDD;
+    border-top-color: #aa8a8a;
+    border-right-color: #fff;
+    border-left-color: #fff;
+    min-height: 134px;
+}
+
+.img-banner {
+    width: 100%;
+}
+voca-application.css:343
+img {
+    vertical-align: middle;
+}
+voca-application.css:127
+img {
+    border: 0;
+}
+body {
+    background-color: #336699;
+    font-family: 'OpenSansRegular'!important;
+    font-size:15px;
+}
+
+.title-topic {
+    padding-bottom: 20px;
+}
+
+.title-topic-left {
+    font-size: 20px;
+    font-family: OpenSansLight;
+    color: #212121;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #ddd;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+p {
+    margin: 0 0 5px;
+}
+
+.fix-badge-topic {
+    font-size: 12px;
+    background: #F93621;
+    color: #fff;
+    font-family: OpenSansBold;
+    padding: 3px 10px;
+    margin-top: -5px;
+    margin-left: 15px;
+}
+
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #999999;
+    border-radius: 10px;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.topics-review {
+    min-width: 80px;
+    color: #fff!important;
+    display: inline-block;
+    font-size: 10px;
+    height: 30px;
+    text-align: center;
+    padding-top: 8px;
+    border-radius: 2px;
+    background-color: #4c87ed;
+    cursor: pointer;
+    text-decoration: none!important;
+}
+.topics-test {
+    min-width: 80px;
+    color: #fff!important;
+    display: inline-block;
+    font-size: 10px;
+    height: 30px;
+    text-align: center;
+    padding-top: 8px;
+    border-radius: 2px;
+    background-color: #003366;
+    cursor: pointer;
+    text-decoration: none!important;
+}

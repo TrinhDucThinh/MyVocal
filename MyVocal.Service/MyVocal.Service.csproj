@@ -45,6 +45,7 @@
     <Compile Include="QuestionCategoryService.cs" />
     <Compile Include="QuestionService.cs" />
     <Compile Include="SemanticService.cs" />
+    <Compile Include="SubjectGroupService.cs" />
     <Compile Include="SubjectService.cs" />
     <Compile Include="WordCategoryService.cs" />
     <Compile Include="WordService.cs" />

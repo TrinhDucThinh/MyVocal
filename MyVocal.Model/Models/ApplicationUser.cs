@@ -31,5 +31,7 @@ namespace MyVocal.Model.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public virtual IEnumerable<ApplicationUser_Subject> ApplicationUser_Subjects { set; get; }
     }
 }

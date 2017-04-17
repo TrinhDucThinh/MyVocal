@@ -18,6 +18,7 @@ namespace MyVocal.Service
         IEnumerable<Subject> GetAll();
         IEnumerable<Subject> GetAllPagging(int pageIndex, int pageSize, out int totalRow);
         IEnumerable<Subject> GetBySubjectGroup(string subjectGroupName, int pageIndex, int pageSize, out int totalRow);
+        IEnumerable<Subject> GetByGroupId(int groupId, int pageIndex, int pageSize, out int totalRow);
     }
     public class SubjectService : ISubjectService
     {
@@ -48,6 +49,11 @@ namespace MyVocal.Service
         public IEnumerable<Subject> GetAllPagging(int pageIndex, int pageSize, out int totalRow)
         {
             return _subjectRepository.GetMultiPaging(x=>x.Status,out totalRow,pageIndex, pageSize,new string[] { "SubjectGroup" });
+        }
+
+        public IEnumerable<Subject> GetByGroupId(int groupId, int pageIndex, int pageSize, out int totalRow)
+        {
+            return _subjectRepository.GetAllByGroup(groupId, pageIndex, pageSize, out totalRow);
         }
 
         public IEnumerable<Subject> GetBySubjectGroup(string subjectGroupName, int pageIndex, int pageSize, out int totalRow)

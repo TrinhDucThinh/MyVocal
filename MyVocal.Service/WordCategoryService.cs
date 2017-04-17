@@ -13,11 +13,11 @@ namespace MyVocal.Service
     {
         WordCategory Add(WordCategory wordCategory);
         void Update(WordCategory wordCategory);
-        void Delete(int id);
+        WordCategory Delete(int id);
         IEnumerable<WordCategory> GetAll();
         IEnumerable<WordCategory> GetAll(string keyword);
         WordCategory GetById(int id);
-        void SaveChanges();
+        void Save();
     }
     public class WordCategoryService : IWordCategoryService
     {
@@ -36,9 +36,9 @@ namespace MyVocal.Service
             return _wordCategoryRepository.Add(wordCategory);
         }
 
-        public void Delete(int id)
+        public WordCategory Delete(int id)
         {
-            _wordCategoryRepository.Delete(id);
+           return _wordCategoryRepository.Delete(id);
         }
 
         public IEnumerable<WordCategory> GetAll()
@@ -51,7 +51,7 @@ namespace MyVocal.Service
             return _wordCategoryRepository.GetSingleById(id);
         }
 
-        public void SaveChanges()
+        public void Save()
         {
             _unitOfWork.Commit();
         }

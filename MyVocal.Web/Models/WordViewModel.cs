@@ -9,6 +9,8 @@ namespace MyVocal.Web.Models
 
         public string Transcription { get; set; }
 
+        public string WordName { get; set; }
+
         public int WordCategoryId { get; set; }
 
         public virtual WordCategoryViewModel WordCategory { get; set; }

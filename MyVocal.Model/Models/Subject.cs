@@ -1,4 +1,5 @@
 ﻿using MyVocal.Model.Abstract;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -31,5 +32,7 @@ namespace MyVocal.Model.Models
         public bool Status { get; set; }
 
         public int WordTotal { get; set; }
+
+        public virtual IEnumerable<ApplicationUser_Subject> ApplicationUser_Subjects { set; get; }
     }
 }

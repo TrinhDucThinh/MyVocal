@@ -13,7 +13,7 @@ using System.Web.Http;
 
 namespace MyVocal.Web.Api
 {
-    [RoutePrefix("api/WordCategory")]
+    [RoutePrefix("api/wordcategory")]
     public class WordCategoryController : ApiControllerBase
     {
         private IWordCategoryService _wordCategoryService;
@@ -49,13 +49,15 @@ namespace MyVocal.Web.Api
             });
         }
 
-        [Route("add")]
-        public HttpResponseMessage Post(HttpRequestMessage request, WordCategoryViewModel wordCategoryVm)
+        [Route("create")]
+        [HttpPost]
+        [AllowAnonymous]
+        public HttpResponseMessage Create(HttpRequestMessage request, WordCategoryViewModel wordCategoryVm)
         {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                if (ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
                     request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
                 }
@@ -66,9 +68,12 @@ namespace MyVocal.Web.Api
                     newWordCategory.UpdateWordCategory(wordCategoryVm);
 
                     var category = _wordCategoryService.Add(newWordCategory);
-                    _wordCategoryService.SaveChanges();
 
-                    response = request.CreateResponse(HttpStatusCode.Created, newWordCategory);
+                    _wordCategoryService.Save();
+                    //generate Id for WordCategory and send to client
+                    var responseData = Mapper.Map<WordCategory, WordCategoryViewModel>(newWordCategory);
+
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
                 return response;
             });
@@ -90,32 +95,37 @@ namespace MyVocal.Web.Api
                     wordCategoryDb.UpdateWordCategory(wordCategoryVm);
                     _wordCategoryService.Update(wordCategoryDb);
 
-                    _wordCategoryService.SaveChanges();
+                    _wordCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.OK);
                 }
                 return response;
             });
         }
-
+        [Route("delete")]
+        [HttpDelete]
+        [AllowAnonymous]
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                if (ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
                 }
                 else
                 {
-                    _wordCategoryService.Delete(id);
-                    _wordCategoryService.SaveChanges();
+                    var oldWordCategory = _wordCategoryService.Delete(id);
+                    _wordCategoryService.Save();
 
-                    response = request.CreateResponse(HttpStatusCode.OK);
+                    var responseData = Mapper.Map<WordCategory, WordCategoryViewModel>(oldWordCategory);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
+
                 return response;
             });
         }
+        
     }
 }

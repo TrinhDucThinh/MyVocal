@@ -1,0 +1,16 @@
+﻿/// <reference path="E:\Document\Đồ án\Project\Git\MyVocal\MyVocal.Web\Assets/admin/libs/angular/angular.js" />
+(function () {
+    angular.module('myvocal.subject_group', ['myvocal.common']).config(config);
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function config($stateProvider, $urlRouterProvider) {
+        $stateProvider.state('subject_group', {
+            url: "/subject_group",
+            templateUrl: "/app/components/subject_group/subject_groupListView.html",
+            controller: "subject_groupListController"
+        }).state('subject_group_add', {
+            url: "/subject_group_add",
+            templateUrl: "/app/components/subject_group/subject_groupAddView.html",
+            controller: "subject_groupAddController"
+        });
+    }
+})();

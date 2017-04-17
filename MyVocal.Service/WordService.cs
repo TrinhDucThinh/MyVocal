@@ -21,6 +21,8 @@ namespace MyVocal.Service
         IEnumerable<Word> GetAllPagging(int pageIndex, int pageSize, out int totalRow);
 
         IEnumerable<Word> GetBySubjectName(string subjectName, int pageIndexe, int pageSize, out int totalRow);
+
+        //IEnumerable<Word> GetAll(string keyword);
     }
 
     public class WordService : IWordService
@@ -68,5 +70,16 @@ namespace MyVocal.Service
         {
             return _wordRepository.GetSingleById(id);
         }
+
+        //public IEnumerable<Word> GetAll(string keyword)
+        //{
+        //    //if (!string.IsNullOrEmpty(keyword))
+        //    //{
+        //    //    return _wordRepository.GetMulti(x=>x.w)
+        //    //}else
+        //    //{
+
+        //    //}
+        //}
     }
 }

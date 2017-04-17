@@ -34,7 +34,7 @@
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>LT</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg"><b>My</b>Vocal</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -133,15 +133,15 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="/Assets/admin/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Alexander Pierce</span>
+                                <span class="hidden-xs">Admin</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="./Assets/admin/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <img src="/Assets/admin/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                     <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        Admin
+                                       
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -186,7 +186,7 @@
                         <img src="/Assets/admin/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p>Admin</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
@@ -203,6 +203,7 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <li class="header">MAIN NAVIGATION</li>
+                    @*wordCategory*@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-dashboard"></i> <span>Loại từ</span> <i class="fa fa-angle-left pull-right"></i>
@@ -212,129 +213,70 @@
                             <li><a ui-sref="word_categories_add"><i class="fa fa-circle-o"></i> Thêm loại từ</a></li>
                         </ul>
                     </li>
+                    @*word*@
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-files-o"></i>
-                            <span>Layout Options</span>
-                            <span class="label label-primary pull-right">4</span>
+                            <i class="fa fa-dashboard"></i> <span>Từ vựng</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                            <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                            <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                            <li><a ui-sref="words"><i class="fa fa-circle-o"></i> Danh sách từ vựng</a></li>
+                            <li><a ui-sref="word_add"><i class="fa fa-circle-o"></i> Thêm từ vựng</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="../widgets.html">
-                            <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">Hot</small>
-                        </a>
-                    </li>
+
+                    @*subject*@
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-pie-chart"></i>
-                            <span>Charts</span>
-                            <i class="fa fa-angle-left pull-right"></i>
+                            <i class="fa fa-dashboard"></i> <span>Chủ đề</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                            <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-                            <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                            <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                            <li><a ui-sref="subjects"><i class="fa fa-circle-o"></i> Danh sách chủ đề</a></li>
+                            <li><a ui-sref="subject_add"><i class="fa fa-circle-o"></i> Thêm chủ đề</a></li>
                         </ul>
                     </li>
+
+                    @*subject_group*@
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-laptop"></i>
-                            <span>UI Elements</span>
-                            <i class="fa fa-angle-left pull-right"></i>
+                            <i class="fa fa-dashboard"></i> <span>Nhóm chủ đề</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                            <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                            <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                            <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                            <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                            <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+                            <li><a ui-sref="subjects"><i class="fa fa-circle-o"></i> Danh sách nhóm chủ đề</a></li>
+                            <li><a ui-sref="subject_add"><i class="fa fa-circle-o"></i> Thêm nhóm chủ đề</a></li>
                         </ul>
                     </li>
+
+                    @*semantic*@
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-edit"></i> <span>Forms</span>
-                            <i class="fa fa-angle-left pull-right"></i>
+                            <i class="fa fa-dashboard"></i> <span>Ngữ nghĩa</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-                            <li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-                            <li><a href="../forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+                            <li><a ui-sref="subjects"><i class="fa fa-circle-o"></i> Danh sách ngữ nghĩa</a></li>
+                            <li><a ui-sref="subject_add"><i class="fa fa-circle-o"></i> Thêm ngữ nghĩa</a></li>
                         </ul>
                     </li>
+
+                    @*question*@
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-table"></i> <span>Tables</span>
-                            <i class="fa fa-angle-left pull-right"></i>
+                            <i class="fa fa-dashboard"></i> <span>Câu hỏi</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                            <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+                            <li><a ui-sref="subjects"><i class="fa fa-circle-o"></i> Danh sách câu hỏi</a></li>
+                            <li><a ui-sref="subject_add"><i class="fa fa-circle-o"></i> Thêm câu hỏi</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="../calendar.html">
-                            <i class="fa fa-calendar"></i> <span>Calendar</span>
-                            <small class="label pull-right bg-red">3</small>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../mailbox/mailbox.html">
-                            <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                            <small class="label pull-right bg-yellow">12</small>
-                        </a>
-                    </li>
-                    <li class="treeview active">
-                        <a href="#">
-                            <i class="fa fa-folder"></i> <span>Examples</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-                            <li><a href="profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-                            <li><a href="login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-                            <li><a href="register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-                            <li><a href="lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-                            <li><a href="404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-                            <li><a href="500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                            <li class="active"><a href="blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-                        </ul>
-                    </li>
+                    @*questionCategory*@
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-share"></i> <span>Multilevel</span>
-                            <i class="fa fa-angle-left pull-right"></i>
+                            <i class="fa fa-dashboard"></i> <span>Loại câu hỏi</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-                            <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
-                                <ul class="treeview-menu">
-                                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                                    <li>
-                                        <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
-                                        <ul class="treeview-menu">
-                                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                                            <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                            <li><a ui-sref="question_categories"><i class="fa fa-circle-o"></i> Danh sách loại câu hỏi</a></li>
+                            <li><a ui-sref="question_categories_add"><i class="fa fa-circle-o"></i> Thêm loại câu hỏi</a></li>
                         </ul>
                     </li>
-                    <li><a href="../../documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-                    <li class="header">LABELS</li>
-                    <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-                    <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
                 </ul>
             </section>
             <!-- /.sidebar -->
@@ -523,18 +465,56 @@
     <script src="~/Assets/admin/libs/angular/angular.js"></script>
     <script src="~/Assets/admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="~/Assets/admin/libs/toastr/toastr.js"></script>
+    <script src="~/Assets/admin/libs/bootbox/bootbox.js"></script>
+    <script src="~/Assets/admin/libs/ngBootbox/dist/ngBootbox.js"></script>
 
     <script src="~/app/shared/modules/myvocal.common.js"></script>
     <script src="~/app/shared/services/apiService.js"></script>
     <script src="~/app/shared/directives/pagerDirective.js"></script>
     <script src="~/app/shared/services/notificationService.js"></script>
-
+    @*module common for groups*@
     <script src="~/app/components/word_categories/wordCategories.module.js"></script>
+    <script src="~/app/components/words/word.module.js"></script>
+    <script src="~/app/components/subjects/subject.module.js"></script>
+    <script src="~/app/components/semantics/semantics.module.js"></script>
+    <script src="~/app/components/questions/questions.module.js"></script>
+    <script src="~/app/components/question_categories/question_categories.module.js"></script>
     <script src="~/app/app.js"></script>
 
-   
+    @*controller for wordCategory*@
+ 
     <script src="~/app/components/word_categories/wordCategoriesAddController.js"></script>
     <script src="~/app/components/word_categories/wordCategoriesListController.js"></script>
+    <script src="~/app/components/subject_group/subject_group.module.js"></script>
+
+    @*controller for word*@
+    <script src="~/app/components/words/wordAddController.js"></script>
+    <script src="~/app/components/words/wordListController.js"></script>
     <script src="~/app/components/home/homeController.js"></script>
+
+    @*controller for subject*@
+    <script src="~/app/components/subjects/subjectAddController.js"></script>
+    <script src="~/app/components/subjects/subjectEditController.js"></script>
+    <script src="~/app/components/subjects/subjectListController.js"></script>
+
+    @*controller for subject group*@
+    <script src="~/app/components/subject_group/subject_groupEditController.js"></script>
+    <script src="~/app/components/subject_group/subject_groupAddController.js"></script>
+    <script src="~/app/components/subject_group/subject_groupListController.js"></script>
+    
+    @*controller for semantic**@
+    <script src="~/app/components/semantics/semanticsEditController.js"></script>
+    <script src="~/app/components/semantics/semanticsAddController.js"></script>
+    <script src="~/app/components/semantics/semanticsListController.js"></script>
+    
+    @*controller for question*@
+    <script src="~/app/components/questions/questionsAddController.js"></script>
+    <script src="~/app/components/questions/questionsEditController.js"></script>
+    <script src="~/app/components/questions/questionsListController.js"></script>
+    
+    @*controller for question_categories*@
+    <script src="~/app/components/question_categories/question_categoriesAddController.js"></script>
+    <script src="~/app/components/question_categories/question_categoriesEditController.js"></script>
+    <script src="~/app/components/question_categories/question_categoriesListController.js"></script>
 </body>
 </html>

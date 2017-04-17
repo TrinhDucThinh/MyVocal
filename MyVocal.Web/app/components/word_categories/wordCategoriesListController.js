@@ -1,8 +1,8 @@
 ﻿/// <reference path="E:\Document\Đồ án\Project\Git\MyVocal\MyVocal.Web\Assets/admin/libs/angular/angular.js" />
 (function (app) {
     app.controller('wordCategoriesListController', wordCategoriesListController);
-    wordCategoriesListController.$inject = ['$scope', 'apiService', 'notificationService'];
-    function wordCategoriesListController($scope, apiService, notificationService) {
+    wordCategoriesListController.$inject = ['$scope', 'apiService', 'notificationService','$ngBootbox'];
+    function wordCategoriesListController($scope, apiService, notificationService, $ngBootbox) {
         $scope.wordCategories = [];
         $scope.page = 0;
         $scope.pagesCount = 0;
@@ -10,6 +10,24 @@
         $scope.keyword = '';
         var isSearch=false;
         $scope.search = search;
+
+        $scope.deleteWordCategory = deleteWordCategory;
+
+        function deleteWordCategory(id) {
+            $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
+                var config = {
+                    params: {
+                        id: id
+                    }
+                }
+                apiService.del('/api/WordCategory/delete', config, function () {
+                    notificationService.displaySuccess('Xóa thành công');
+                    search();
+                }, function () {
+                    notificationService.displayError('Xóa không thành công');
+                })
+            });
+        }
 
         function search() {
             isSearch = true;

@@ -1,7 +1,17 @@
-﻿/// <reference path="E:\Document\Đồ án\Project\Git\MyVocal\MyVocal.Web\Assets/admin/libs/angular/angular.js" />
+﻿ /// <reference path="E:\Document\Đồ án\Project\Git\MyVocal\MyVocal.Web\Assets/admin/libs/angular/angular.js" />
 
 (function () {
-    angular.module('myvocal', ['myvocal.word_categories','myvocal.common']).config(config);
+    angular.module('myvocal',
+        ['myvocal.word_categories',
+        'myvocal.word',
+        'myvocal.subject',
+        'myvocal.subject_group',
+        'myvocal.semantics',
+        'myvocal.question',
+        'myvocal.question_categories',
+        'myvocal.common'
+        ]).config(config);
+
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('home', {
