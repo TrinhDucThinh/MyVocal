@@ -28,8 +28,9 @@ namespace MyVocal.Data.Repository
                         orderby s.SubjectId
                         select s;
             totalRow = query.Count();
-            query.Skip((pageIndex-1)*pageSize).Take(pageSize);
-            return query;
+            
+            var result=query.Skip((pageIndex-1)*pageSize).Take(pageSize);
+            return result;
 
         }
 

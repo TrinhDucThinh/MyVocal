@@ -19,15 +19,16 @@ namespace MyVocal.Web.Controllers
             this._subjectService = subjectService;
         }
 
-        public JsonResult LoadAllTopic(int groupId,int page, int pageSize = 3)
+        public JsonResult LoadAllTopic(int groupId,int pageIndex=1, int pageSize = 8)
         {
             int totalRow = 0;
-            IEnumerable<Subject> listTopic=null;
+            IEnumerable<Subject> listTopic = null;
             try
             {
-                listTopic = _subjectService.GetByGroupId(groupId, page, pageSize, out totalRow);
-               
-            }catch(Exception ex)
+                listTopic = _subjectService.GetByGroupId(groupId, pageIndex, pageSize, out totalRow);
+
+            }
+            catch (Exception ex)
             {
                 string ex2 = ex.ToString();
             }
@@ -47,6 +48,13 @@ namespace MyVocal.Web.Controllers
             return View();
         }
 
+        public JsonResult Test(int id,string name)
+        {
+            return Json(new {
+                data = "Test"+id,
+                status = true
+            },JsonRequestBehavior.AllowGet);
+        }
 
     }
 }

@@ -32,6 +32,17 @@ namespace MyVocal.Model.Models
 
         public int SubjectId { get; set; }
 
+        public string Example { get; set; }
+
+        public string ExampleTranslation { get; set; }
+
+        public string Defination { get; set; }
+
+        public string Synonym { get; set; }
+
+        [MaxLength(400)]
+        public string SoundExample { get; set; }
+
         [ForeignKey("SubjectId")]
         public virtual Subject Subject { get; set; }
 

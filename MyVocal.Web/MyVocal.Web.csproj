@@ -558,6 +558,7 @@
     <Content Include="Assets\client\css\library\detail_library.css" />
     <Content Include="Assets\client\css\slippry.css" />
     <Content Include="Assets\client\css\vocal_application.css" />
+    <Content Include="Assets\client\js\controllers\Test.js" />
     <Content Include="Assets\client\js\controllers\topicController.js" />
     <Content Include="Assets\client\js\library.js" />
     <Content Include="Assets\client\js\plugins\jquery.twbsPagination.min.js" />
@@ -570,9 +571,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="UploadFiles\Audios\example_accountant.mp3" />
+    <Content Include="UploadFiles\Audios\_accountant.mp3" />
     <Content Include="UploadFiles\images\1_2.jpg" />
     <Content Include="UploadFiles\images\3000 smart words.jpg" />
     <Content Include="UploadFiles\images\3000-essential-words.jpg" />
+    <Content Include="UploadFiles\images\accountant.jpg" />
     <Content Include="UploadFiles\images\avatar_determination.png" />
     <Content Include="UploadFiles\images\boboiboy-photos %281%29.jpg" />
     <Content Include="UploadFiles\images\cup-image.png" />
@@ -820,6 +824,9 @@
   <ItemGroup>
     <Content Include="Views\Topic\Index.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -837,9 +844,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51191</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:63877/</IISUrl>
+          <IISUrl>http://localhost:52762/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

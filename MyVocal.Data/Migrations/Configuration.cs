@@ -28,6 +28,24 @@ namespace MyVocal.Data.Migrations
             }
             #endregion
 
+            //Add subject in group let's go
+            #region subject
+            if (context.Subjects.Count() == 0)
+            {
+                context.Subjects.AddOrUpdate(
+                        new Subject {SubjectName="Job",Description= @"Chủ đề JOB gồm 20 từ vựng được trình bày bằng Flashcards, nội dung xoay quanh những nghề nghiệp phổ biến trong xã hội như giáo viên, diễn viên, bác sĩ…", Identify="Job",Image= @"UploadFiles\images\job.jpg", SubjectGroupId=8,WordTotal=20},
+                        new Subject { SubjectName = "Love", Description = @"Chủ đề LOVE gồm 20 từ vựng được trình bày bằng Flashcards, nội dung xoay quanh vấn đề tình yêu như con người, mối quan hệ, cảm xúc.", Identify = "", Image = @"UploadFiles\images\love.jpg", SubjectGroupId = 8, WordTotal = 20 },
+                        new Subject { SubjectName = "Place around town", Description = @" Chủ đề PLACE AROUND TOWN gồm 20 từ vựng được trình bày bằng Flashcards, nói về những địa điểm xuất hiện quanh ta.", Identify = "Place around town", Image = @"UploadFiles\images\place_around_town.jpeg", SubjectGroupId = 8, WordTotal = 20 },
+                        new Subject { SubjectName = "Holidays", Description = @"Chủ đề HOLIDAYS gồm 20 từ vựng được trình bày bằng Flashcards, nói về các ngày lễ lớn và các vấn đề liên quan khác.", Identify = "", Image = @"UploadFiles\images\holiday.jpg", SubjectGroupId = 8, WordTotal = 20 },
+                        new Subject { SubjectName = "Hobbies", Description = @" Chủ đề HOBBIES gồm 20 từ vựng được trình bày bằng Flashcards, nói về sở thích cá nhân.", Identify = "", Image = @"UploadFiles\images\hobby.jpg", SubjectGroupId = 8, WordTotal = 20 },
+                        new Subject { SubjectName = "Entertaiment", Description = @" Chủ đề ENTERTAINMENT gồm 20 từ vựng được trình bày bằng Flashcards, nói về các hình thức giải trí, vui chơi trong cuộc sống.", Identify = "", Image = @"UploadFiles\images\entertainment.jpg", SubjectGroupId = 8, WordTotal = 20 },
+                        new Subject { SubjectName = "Nature", Description = @" Chủ đề NATURE gồm 20 từ vựng được trình bày bằng Flashcards, nói về những sự vật, hiện tượng thiên nhiên quen thuộc với chúng ta.", Identify = "", Image = @"UploadFiles\images\nature.jpg", SubjectGroupId = 8, WordTotal = 20 },
+                        new Subject { SubjectName = "Final test", Description = @"Tổng hợp 7 chủ đề", Identify = "", Image = @"UploadFiles\images\finalexam.jpg", SubjectGroupId = 8, WordTotal = 20 }
+                    );
+            }
+            #endregion
+
+            //Add group subject 
             #region add SubjectGroup
             if (context.SubjectGroups.Count() == 0)
             {
@@ -68,6 +86,15 @@ namespace MyVocal.Data.Migrations
             manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
             #endregion
             // context.Database.ExecuteSqlCommand("Delete FROM WordCategories;");
+
+            //Add Word
+            if (context.Words.Count() == 0)
+            {
+                context.Words.AddOrUpdate(
+                    new Word { WordName = "accountant",Defination= @"someone who keeps or examines the records of money received, paid, and owed by a company or person", Synonym= @"book-keeper", Transcription = @"/əˈkaʊntənt/", WordCategoryId = 5, Sound = @"UploadFiles\Audios\_accountant.mp3", Image = @"UploadFiles\images\accountant.jpg", SubjectId = 8, Example = @"Her husband is an accountant of her company.", ExampleTranslation = @"Người chồng chính là kế toán viên của công ty cô ta.", SoundExample = @"UploadFiles\Audios\example_accountant.mp3" }
+                );
+            }
+
         }
     }
 }

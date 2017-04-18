@@ -47,7 +47,7 @@
             };
 
             // Instantiate and draw the chart for Sarah's pizza.
-            var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
             chart.draw(data, options);
         }
 
@@ -79,7 +79,8 @@
         }
     </script>
 
-    <script src="~/Assets/client/js/controllers/topicController.js"></script>
+    @*<script src="~/Assets/client/js/controllers/topicController.js"></script>*@
+    <script src="~/Assets/client/js/controllers/Test.js"></script>
 }
 
 
@@ -114,7 +115,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="box-chart-next-all">
-                                    <div id="Sarah_chart_div" style="border: 1px solid #ccc"></div>
+                                    <div id="chart_div" style="border: 1px solid #ccc"></div>
                                 </div>
                             </div>
                         </div>

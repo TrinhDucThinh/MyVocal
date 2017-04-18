@@ -104,6 +104,18 @@
     <Compile Include="Migrations\201704130325208_addRelationship_subject_applicationUser.Designer.cs">
       <DependentUpon>201704130325208_addRelationship_subject_applicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704171454392_AddAttributeForWord.cs" />
+    <Compile Include="Migrations\201704171454392_AddAttributeForWord.Designer.cs">
+      <DependentUpon>201704171454392_AddAttributeForWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704171548015_ChangeWord.cs" />
+    <Compile Include="Migrations\201704171548015_ChangeWord.Designer.cs">
+      <DependentUpon>201704171548015_ChangeWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704171554576_EditWord.cs" />
+    <Compile Include="Migrations\201704171554576_EditWord.Designer.cs">
+      <DependentUpon>201704171554576_EditWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyVocalDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -161,6 +173,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704130325208_addRelationship_subject_applicationUser.resx">
       <DependentUpon>201704130325208_addRelationship_subject_applicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704171454392_AddAttributeForWord.resx">
+      <DependentUpon>201704171454392_AddAttributeForWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704171548015_ChangeWord.resx">
+      <DependentUpon>201704171548015_ChangeWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704171554576_EditWord.resx">
+      <DependentUpon>201704171554576_EditWord.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
