@@ -43,8 +43,9 @@ namespace MyVocal.Web.Controllers
 
 
         // GET: Topic
-        public ActionResult Index()
+        public ActionResult Index(int groupId)
         {
+            ViewBag.GroupId = groupId;
             return View();
         }
 

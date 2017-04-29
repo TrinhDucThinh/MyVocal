@@ -19,6 +19,8 @@ namespace MyVocal.Model.Models
 
         public int WordCategoryId { get; set; }
 
+        public string Meaning { get; set; }
+
         [ForeignKey("WordCategoryId")]
         public virtual WordCategory WordCategory { get; set; }
 

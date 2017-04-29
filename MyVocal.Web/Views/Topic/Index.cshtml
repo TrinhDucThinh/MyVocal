@@ -81,9 +81,10 @@
 
     @*<script src="~/Assets/client/js/controllers/topicController.js"></script>*@
     <script src="~/Assets/client/js/controllers/Test.js"></script>
+
 }
 
-
+<input type="hidden" id="groupId" value=@ViewBag.GroupId />
 <div class="main-wrapper" style="min-height: 251px;">
     <!--begin header-->
     <!--end header-->
@@ -137,7 +138,7 @@
         <!--begin check user is learn-->
         <div class="topics-item">
             <div class="row">
-                <a href="#">
+                <a href="http://localhost:52762/Word/Test">
                     <div class="col-xs-3 col-md-2">
 
                         <img class="topic-image" src="{{image}}" alt="JOB" title="JOB">

@@ -1,9 +1,9 @@
 ﻿var topicConfig = {
     pageSize: 8,
     pageIndex:1,
-    location: window.location.origin
+    location: window.location.origin,
+    groupId: $('#groupId').val()
 }
-
 var topicController = {
 
     init: function () {
@@ -11,12 +11,13 @@ var topicController = {
     },
 
     loadData: function (changePageSize) {
+      
         $.ajax({
             url: '/Topic/LoadAllTopic',
             type: 'GET',
             dataType:'json',
             data: {
-                groupId: 8,
+                groupId: topicConfig.groupId,
                 pageIndex: topicConfig.pageIndex,
                 pageSize: topicConfig.pageSize
             },
@@ -27,7 +28,8 @@ var topicController = {
                     var template = $('#listTopic-template').html();    
                     $.each(data, function (i, item) {
                        
-                        html += Mustache.render(template,{
+                        html += Mustache.render(template, {
+                            
                             image: location.origin +'/'+ item.Image,
                             subjectName: item.SubjectName,
                             description: item.Description

@@ -231,6 +231,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LibraryController.cs" />
     <Compile Include="Controllers\TopicController.cs" />
+    <Compile Include="Controllers\WordController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -558,6 +559,8 @@
     <Content Include="Assets\client\css\library\detail_library.css" />
     <Content Include="Assets\client\css\slippry.css" />
     <Content Include="Assets\client\css\vocal_application.css" />
+    <Content Include="Assets\client\css\word\word.css" />
+    <Content Include="Assets\client\js\controllers\learning_workController.js" />
     <Content Include="Assets\client\js\controllers\Test.js" />
     <Content Include="Assets\client\js\controllers\topicController.js" />
     <Content Include="Assets\client\js\library.js" />
@@ -571,32 +574,51 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="UploadFiles\Audios\example_accountant.mp3" />
-    <Content Include="UploadFiles\Audios\_accountant.mp3" />
     <Content Include="UploadFiles\images\1_2.jpg" />
     <Content Include="UploadFiles\images\3000 smart words.jpg" />
     <Content Include="UploadFiles\images\3000-essential-words.jpg" />
     <Content Include="UploadFiles\images\accountant.jpg" />
+    <Content Include="UploadFiles\images\actor.jpg" />
+    <Content Include="UploadFiles\images\actress.jpg" />
+    <Content Include="UploadFiles\images\architect.jpg" />
+    <Content Include="UploadFiles\images\artist_1.jpg" />
     <Content Include="UploadFiles\images\avatar_determination.png" />
+    <Content Include="UploadFiles\images\babysitter.jpg" />
+    <Content Include="UploadFiles\images\baker.jpg" />
+    <Content Include="UploadFiles\images\barber.jpg" />
     <Content Include="UploadFiles\images\boboiboy-photos %281%29.jpg" />
+    <Content Include="UploadFiles\images\carpenter.jpg" />
+    <Content Include="UploadFiles\images\cashier_1.jpg" />
+    <Content Include="UploadFiles\images\chef.jpg" />
     <Content Include="UploadFiles\images\cup-image.png" />
+    <Content Include="UploadFiles\images\doctor.jpg" />
+    <Content Include="UploadFiles\images\engineer.jpg" />
     <Content Include="UploadFiles\images\entertainment.jpg" />
+    <Content Include="UploadFiles\images\farmer.jpg" />
     <Content Include="UploadFiles\images\finalexam.jpg" />
     <Content Include="UploadFiles\images\hobby.jpg" />
     <Content Include="UploadFiles\images\holiday.jpg" />
+    <Content Include="UploadFiles\images\homemaker.jpg" />
     <Content Include="UploadFiles\images\horizontal-bar.png" />
     <Content Include="UploadFiles\images\images xuka.jpg" />
     <Content Include="UploadFiles\images\img-successfull-idea.png" />
     <Content Include="UploadFiles\images\job.jpg" />
+    <Content Include="UploadFiles\images\lawyer.jpg" />
     <Content Include="UploadFiles\images\let%27s_go.png" />
     <Content Include="UploadFiles\images\love.jpg" />
     <Content Include="UploadFiles\images\nature.jpg" />
+    <Content Include="UploadFiles\images\nurse_1.jpg" />
+    <Content Include="UploadFiles\images\photographer.jpg" />
     <Content Include="UploadFiles\images\place_around_town.jpeg" />
     <Content Include="UploadFiles\images\rank-msg-img.png" />
     <Content Include="UploadFiles\images\effort.jpg" />
+    <Content Include="UploadFiles\images\secretary.jpg" />
+    <Content Include="UploadFiles\images\teacher.jpg" />
     <Content Include="UploadFiles\images\voca-instories-advanced.jpg" />
     <Content Include="UploadFiles\images\voca-instories-improver.jpg" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -610,6 +632,7 @@
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
     <Folder Include="Assets\client\img\" />
+    <Folder Include="UploadFiles\Audios\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -825,7 +848,7 @@
     <Content Include="Views\Topic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <Content Include="Views\Word\Test.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

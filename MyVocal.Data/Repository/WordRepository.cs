@@ -2,18 +2,28 @@
 using MyVocal.Model.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace MyVocal.Data.Repository
 {
     public interface IWordRepository : IRepository<Word>
     {
         IEnumerable<Word> GetBySubjectName(string subjectName, int pageIndex, int pageSize, out int totalRow);
+        IEnumerable<Word> GetAllBySubjectId(int subjectId);
     }
 
     public class WordRepository : RepositoryBase<Word>, IWordRepository
     {
         public WordRepository(IDbFactory dbFactory) : base(dbFactory)
         {
+        }
+
+        public IEnumerable<Word> GetAllBySubjectId(int subjectId)
+        {
+            var query = from w in DbContext.Words
+                        where w.SubjectId==subjectId
+                        select w;
+            return query;
         }
 
         public IEnumerable<Word> GetBySubjectName(string subjectName, int pageIndex, int pageSize, out int totalRow)

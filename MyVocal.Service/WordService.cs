@@ -20,8 +20,9 @@ namespace MyVocal.Service
 
         IEnumerable<Word> GetAllPagging(int pageIndex, int pageSize, out int totalRow);
 
-        IEnumerable<Word> GetBySubjectName(string subjectName, int pageIndexe, int pageSize, out int totalRow);
+        IEnumerable<Word> GetBySubjectName(string subjectName, int pageIndex, int pageSize, out int totalRow);
 
+        IEnumerable<Word> GetAllBySubjectId(int subjectId);
         //IEnumerable<Word> GetAll(string keyword);
     }
 
@@ -71,15 +72,9 @@ namespace MyVocal.Service
             return _wordRepository.GetSingleById(id);
         }
 
-        //public IEnumerable<Word> GetAll(string keyword)
-        //{
-        //    //if (!string.IsNullOrEmpty(keyword))
-        //    //{
-        //    //    return _wordRepository.GetMulti(x=>x.w)
-        //    //}else
-        //    //{
-
-        //    //}
-        //}
+        public IEnumerable<Word> GetAllBySubjectId(int subjectId)
+        {
+            return _wordRepository.GetAllBySubjectId(subjectId);
+        }
     }
 }
