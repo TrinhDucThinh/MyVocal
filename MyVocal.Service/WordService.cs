@@ -8,13 +8,13 @@ namespace MyVocal.Service
 {
     public interface IWordService
     {
-        void Add(Word word);
+        Word Add(Word word);
 
         void Update(Word word);
 
-        void Delete(int id);
+        Word Delete(int id);
 
-        void SaveChange();
+        void Save();
 
         Word GetById(int id);
 
@@ -23,7 +23,8 @@ namespace MyVocal.Service
         IEnumerable<Word> GetBySubjectName(string subjectName, int pageIndex, int pageSize, out int totalRow);
 
         IEnumerable<Word> GetAllBySubjectId(int subjectId);
-        //IEnumerable<Word> GetAll(string keyword);
+
+        IEnumerable<Word> GetAll(string keyword);
     }
 
     public class WordService : IWordService
@@ -37,14 +38,14 @@ namespace MyVocal.Service
             this._unitOfWork = unitOfWork;
         }
 
-        public void Add(Word word)
+        public Word Add(Word word)
         {
-            _wordRepository.Add(word);
+            return _wordRepository.Add(word);
         }
 
-        public void Delete(int id)
+        public Word Delete(int id)
         {
-            _wordRepository.Delete(id);
+            return _wordRepository.Delete(id);
         }
 
         public IEnumerable<Word> GetAllPagging(int pageIndex, int pageSize, out int totalRow)
@@ -57,7 +58,7 @@ namespace MyVocal.Service
             return _wordRepository.GetBySubjectName(subjectName,pageIndex,pageSize,out totalRow);
         }
 
-        public void SaveChange()
+        public void Save()
         {
             _unitOfWork.Commit();
         }
@@ -75,6 +76,17 @@ namespace MyVocal.Service
         public IEnumerable<Word> GetAllBySubjectId(int subjectId)
         {
             return _wordRepository.GetAllBySubjectId(subjectId);
+        }
+
+        public IEnumerable<Word> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                return _wordRepository.GetMulti(x => x.WordName.Contains(keyword));
+            }else
+            {
+                return _wordRepository.GetAll();
+            }
         }
     }
 }

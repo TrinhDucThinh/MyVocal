@@ -1,0 +1,77 @@
+﻿@model MyVocal.Web.Models.LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Assets/client/css/account/register.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div> 
+        <!--SIGN IN-->
+        <div class="login-form-1">
+            <div class="close-2"> </div>
+            <div class="head">
+            </div>
+            <div class="head-info">
+                <h1>ĐĂNG NHẬP</h1>
+                <h2>Chào mừng bạn với vocal.vn</h2>
+            </div>
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(false, "", new { @class = "error" })
+                <ul>
+                    <li>
+                        @*<input type="text" class="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}"><a href="#" class="icon mail"></a>*@
+                        @Html.TextBoxFor(model => model.UserName, new { @class = "text", @Value = "UserName", @onfocus = "this.value=''", @onblur = "if(this.value==''){this.value='UserName';}" })<a href="#" class="icon mail"></a>
+                    </li>
+                    <li>
+                        @*<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"><a href="#" class="icon lock"></a>*@
+                        @Html.PasswordFor(model => model.Password, new { @Value = "Password", @onfocus = "this.value=''", @onblur = "if(this.value==''){this.value='Password';}" })<a href="#" class="icon lock"></a>
+                    </li>
+
+                    <li class="remember">
+                        @*<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"><a href="#" class="icon lock"></a>*@
+                        @Html.CheckBoxFor(model => model.RememberMe)
+                        Nhớ mật khẩu?
+                    </li>
+                </ul>
+
+                <div class="p-container">
+                    <input type="submit" onclick="myFunction()" value="SIGN IN">
+                    <div class="clear"> </div>
+                </div>
+            }
+                
+          
+            <div class="social-icons">
+                <div class="but-bottom">
+                    <a href="#" class="account"><p>Bạn đã có tài khoản ?</p></a>
+                </div>
+                <a href="#" class="social-account"><h3>or sign in with social account</h3></a>
+                <a href="#">
+                    <ul class="facebook">
+                        <li><img src="~/Assets/client/img/fb.png" />Facebook</li>
+                    </ul>
+                </a>
+                <a href="#">
+                    <ul class="google-plus">
+                        <li><img src="~/Assets/client/img/gp.png" />Google +</li>
+                    </ul>
+                </a>
+
+                <div class="clear"> </div>
+            </div>
+        </div>
+        <!--/SIGN IN-->
+    </div>
+</body>
+</html>

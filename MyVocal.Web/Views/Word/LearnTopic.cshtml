@@ -5,26 +5,24 @@
 }
 @section Styles{
     <link href="~/Assets/client/css/word/word.css" rel="stylesheet" />
-    <style>
-        .hideElement {
-            display: none;
-        }
-    </style>
 }
 
 @section Scripts{
     <script src="~/Assets/client/js/plugins/mustache.min.js"></script>
     <script src="~/Assets/client/js/controllers/learning_workController.js"></script>
 }
+<!--Begin main-wrap-->
+<input type="hidden" id="TopicId" value=@ViewBag.Id />
 
 <div class="main-wrap">
+    @*Begin div_listword*@
     <div id="listword">
-       <div id="p1" class='item active' data-word='accountant'>
+       @*<div id="p1" class='item active' data-word='accountant'>
             <div class="child child1" style="display: block;">
                 <div class="row face face1">
                     <div class="col-md-3 col-sm-3 col-xs-4">
                         <div class="thumbnail">
-                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <a href="#" class="pin-word pin-word-learning" vocabulary="96" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
                             <img class="img-vocabulary" alt="accountant" src="~/UploadFiles/images/accountant.jpg" />
 
                         </div>
@@ -47,7 +45,7 @@
                 <div class="row  face face2">
                     <div class="col-md-3 col-sm-3 col-xs-4">
                         <div class="thumbnail">
-                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <a href="#" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
                             <img class="img-vocabulary" alt="accountant" src="~/UploadFiles/images/accountant.jpg" />
                         </div>
                     </div>
@@ -90,7 +88,7 @@
                 <div class="row  face face3">
                     <div class="col-md-3 col-sm-3 col-xs-4">
                         <div class="thumbnail">
-                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <a href="#" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
                             <img class="img-vocabulary" alt="accountant" src="~/UploadFiles/images/accountant.jpg" />
                         </div>
                     </div>
@@ -181,7 +179,7 @@
                                     <span></span>
                                 </a>
                                 <audio class="audio-uk-1">
-                                    <source src="undefined0B_QESOpwSu7sUWV0VWx6RENzYTA" type="audio/mpeg">
+                                    <source src="0B_QESOpwSu7sUWV0VWx6RENzYTA" type="audio/mpeg">
                                 </audio>
                             </div>
                         </div>
@@ -2018,8 +2016,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>*@
    </div>
+    @*End div_listword*@
+    <!--Begin div_learning-fill-->
     <div class="learning-fill" style="background: rgb(255, 255, 255);">
         <div class="row">
             <div class="col-md-12">
@@ -2038,17 +2038,18 @@
             </div>
         </div>
     </div>
+    <!--End div_learning-fill-->
 </div>
-
-
+<!--End main-wrap-->
 
 <div class="col-md-12" align="center" >
     <input type="button"  id='prev' class="btn btn-prev prevBtn" value="Quay lại">
     <input type="button" id='next' class="btn btn-next nextBtn" value="Tiếp theo">
 </div>
 
+<!--template-->
 <script id="listWord-template" type="x-tmpl-mustache">
-    <div id="p{{Id}}" class='item {{Active}}'>
+    <div id="p{{Id}}" class='item {{Active}}' data-word='{{WordName}}'>
         <div class="child child1" style="display: block;">
             <div class="row face face1">
                 <div class="col-md-3 col-sm-3 col-xs-4">
@@ -2088,7 +2089,7 @@
                             <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
                                 <span></span>
                             </a>
-                            <audio class="audio-uk-1">
+                            <audio class="audio-uk-1" id="audioSound">
                                 <source src={{Sound}} type='audio/mpeg' />
                             </audio>
                         </div>
@@ -2129,7 +2130,7 @@
                             <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
                                 <span></span>
                             </a>
-                            <audio class="audio-sample-uk-1">
+                            <audio class="audio-sample-uk-1" id="soundExample">
                                 <source src={{SoundExample}} type='audio/mpeg' />
                             </audio>
                         </div>

@@ -14,80 +14,47 @@
     <script src="~/Assets/client/js/plugins/jquery.twbsPagination.min.js"></script>
     <script src="//cdn.jsdelivr.net/excanvas/r3/excanvas.js" type="text/javascript"></script>
     <script src="//cdn.jsdelivr.net/chart.js/0./Chart.js" type="text/javascript"></script>
-
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="~/Assets/client/js/controllers/topicController.js"></script>
     <script type="text/javascript">
 
         // Load Charts and the corechart package.
         google.charts.load('current', { 'packages': ['corechart'] });
 
         // Draw the pie chart for Sarah's pizza when Charts is loaded.
-        google.charts.setOnLoadCallback(drawSarahChart);
-
-        // Draw the pie chart for the Anthony's pizza when Charts is loaded.
-        google.charts.setOnLoadCallback(drawAnthonyChart);
+        google.charts.setOnLoadCallback(drawLearningChart);
 
         // Callback that draws the pie chart for Sarah's pizza.
-        function drawSarahChart() {
+        function drawLearningChart() {
 
             // Create the data table for Sarah's pizza.
             var data = new google.visualization.DataTable();
             data.addColumn('string', 'Topping');
             data.addColumn('number', 'Slices');
             data.addRows([
-              ['Từ đã thuộc', 1],
-              ['Từ chưa thuộc', 1],
-              ['Từ chưa học', 2],
+              ['20 Từ đã thuộc', 20],
+              ['30 Từ chưa thuộc', 30],
+              ['50 Từ chưa học', 50],
             ]);
 
-            // Set options for Sarah's pie chart.
+            // Set options for  chart.
             var options = {
-                width: 400,
+                title: 'Biểu đồ tiến độ',
+                width: 500,
                 height: 300
             };
 
-            // Instantiate and draw the chart for Sarah's pizza.
+            // Instantiate and draw the chart 
             var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
             chart.draw(data, options);
         }
 
-        // Callback that draws the pie chart for Anthony's pizza.
-        function drawAnthonyChart() {
-
-            // Create the data table for Anthony's pizza.
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Topping');
-            data.addColumn('number', 'Slices');
-            data.addRows([
-              ['Mushrooms', 2],
-              ['Onions', 2],
-              ['Olives', 2],
-              ['Zucchini', 0],
-              ['Pepperoni', 3]
-            ]);
-
-            // Set options for Anthony's pie chart.
-            var options = {
-                title: 'How Much Pizza Anthony Ate Last Night',
-                width: 400,
-                height: 300
-            };
-
-            // Instantiate and draw the chart for Anthony's pizza.
-            var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));
-            chart.draw(data, options);
-        }
     </script>
-
-    @*<script src="~/Assets/client/js/controllers/topicController.js"></script>*@
-    <script src="~/Assets/client/js/controllers/Test.js"></script>
-
 }
 
 <input type="hidden" id="groupId" value=@ViewBag.GroupId />
+
 <div class="main-wrapper" style="min-height: 251px;">
-    <!--begin header-->
-    <!--end header-->
     <!--Begin content-->
     <div class="background-all-blog">
         <!--banner-->
@@ -103,7 +70,6 @@
                     <div class="col-md-8 col-xs-8">
                         <p class="title-topic-left title-topic"><span class="pull-left">Chủ đề</span> <span class="badge fix-badge-topic">7</span></p>
                         <div class="row" id="topicList">
-
                         </div><!--END topics-item-->
 
                     </div><!--end content left-->
@@ -113,14 +79,17 @@
                                 <p class="title-topic-left not-top-chart">Biểu đồ tiến bộ</p>
                             </div>
                         </div>
+                        <!--Beign div_Chart learning-->
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="box-chart-next-all">
-                                    <div id="chart_div" style="border: 1px solid #ccc"></div>
+                                    <div id="chart_div" style="border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;margin-left:-10%"></div>
                                 </div>
                             </div>
                         </div>
-                    </div><!--end content right-->
+                        <!--End div_Chart learning-->
+                    </div>
+                    <!--end content right-->
                 </div>
             </div>
         </div>
@@ -138,7 +107,7 @@
         <!--begin check user is learn-->
         <div class="topics-item">
             <div class="row">
-                <a href="http://localhost:52762/Word/Test">
+                <a href="{{link}}">
                     <div class="col-xs-3 col-md-2">
 
                         <img class="topic-image" src="{{image}}" alt="JOB" title="JOB">
@@ -161,7 +130,7 @@
 
                     </a><p class="col-btn-test text-center">
                         <a href="#">
-                        </a><a isdontknowword="1" href="javascript:void(0)" childrentopic="96" parenttopic="95" class="learn-question topics-review">ÔN LẠI</a>
+                        </a><a isdontknowword="1" href="#" childrentopic="96" parenttopic="95" class="learn-question topics-review">ÔN LẠI</a>
                     </p>
 
                     <p class="text-center">

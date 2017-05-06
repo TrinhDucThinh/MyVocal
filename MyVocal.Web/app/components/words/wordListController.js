@@ -1,31 +1,31 @@
 ﻿/// <reference path="E:\Document\Đồ án\Project\Git\MyVocal\MyVocal.Web\Assets/admin/libs/angular/angular.js" />
 (function (app) {
-    app.controller('wordListController', wordCategoriesListController);
-    wordCategoriesListController.$inject = ['$scope', 'apiService', 'notificationService'];
-    function wordCategoriesListController($scope, apiService, notificationService) {
-        $scope.wordCategories = [];
+    app.controller('wordListController', wordListController);
+    wordListController.$inject = ['$scope', 'apiService', 'notificationService'];
+    function wordListController($scope, apiService, notificationService) {
+        $scope.words = [];
         $scope.page = 0;
         $scope.pagesCount = 0;
-        $scope.getWordCategories = getWordCategories;
+        $scope.getWords = getWords;
         $scope.keyword = '';
         var isSearch=false;
         $scope.search = search;
 
         function search() {
             isSearch = true;
-            getWordCategories();
+            getWords();
         }
 
-        function getWordCategories(page) {
+        function getWords(page) {
             page = page || 0;
             var config = {
                 params: {
                     keyword: $scope.keyword,
                     page: page,
-                    pageSize: 2
+                    pageSize: 10
                 }
             }
-            apiService.get('/api/WordCategory/getall', config, function (result) {
+            apiService.get('/api/word/getall', config, function (result) {
                 if (isSearch) {
                     if (result.data.TotalCount == 0) {
                         notificationService.displayWarning('Không có bản ghi nào được tìm thấy.'); 
@@ -35,14 +35,15 @@
                     isSearch = false;
                 }
 
-                $scope.wordCategories = result.data.Items;
+                $scope.words = result.data.Items;
                 $scope.page = result.data.Page;
                 $scope.totalCount = result.data.TotalCount;
                 $scope.pagesCount = result.data.TotalPages;
             }, function () {
-                console.log('Load word categories failure');
+                console.log('Load words failure');
             });
         }
-        $scope.getWordCategories();
+
+        //$scope.getWords();
     }
 })(angular.module('myvocal.word'));

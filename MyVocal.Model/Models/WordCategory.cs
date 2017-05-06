@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyVocal.Model.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 namespace MyVocal.Model.Models
 {
     [Table("WordCategories")]
-    public class WordCategory
+    public class WordCategory 
     {
         [Key]
         public int WordCategoryId { get; set; }

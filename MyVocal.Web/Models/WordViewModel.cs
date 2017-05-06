@@ -33,7 +33,19 @@ namespace MyVocal.Web.Models
 
         public virtual SubjectViewModel Subject { get; set; }
 
+
+        public string Meaning { get; set; }
+
+        public string Example { get; set; }
+
+        public string ExampleTranslation { get; set; }
+
+        public string Defination { get; set; }
+
+        public string Synonym { get; set; }
+
         public virtual IEnumerable<QuestionViewModel> Questions { get; set; }
         public virtual IEnumerable<SemanticViewModel> Semantics { get; set; }
+
     }
 }

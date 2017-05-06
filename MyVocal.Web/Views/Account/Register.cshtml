@@ -1,0 +1,93 @@
+﻿@model MyVocal.Web.Models.RegisterViewModel
+@using BotDetect.Web.Mvc;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <link href="~/Assets/client/css/account/register.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,700,800' rel='stylesheet' type='text/css'>
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
+    <!--//webfonts-->
+    <script src="~/Assets/admin/libs/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <!--SIGN UP-->
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+        {
+            
+            <div class="login-form">
+                <div class="close"> </div>
+                <div class="head">
+
+                </div>
+                <div class="head-info">
+                    <h1>Đăng ký</h1>
+                    <h2>Làm ơn điền thông tin của bạn</h2>
+                </div>
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(false, "", new { @class = "error" })
+
+                @if (ViewData["SuccessMsg"] != null)
+                {
+                <div class="alert alert-success" role="alert" style="text-align:center; color:#0026ff">
+                    <strong>Chúc mừng bạn! </strong> đã đăng ký thành công.
+                    <br />Vui lòng click <a href="/dang-nhap.html">vào đây </a>để đăng nhập.
+                </div>
+                }
+                <ul>
+                    <li>
+                        @Html.TextBoxFor(model => model.Email, new { @onfocus = "this.value=''", @class = "text", @Value = "Email", @onblur = "if (this.value == '') {this.value = 'Email';}" })<a href="#" class="icon mail"></a>
+                    </li>
+                    <li>
+                        @Html.TextBoxFor(model => model.UserName, new { @onfocus = "this.value=''", @class = "text", @Value = "UserName", @onblur = "if (this.value == '') {this.value = 'UserName';}" })<a href="#" class="icon user"></a>
+                    </li>
+                    <li>
+                        @Html.PasswordFor(model => model.Password, new { @onfocus = "this.value=''", @class = "text", @Value = "Password", @onblur = "if (this.value == '') {this.value = 'Password';}" })<a href="#" class="icon lock"></a>
+                    </li>
+                </ul>
+                <div class="captcha">
+                    @{
+                        MvcCaptcha registerCaptcha = new MvcCaptcha("registerCaptcha");
+                    }
+                    @Html.Captcha(registerCaptcha)
+                    @Html.TextBox("CaptchaCode", "", new { @class = "text", @onfocus = "this.value=''", @Value = "Nhập mã captcha ở trên vào đây", @onblur = "if (this.value == '') {this.value = 'Nhập mã captcha ở trên vào đây';}" })
+                </div>
+                <div class="p-container">
+                    <input type="submit" onclick="myFunction()" value="SIGN UP">
+                    <div class="clear"> </div>
+                </div>
+                <div class="social-icons">
+                    <div class="but-bottom">
+                        <a href="#" class="account"><p>Bạn đã có tài khoản ?</p></a>
+                    </div>
+                    <a href="#" class="social-account"><h3>or sign in with social account</h3></a>
+                    <a href="#">
+                        <ul class="facebook">
+                            <li><img src="~/Assets/client/img/fb.png" />Facebook</li>
+                        </ul>
+                    </a>
+                    <a href="#">
+                        <ul class="google-plus">
+                            <li><img src="~/Assets/client/img/gp.png" />Google +</li>
+                        </ul>
+                    </a>
+
+                    <div class="clear"> </div>
+                </div>
+            </div>
+                        }
+
+               
+           
+
+        <!--/SIGN UP-->
+</body>
+</html>

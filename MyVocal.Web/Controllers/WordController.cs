@@ -1,36 +1,26 @@
-﻿using AutoMapper;
-using MyVocal.Model.Models;
+﻿using MyVocal.Model.Models;
 using MyVocal.Service;
-using MyVocal.Web.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MyVocal.Web.Controllers
 {
     public class WordController : Controller
     {
-        IWordService _wordService;
-
+        private IWordService _wordService;
+        //Contructor
         public WordController(IWordService workService)
         {
             this._wordService = workService;
         }
-
-        public ActionResult Test()
+        //Learn and practise word in a subject
+        public ActionResult LearnTopic(int id)
         {
+            ViewBag.Id = id;
             return View();
         }
-        // GET: Word
-        public ActionResult LearnTopic()
-        {
-            return View();
-        }
-        
-        
-
+        //Get all word in a subject and return result is json array
         public JsonResult ListAllBySubjectId(int SubjectId)
         {
             bool status = false;
@@ -53,5 +43,12 @@ namespace MyVocal.Web.Controllers
                 status = true
             }, JsonRequestBehavior.AllowGet);
         }
+        //Test word in a Subject(Topic)
+        public ActionResult TestTopic(int id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
+
     }
 }

@@ -25,6 +25,7 @@ namespace MyVocal.Web.Api
         }
 
         [Route("getall")]
+        [HttpGet]
         public HttpResponseMessage GetAll(HttpRequestMessage request,string keyword, int page, int pageSize = 20)
         {
             return CreateHttpResponse(request, () =>
@@ -49,6 +50,19 @@ namespace MyVocal.Web.Api
             });
         }
 
+        [Route("getbyid/{id:int}")]
+        [HttpGet]
+        public HttpResponseMessage GetById(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request,()=> 
+            {
+                var model = _wordCategoryService.GetById(id);
+                var responseData = Mapper.Map<WordCategory, WordCategoryViewModel>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
+
         [Route("create")]
         [HttpPost]
         [AllowAnonymous]
@@ -64,7 +78,7 @@ namespace MyVocal.Web.Api
                 else
                 {
                     var newWordCategory = new WordCategory();
-
+                    
                     newWordCategory.UpdateWordCategory(wordCategoryVm);
 
                     var category = _wordCategoryService.Add(newWordCategory);
@@ -80,28 +94,31 @@ namespace MyVocal.Web.Api
         }
 
         [Route("update")]
-        public HttpResponseMessage Put(HttpRequestMessage request, WordCategoryViewModel wordCategoryVm)
+        [HttpPut]
+        [AllowAnonymous]
+        public HttpResponseMessage Update(HttpRequestMessage request, WordCategoryViewModel wordCategoryVm)
         {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
-                if (ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                    response=request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
                 }
                 else
                 {
                     var wordCategoryDb = _wordCategoryService.GetById(wordCategoryVm.WordCategoryId);
                     wordCategoryDb.UpdateWordCategory(wordCategoryVm);
                     _wordCategoryService.Update(wordCategoryDb);
-
                     _wordCategoryService.Save();
 
-                    response = request.CreateResponse(HttpStatusCode.OK);
+                    var responseData = Mapper.Map<WordCategory, WordCategoryViewModel>(wordCategoryDb);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
                 return response;
             });
         }
+
         [Route("delete")]
         [HttpDelete]
         [AllowAnonymous]

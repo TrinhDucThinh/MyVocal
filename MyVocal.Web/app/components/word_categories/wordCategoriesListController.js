@@ -61,6 +61,7 @@
                 console.log('Load word categories failure');
             });
         }
+
         $scope.getWordCategories();
     }
 })(angular.module('myvocal.word_categories'));

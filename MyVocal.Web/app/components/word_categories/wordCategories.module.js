@@ -7,10 +7,16 @@
             url: "/word_categories",
             templateUrl: "/app/components/word_categories/wordCategoriesListView.html",
             controller: "wordCategoriesListController"
-        }).state('word_categories_add', {
+        })
+            .state('add_word_categories', {
             url: "/word_categories_add",
             templateUrl: "/app/components/word_categories/wordCategoryAddView.html",
             controller: "wordCategoriesAddController"
+        })
+            .state('edit_word_categories', {
+            url: "/edit_word_categories_add/:id",
+            templateUrl: "/app/components/word_categories/wordCategoryEditView.html",
+            controller: "wordCategoriesEditController"
         });
     }
 })();

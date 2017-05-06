@@ -1,0 +1,534 @@
+﻿/* start header */
+#header{
+	background-color:#4c87ed;
+	padding-top:90px;
+	color:#FFF;
+	padding-right:20px;
+	padding-left:20px;
+}
+#header h1{
+	font-family: OpenSansBold;
+	font-size: 30px;
+}
+#header p{
+	margin-top:20px;
+	padding-bottom:100px;
+	font-size:20px
+}
+
+/* end header */
+
+/* start center */
+#center{
+	margin-top:-60px;
+	
+}
+.container{
+	padding-left:110px;
+	padding-right:110px
+}
+@media (min-width: 0px) and (max-width: 992px) { 
+	.container{
+	padding-left:20px;
+	padding-right:20px
+	}
+}
+#center .circle{
+	width:110px;
+	height:110px;
+	border-radius:50%;
+	border-style:solid;
+	border-width:5px;
+	border-color:#FFF;
+	font-weight:bold;
+}
+#center  #blue{
+	background-color:#4c87ed;
+}
+#center  #red{
+	background-color:#e04a32;
+}
+#center  #blue-dam{
+	background-color:#003366;
+}
+#center  #orange{
+	background-color:#FFAB00;
+}
+
+#center .circle p{
+	color:#FFF;
+	font-size:13px;
+}
+#center .circle p span{
+	font-size:18px;
+	font-family: OpenSansBold;
+}
+#center #blue p{
+	padding-top:15px;
+}
+#center #red p{
+	padding-top:40px;
+}
+#center #blue-dam p{
+	padding-top:16px;
+}
+#center #orange img{
+	margin-top:30px
+}
+#center .content{
+	text-align:center;
+	width:170px;
+	font-size:16px;
+	margin:20px
+}
+#center .content span{
+	font-weight:bold;
+	font-family: OpenSansBold;
+}
+/* end center */
+
+/* start bottom */
+#bottom{
+	margin-top:0px	
+}
+#bottom h2{
+	color:#4c87ed;
+	font-weight:bold;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+#bottom a{
+	display:inline-block;
+	min-width: 130px;
+	border-radius:3px;
+	margin-right:5px;
+	margin-left: 5px;
+	font-size:11px;
+	font-family: OpenSansBold;
+	height: 45px;
+	line-height: 45px;
+}
+#bottom #a-black{
+	color:#404040;
+	background-color:#FFCE0F
+}
+#bottom #a-white{
+	color:#FFF;
+	background-color:#4c87ed
+}
+.circle-count{
+    position: relative; 
+    display: inline-block;
+}
+.circle-count-down{
+    position: absolute; 
+    left: 9px; 
+    top: 8px; 
+    font-size: 14px; 
+    font-family: opensansbold;
+}
+/* end bottom */
+.timer-group{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.circle-count{
+    position: relative; 
+    display: inline-block;
+}
+.circle-count-down{
+    position: absolute; 
+    left: 9px; 
+    top: 8px; 
+    font-size: 14px; 
+    font-family: opensansbold;
+}
+
+#testing-card{
+	padding: 20px 10px 50px;
+	max-width: 1170px;
+    margin: auto;
+}
+#testing-card .main-wrap{
+	max-width: 1170px;
+    height: 455px;
+    background-color: #e5e5e5;
+    padding: 15px;
+    margin: 10px auto 0px;
+    overflow: hidden;
+}
+#testing-card .main-wrap-right{
+    -webkit-box-shadow: 0px 0px 10px 3px #7ac60c;
+    -moz-box-shadow: 0px 0px 10px 3px #7ac60c;
+    box-shadow: 0px 0px 10px 3px #7ac60c;
+}
+#testing-card .main-wrap-wrong{
+    -webkit-box-shadow: 0px 0px 15px 2px #ef3737;
+    -moz-box-shadow: 0px 0px 15px 2px #ef3737;
+    box-shadow: 0px 0px 15px 2px #ef3737;
+}
+#testing-card .item{
+	width:100%;
+}
+
+#testing-card .selected-letter .question{
+	color:#4C87ED;
+	border-bottom:solid 1px #E8E4DE;
+	padding-bottom:10px;
+	position:relative;
+	font-size:18px;
+}
+#testing-card .selected-letter .question span{
+	display:inline-block;
+	border:solid 1px;
+	width:30px;
+	height:30px;
+	text-align:center;
+	border:solid 1px;
+	border-radius:50%;
+	padding-top:4px;
+	position:absolute;
+	right:0px;
+	top:-6px;
+}
+#testing-card .selected-letter{
+	width:100%;
+	height: 250px;
+	background-color:#FFF;
+	padding:20px;
+    border: 1px solid #d3d3d3;
+}
+#testing-card .select-vocabulary{
+	width:100%;
+	height:170px;
+	background-color:#FFF;
+	margin-top:5px;
+	padding:20px;
+    border: 1px solid #d3d3d3;
+}
+
+.progress-fix{
+	height: 15px;
+    background: #fff;
+    max-width: 1160px;
+    margin: 15px auto;
+    border-radius: 0;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 0;
+}
+.progress-bar {
+    text-align: center;
+    height: 15px;
+    background-color: #f5f5f5;
+    border-radius: 0px;
+    background-image: -webkit-linear-gradient(top,#003366 0,#003366 100%);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+.btn-testing-group{
+	padding-top: 15px;
+}
+.testing-title{
+	font-size: 18px;
+    font-family: opensanssemibold;
+    margin-top: 15px;
+}
+/*begin testing pronounce*/
+.testing-pronounce{
+	font-size: 25px;
+    color: #4c87ed;
+    margin-top: 35px;
+}
+.pronounce-img span{
+	width: 40px;
+    margin-top: 5px;
+    background: url('../img/sound_pronounce_test_icon.png');
+    height: 40px;
+    display: inline-block;
+    background-position: 0 0px;
+}
+.pronounce-img span:hover{
+	cursor: pointer;
+    background-position: 0 39px;
+    width: 40px;
+    height: 39px;
+    display: inline-block;
+}
+.btn-test-group-left {
+    padding-right: 8px;
+}
+.btn-test-group-right {
+    padding-left: 8px;
+}
+.btn-answer{
+	display: inline-block;
+    border: 1px solid #4c87ed;
+    color: #333;
+    background: #fff;
+    text-align: center;
+    min-width: 200px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-family: opensanssemibold;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-answer:hover {
+    cursor: pointer;
+    color: #4c87ed;
+}
+.btn-answer:focus{
+    outline: none;
+}
+@media (max-width: 992px){
+	.btn-answer {
+		width: 100%!important;
+	}
+	.btn-test-group-left {
+		padding-right: 15px;
+	}
+	.btn-test-group-right {
+		padding-left: 15px;
+	}
+	#testing-card .main-wrap{
+		height: 570px;
+	}
+	#testing-card .select-vocabulary {
+		height: 285px;
+	}
+}
+
+/*end testing prounounce*/
+
+/*begin testing definition*/
+.testing-definition{
+	font-size: 20px;
+    color: #4c87ed;
+    text-align: center;
+    margin-top: 30px;
+}
+.testing-definition-content{
+	display: inline-block;
+    background: #eef5ff;
+    padding: 20px 70px;
+    font-size: 20px;
+    border-radius: 6px;
+    max-width: 650px;
+}
+.testing-definition-content i{
+	font-style: normal;
+    font-size: 18px;
+    margin-left: 10px;
+    color: #4C4C4C;
+}
+/*end testing definition*/
+
+/*begin testing sound*/
+.testing-sound{
+	margin-top: 30px;
+}
+.testing-sound span{
+	width: 80px;
+    margin-top: 5px;
+    background: url('../img/sound_test_icon.png');
+    height: 80px;
+    display: inline-block;
+    background-position: 0 0px;
+}
+.testing-sound span:hover{
+	cursor: pointer;
+    background-position: 0 80px;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+}
+/*end testing sound*/
+
+/*begin sentence*/
+.btn-sentence{
+	display: inline-block;
+    border: 1px solid #4c87ed;
+    color: #333;
+    text-align: center;
+    background: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-family: OpenSansRegular;
+    padding-left: 10px;
+    padding-right: 10px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.btn-sentence:hover {
+    cursor: pointer;
+    color: #4c87ed;
+}
+.btn-sentence:focus{
+    outline: none;
+}
+/*end sentence*/
+
+/*begin testing image*/
+.testing-img{
+	float: left;
+	border: 1px solid #ddd;
+    padding: 3px;
+    width: 210px;
+    height: 200px;
+    margin: 5px;
+    border-radius: 3px;
+}
+.testing-img img{
+	border: 1px solid #ddd;
+    width: 202px;
+    height: 192px;
+	
+}
+.testing-img-text{
+	float: left;
+    margin-left: 20px;
+    width: calc(100% - 240px);
+    margin-top: 10px;
+}
+.testing-img-content{
+	margin-top: 20px;
+    color: #4c87ed;
+    min-width: 320px;
+	display: inline-block;
+    background: #eef5ff;
+    padding: 20px 70px;
+    font-size: 20px;
+    border-radius: 6px;
+}
+.testing-img-content i{
+	font-style: normal;
+    font-size: 18px;
+    margin-left: 10px;
+    color: #4C4C4C;
+}
+@media (max-width: 767px){
+	.testing-img-text{
+		margin-left: 0px;
+		width: 100%;
+	}
+}
+/*end testing image*/
+
+/*begin writing testing*/
+.txt-check{
+	height: 45px;
+    border: 1px solid #ededed;
+    border-radius: 4px;
+    padding: 5px;
+    width: calc(100% - 134px);
+    max-width: 350px;
+    margin-top: 20px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+.txt-check:focus{
+	border-color:#7ac60c;
+	outline:none;
+}
+.btn-check{
+	width: 120px;
+    background: #bee386;
+    border: 0;
+    height: 45px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+.btn-check-active {
+    background: #7ac60c;
+}
+/*end writing testing*/
+
+/*begin result testing*/
+.result-img-text{
+    float: left;
+    margin-left: 40px;
+    width: calc(100% - 260px);
+    margin-top: 10px;
+    text-align: left;
+    text-decoration: underline;
+    font-size: 12px;
+}
+.result-testing-word{
+    border-bottom: 1px solid #ededed;
+    float: left;
+    margin-left: 40px;
+    width: calc(100% - 260px);
+    padding-bottom: 10px;
+    text-align: left;
+    font-size: 22px;
+    color: #4c87ed;
+    font-family: opensansbold;
+}
+.result-testing-word i{
+    font-size: 14px;
+    color: #333;
+    font-style: normal;
+    margin-left: 5px;
+}
+.result-testing-pronounce{
+    float: left;
+    margin-left: 40px;
+    width: calc(100% - 260px);
+    text-align: left;
+    font-size: 14px;
+    color: #9e9e9e;
+}
+.result-testing-definition{
+    float: left;
+    margin-left: 40px;
+    width: calc(100% - 260px);
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+    font-family: opensanssemibold;
+}
+.result-testing-hide{
+    display: none;
+}
+.result-sentence-text{
+    width: calc(100% - 50px);
+    margin-top: 10px;
+    text-align: left;
+    text-decoration: underline;
+    font-size: 12px;
+}
+.result-testing-sentence{
+    width: calc(100% - 50px);
+    margin-top: 10px;
+    text-align: left;
+    padding-bottom: 10px;
+    font-size: 20px;
+    color: #4c87ed;
+    border-bottom: 1px solid #ededed;
+}
+.result-testing-sentence_vi{
+    font-size: 16px;
+    font-family: opensanslight;
+    width: calc(100% - 50px);
+}
+.test-result-right-answer{
+    font-family: opensansbold;
+}
+/*end result testing*/
+
+.layer{
+	display:none;
+}
+.show {
+   display:block;
+}

@@ -1,15 +1,11 @@
 ﻿using MyVocal.Model.Models;
 using MyVocal.Web.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace MyVocal.Web.Infrastructure.Extensions
 {
     public static class EntityExtensions
     {
-        public static void UpdateWordCategory(this WordCategory wordCategory,WordCategoryViewModel wordCategoryVm)
+        public static void UpdateWordCategory(this WordCategory wordCategory, WordCategoryViewModel wordCategoryVm)
         {
             wordCategory.WordCategoryId = wordCategoryVm.WordCategoryId;
 
@@ -43,8 +39,6 @@ namespace MyVocal.Web.Infrastructure.Extensions
             word.CreatedBy = wordVm.CreatedBy;
 
             word.UpdateBy = wordVm.UpdateBy;
-
-      
+        }
     }
-}
 }
