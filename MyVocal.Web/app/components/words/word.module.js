@@ -7,10 +7,14 @@
             url: "/words",
             templateUrl: "/app/components/words/wordListView.html",
             controller: "wordListController"
-        }).state('word_add', {
-            url: "/word_add",
+        }).state('add_word', {
+            url: "/add_word",
             templateUrl: "/app/components/words/wordAddView.html",
             controller: "wordAddController"
+        }).state('edit_word', {
+            url: "/edit_word/:id",
+            templateUrl: "/app/components/words/wordEditView.html",
+            controller: "wordEditController"
         });
     }
 })();

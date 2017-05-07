@@ -22,6 +22,8 @@ namespace MyVocal.Web.Infrastructure.Extensions
 
             word.Transcription = wordVm.Transcription;
 
+            word.WordName = wordVm.WordName;
+
             word.WordCategoryId = wordVm.WordCategoryId;
 
             word.Sound = wordVm.Sound;
@@ -29,6 +31,12 @@ namespace MyVocal.Web.Infrastructure.Extensions
             word.Image = wordVm.Image;
 
             word.Status = wordVm.Status;
+
+            word.Example = wordVm.Example;
+
+            word.ExampleTranslation = wordVm.ExampleTranslation;
+
+            word.SoundExample = wordVm.SoundExample;
 
             word.SubjectId = wordVm.SubjectId;
 

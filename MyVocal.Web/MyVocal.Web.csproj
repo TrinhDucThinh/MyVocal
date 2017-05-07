@@ -225,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
+    <Compile Include="Api\SubjectController.cs" />
     <Compile Include="Api\WordCategoryController.cs" />
     <Compile Include="Api\WordController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />

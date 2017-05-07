@@ -44,6 +44,6 @@
             });
         }
 
-        //$scope.getWords();
+        $scope.getWords();
     }
 })(angular.module('myvocal.word'));

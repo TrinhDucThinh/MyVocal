@@ -1,10 +1,111 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
+﻿  <!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Đang cập nhật từ vựng {{word.WordName}}
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="#">Từ vựng</a></li>
+        <li><a ui-sref="words">Danh sách từ vựng </a></li>
+        <li class="active">Cập nhật</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Horizontal Form -->
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Cập nhật</h3>
+        </div><!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" novalidate name="frmEditWord" role="form" ng-submit="EditWord()">
+            <div class="box-body">
 
-</body>
-</html>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Chủ đề</label>
+                    <div class="col-sm-10">
+                        <select name="SubjectIds" required class="form-control" ng-model="word.SubjectId" ng-options="option.SubjectId as option.SubjectName for option in Subjects">
+                            <option value="">Chọn chủ đề</option>
+                        </select>
+                        <input type="hidden" name="WordCategoryId" ng-model="word.SubjectId" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Từ vựng</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="wordName" ng-model="word.WordName">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Loại từ</label>
+                    <div class="col-sm-10">
+                        <select name="WordCategoryIds" required class="form-control" ng-model="word.WordCategoryId" ng-options="option.WordCategoryId as option.CategoryName for option in wordCategories">
+                            <option value="">Chọn loại từ</option>
+                        </select>
+                        <input type="hidden" name="WordCategoryId" ng-model="word.WordCategoryId" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Nghĩa từ</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="meaning" ng-model="word.Meaning"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Phiên âm</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="transcription" ng-model="word.Transcription">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Định nghĩa tiếng anh</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="defination" ng-model="word.Defination"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Phát âm</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="sound" ng-model="word.Sound">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Ảnh minh họa</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="Image" ng-model="word.Image">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Ví dụ</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="example" ng-model="word.Example">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Nghĩa ví dụ:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="exampleTranslation" ng-model="word.ExampleTranslation">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Phát âm ví dụ</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="soundExample" ng-model="word.SoundExample">
+                    </div>
+                </div>
+
+            </div><!-- /.box-body -->
+            <div class="box-footer">
+                <button ui-sref="words" class="btn btn-default">Hủy</button>
+                <button type="submit" class="btn btn-success pull-right">Lưu</button>
+            </div><!-- /.box-footer -->
+        </form>
+    </div><!-- /.box -->
+</section><!-- /.content -->

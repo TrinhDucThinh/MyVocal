@@ -1,4 +1,5 @@
 ﻿using MyVocal.Web.Infrastructure.Core;
+using MyVocal.Web.Infrastructure.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,36 +76,13 @@ namespace MyVocal.Web.Api
                 }
                 else
                 {
-                    var newWordCategory = new Word();
-
-                    //newWordCategory.;
-                    newWordCategory.WordId = wordVm.WordId;
-
-                    newWordCategory.Transcription = wordVm.Transcription;
-
-                    newWordCategory.WordCategoryId = wordVm.WordCategoryId;
-
-                    newWordCategory.Sound = wordVm.Sound;
-
-                    newWordCategory.Image = wordVm.Image;
-
-                    newWordCategory.Status = wordVm.Status;
-
-                    newWordCategory.SubjectId = wordVm.SubjectId;
-
-                    newWordCategory.CreatedDate = wordVm.CreatedDate;
-
-                    newWordCategory.UpdatedDate = wordVm.UpdatedDate;
-
-                    newWordCategory.CreatedBy = wordVm.CreatedBy;
-
-                    newWordCategory.UpdateBy = wordVm.UpdateBy;
-
-                    var category = _wordService.Add(newWordCategory);
-
+                    var newWord = new Word();
+                    newWord.UpdateWord(wordVm);
+                    var category = _wordService.Add(newWord);
                     _wordService.Save();
-                    //generate Id for WordCategory and send to client
-                    var responseData = Mapper.Map<Word, WordViewModel>(newWordCategory);
+
+                    //generate Id for Word and send to client
+                    var responseData = Mapper.Map<Word, WordViewModel>(newWord);
 
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
@@ -128,29 +106,7 @@ namespace MyVocal.Web.Api
                 {
                     var wordDb = _wordService.GetById(wordVm.WordCategoryId);
                     //wordCategoryDb.UpdateWord(wordCategoryVm);
-                    wordDb.WordId = wordVm.WordId;
-
-                    wordDb.Transcription = wordVm.Transcription;
-
-                    wordDb.WordCategoryId = wordVm.WordCategoryId;
-
-                    wordDb.Sound = wordVm.Sound;
-
-                    wordDb.Image = wordVm.Image;
-
-                    wordDb.Status = wordVm.Status;
-
-                    wordDb.SubjectId = wordVm.SubjectId;
-
-                    wordDb.CreatedDate = wordVm.CreatedDate;
-
-                    wordDb.UpdatedDate = wordVm.UpdatedDate;
-
-                    wordDb.CreatedBy = wordVm.CreatedBy;
-
-                    wordDb.UpdateBy = wordVm.UpdateBy;
-
-
+                    wordDb.UpdateWord(wordVm);
                     _wordService.Update(wordDb);
                     _wordService.Save();
 

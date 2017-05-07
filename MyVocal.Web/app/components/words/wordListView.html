@@ -35,7 +35,7 @@
                 <!--endSearching-->
                 <!--AddWord-->
                 <div class="col-md-6">
-                    <button class="btn btn-success" ui-sref="word_categories_add">Thêm mới</button>
+                    <button class="btn btn-success" ui-sref="add_word">Thêm mới</button>
                 </div>
                 <!--endAddWord-->
             </di>
@@ -57,7 +57,7 @@
                             <td>{{item.Meaning}}</td>
                            
                             <td>
-                                <button class="btn-sm btn-primary"><i class="fa fa-pencil"></i></button>
+                                <button class="btn-sm btn-primary" ui-sref="edit_word({id:item.WordId})"><i class="fa fa-pencil"></i></button>
                                 <button class="btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>

@@ -4,21 +4,42 @@
     wordAddController.$inject = ['apiService', '$scope', 'notificationService', '$state'];
 
     function wordAddController(apiService, $scope, notificationService, $state) {
-        //$scope.wordCategory = {
+        $scope.word = {
             
-        //}
+        }
 
-        //$scope.wordAddController = wordAddController;
+        $scope.AddWord = AddWord;
 
-        //function wordAddController() {
-        //    apiService.post('api/wordcategory/create',$scope.word,
-        //        function (result) {
-        //            notificationService.displaySuccess(result.data.CategoryName + ' đã được thêm mới thành công.');
-        //            $state.go('word_categories');
-        //        },
-        //        function (error) {
-        //            notificationService.displayError('Thêm mới không thành công');
-        //        });
-        //}
+        function AddWord() {
+            apiService.post('api/word/create',$scope.word,
+                function (result) {
+                    notificationService.displaySuccess(result.data.WordName + ' đã được thêm mới thành công.');
+                    $state.go('words');
+                },
+                function (error) {
+                    notificationService.displayError('Thêm mới không thành công');
+                });
+        }
+
+        function loadWordCategory() {
+            apiService.get('api/wordCategory/getall_for_word', null, function (result) {
+                $scope.wordCategories = result.data;
+                console.log('ad');
+            }, function () {
+                console.log('Cannot get list parent');
+            });
+        }
+
+        function loadSubject() {
+            apiService.get('api/subject/getallSubject', null, function (result) {
+                $scope.Subjects = result.data;
+                console.log('ad');
+            }, function () {
+                console.log('Cannot get list subject');
+            });
+        }
+
+        loadWordCategory();
+        loadSubject();
     }
 })(angular.module('myvocal.word'));

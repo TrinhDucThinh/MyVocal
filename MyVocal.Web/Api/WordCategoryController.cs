@@ -50,6 +50,21 @@ namespace MyVocal.Web.Api
             });
         }
 
+        [Route("getall_for_word")]
+        [HttpGet]
+        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _wordCategoryService.GetAll();
+
+                var responseData = Mapper.Map<IEnumerable<WordCategory>, IEnumerable<WordCategoryViewModel>>(model);
+
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
+
         [Route("getbyid/{id:int}")]
         [HttpGet]
         public HttpResponseMessage GetById(HttpRequestMessage request, int id)
@@ -78,7 +93,8 @@ namespace MyVocal.Web.Api
                 else
                 {
                     var newWordCategory = new WordCategory();
-                    
+                  
+
                     newWordCategory.UpdateWordCategory(wordCategoryVm);
 
                     var category = _wordCategoryService.Add(newWordCategory);

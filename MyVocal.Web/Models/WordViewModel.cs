@@ -6,19 +6,19 @@ namespace MyVocal.Web.Models
     public class WordViewModel
     {
         public int WordId { get; set; }
-
+        //
         public string Transcription { get; set; }
-
+        //
         public string WordName { get; set; }
 
         public int WordCategoryId { get; set; }
 
         public virtual WordCategoryViewModel WordCategory { get; set; }
-
+        //
         public string Sound { get; set; }
-
+        //
         public string Image { get; set; }
-
+        
         public bool Status { get; set; }
 
         public int SubjectId { get; set; }
@@ -33,12 +33,14 @@ namespace MyVocal.Web.Models
 
         public virtual SubjectViewModel Subject { get; set; }
 
-
+        //
         public string Meaning { get; set; }
 
         public string Example { get; set; }
 
         public string ExampleTranslation { get; set; }
+
+        public string SoundExample { get; set; }
 
         public string Defination { get; set; }
 
