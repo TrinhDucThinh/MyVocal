@@ -1,8 +1,7 @@
-﻿/// <reference path="E:\Document\Đồ án\Project\Git\MyVocal\MyVocal.Web\Assets/admin/libs/angular/angular.js" />
-(function (app) {
+﻿(function (app) {
     app.controller('questionsListController', questionsListController);
-    questionsListController.$inject = ['$scope', 'apiService', 'notificationService'];
-    function questionsListController($scope, apiService, notificationService) {
+    questionsListController.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox'];
+    function questionsListController($scope, apiService, notificationService, $ngBootbox) {
         $scope.questions = [];
         $scope.page = 0;
         $scope.pagesCount = 0;
@@ -15,7 +14,6 @@
             isSearch = true;
             getQuestions();
         }
-
         //get all question
         function getQuestions(page) {
             page = page || 0;
@@ -44,6 +42,23 @@
                 console.log('Load words failure');
             });
         }
+        //delete question
+        $scope.deleteQuestion = deleteQuestion;
+        function deleteQuestion(id) {
+            $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
+                var config = {
+                    params: {
+                        id: id
+                    }
+                }
+                apiService.del('/api/question/delete', config, function () {
+                    notificationService.displaySuccess('Xóa thành công');
+                    search();
+                }, function () {
+                    notificationService.displayError('Xóa không thành công');
+                })
+            });
+        }
         $scope.getQuestions();
     }
-})(angular.module('myvocal.question'));
+})(angular.module('myvocal.questions'));

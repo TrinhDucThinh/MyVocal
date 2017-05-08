@@ -53,4 +53,4 @@
         loadWordDetail();
 
     }
-})(angular.module('myvocal.word'));
+})(angular.module('myvocal.words'));

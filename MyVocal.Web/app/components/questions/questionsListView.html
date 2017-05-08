@@ -43,21 +43,21 @@
                     <table class="table table-bordered">
                         <tr>
                             <th style="width: 5%">Id</th>
-                            <th style="width: 20%"></th>
-                            <th style="width: 20%">Phiên âm</th>
-                            <th style="width: 20%">Nghĩa Tiếng Việt</th>
+                            <th style="width: 20%">Câu hỏi</th>
+                            <th style="width: 20%">Loại câu hỏi</th>
+                            <th style="width: 20%">Câu hỏi của từ vựng</th>
                             <th style="width: 20%">Thao tác</th>
 
                         </tr>
                         <tr ng-repeat="item in questions ">
                             <td>{{item.QuestionId}}</td>
                             <td>{{item.QuestionName}}</td>
-                            <td>{{item.QuestionCategoryId}}</td>
-                            <td>{{item.WordId}}</td>
+                            <td>{{item.QuestionCategory.QuestionCategoryName}}</td>
+                            <td>{{item.Word.WordName}}</td>
 
                             <td>
-                                <button class="btn-sm btn-primary" ui-sref="edit_question({id:item.WordId})"><i class="fa fa-pencil"></i></button>
-                                <button class="btn-sm btn-danger" ><i class="fa fa-trash"></i></button>
+                                <button class="btn-sm btn-primary" ui-sref="questionEdit({id:item.QuestionId})"><i class="fa fa-pencil"></i></button>
+                                <button class="btn-sm btn-danger" ng-click="deleteQuestion(item.QuestionId)"><i class="fa fa-trash"></i></button>
                             </td>
                         </tr>
                         <tfoot>

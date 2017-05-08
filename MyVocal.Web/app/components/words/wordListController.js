@@ -1,14 +1,13 @@
-﻿/// <reference path="E:\Document\Đồ án\Project\Git\MyVocal\MyVocal.Web\Assets/admin/libs/angular/angular.js" />
-(function (app) {
+﻿(function (app) {
     app.controller('wordListController', wordListController);
-    wordListController.$inject = ['$scope', 'apiService', 'notificationService','$ngBootbox'];
+    wordListController.$inject = ['$scope', 'apiService', 'notificationService', '$ngBootbox'];
     function wordListController($scope, apiService, notificationService, $ngBootbox) {
         $scope.words = [];
         $scope.page = 0;
         $scope.pagesCount = 0;
         $scope.getWords = getWords;
         $scope.keyword = '';
-        var isSearch=false;
+        var isSearch = false;
         $scope.search = search;
 
         //searching word
@@ -30,7 +29,7 @@
             apiService.get('/api/word/getAllByPagging', config, function (result) {
                 if (isSearch) {
                     if (result.data.TotalCount == 0) {
-                        notificationService.displayWarning('Không có bản ghi nào được tìm thấy.'); 
+                        notificationService.displayWarning('Không có bản ghi nào được tìm thấy.');
                     } else {
                         notificationService.displaySuccess('Đã tìm thấy ' + result.data.TotalCount + ' bản ghi.');
                     }
@@ -67,4 +66,4 @@
 
         $scope.getWords();
     }
-})(angular.module('myvocal.word'));
+})(angular.module('myvocal.words'));

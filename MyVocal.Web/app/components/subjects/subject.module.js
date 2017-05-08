@@ -1,6 +1,6 @@
 ﻿/// <reference path="E:\Document\Đồ án\Project\Git\MyVocal\MyVocal.Web\Assets/admin/libs/angular/angular.js" />
 (function () {
-    angular.module('myvocal.subject', ['myvocal.common']).config(config);
+    angular.module('myvocal.subjects', ['myvocal.common']).config(config);
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('subjects', {

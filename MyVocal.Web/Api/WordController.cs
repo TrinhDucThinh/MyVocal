@@ -1,29 +1,33 @@
-﻿using MyVocal.Web.Infrastructure.Core;
+﻿using AutoMapper;
+using MyVocal.Model.Models;
+using MyVocal.Service;
+using MyVocal.Web.Infrastructure.Core;
 using MyVocal.Web.Infrastructure.Extensions;
+using MyVocal.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using MyVocal.Service;
-using MyVocal.Web.Models;
-using AutoMapper;
-using MyVocal.Model.Models;
 
 namespace MyVocal.Web.Api
 {
     [RoutePrefix("api/word")]
     public class WordController : ApiControllerBase
     {
+        #region Initialize
+
         private IWordService _wordService;
 
-        public WordController(IErrorService errorService,IWordService wordService) : base(errorService)
+        public WordController(IErrorService errorService, IWordService wordService) : base(errorService)
         {
             this._wordService = wordService;
         }
 
-        //Test
+        #endregion Initialize
+
+        //Get all words has include WordCategroy
         [Route("getAll")]
         [HttpGet]
         public HttpResponseMessage GetAll(HttpRequestMessage request)
@@ -36,7 +40,7 @@ namespace MyVocal.Web.Api
                 var query = model.OrderBy(x => x.WordName);
 
                 var responseData = Mapper.Map<IEnumerable<Word>, IEnumerable<WordViewModel>>(query);
-               
+
                 var response = request.CreateResponse(HttpStatusCode.OK, responseData);
                 return response;
             });
@@ -44,9 +48,9 @@ namespace MyVocal.Web.Api
 
         [Route("getAllByPagging")]
         [HttpGet]
-        public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword,int page, int pageSize = 20)
+        public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize = 20)
         {
-            return CreateHttpResponse(request, () => 
+            return CreateHttpResponse(request, () =>
             {
                 int totalRow = 0;
                 var model = _wordService.GetAll(keyword);
@@ -61,8 +65,8 @@ namespace MyVocal.Web.Api
                     TotalCount = totalRow,
                     TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
                 };
-            var response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
-            return response;
+                var response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
+                return response;
             });
         }
 
@@ -151,7 +155,7 @@ namespace MyVocal.Web.Api
                 else
                 {
                     var oldWordCategory = _wordService.Delete(id);
-                    _wordService.Save() ;
+                    _wordService.Save();
 
                     var responseData = Mapper.Map<Word, WordViewModel>(oldWordCategory);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);

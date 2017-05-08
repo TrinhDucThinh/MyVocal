@@ -21,4 +21,4 @@
                 });
         }
     }
-})(angular.module('myvocal.question_categories'));
+})(angular.module('myvocal.questionCategories'));

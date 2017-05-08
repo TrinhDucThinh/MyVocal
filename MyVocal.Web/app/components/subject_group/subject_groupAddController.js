@@ -21,4 +21,4 @@
                 });
         }
     }
-})(angular.module('myvocal.subject_group'));
+})(angular.module('myvocal.subjectGroups'));

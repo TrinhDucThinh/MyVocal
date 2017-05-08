@@ -2,13 +2,13 @@
 
 (function () {
     angular.module('myvocal',
-        ['myvocal.word_categories',
-        'myvocal.word',
-        'myvocal.subject',
-        'myvocal.subject_group',
+        ['myvocal.wordCategories',
+        'myvocal.words',
+        'myvocal.subjects',
+        'myvocal.subjectGroups',
         'myvocal.semantics',
-        'myvocal.question',
-        'myvocal.question_categories',
+        'myvocal.questions',
+        'myvocal.questionCategories',
         'myvocal.common'
         ]).config(config);
 

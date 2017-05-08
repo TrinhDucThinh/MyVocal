@@ -42,4 +42,4 @@
         loadQuestionCategories();
         loadWords();
     }
-})(angular.module('myvocal.question'));
+})(angular.module('myvocal.questions'));

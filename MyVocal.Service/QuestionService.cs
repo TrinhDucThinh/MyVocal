@@ -2,7 +2,6 @@
 using MyVocal.Data.Repository;
 using MyVocal.Model.Models;
 using System.Collections.Generic;
-using System;
 
 namespace MyVocal.Service
 {
@@ -50,17 +49,17 @@ namespace MyVocal.Service
 
         public IEnumerable<Question> GetAll()
         {
-            return _questionRepository.GetAll(new string[] {""});
+            return _questionRepository.GetAll("QuestionCategory","Word");
         }
 
         public IEnumerable<Question> GetAll(string keyword)
         {
             if (!string.IsNullOrEmpty(keyword))
             {
-                return _questionRepository.GetMulti(x => x.QuestionName.Contains(keyword) || x.Word.WordName.Contains(keyword));
+                return _questionRepository.GetMulti(x => x.QuestionName.Contains(keyword) || x.Word.WordName.Contains(keyword), "QuestionCategory", "Word");
             }
             else
-                return _questionRepository.GetAll();
+                return _questionRepository.GetAll("QuestionCategory", "Word");
         }
 
         public IEnumerable<Question> GetAllByCategoryPagging(string category, int pageIndex, int pageSize, out int toltalRow)

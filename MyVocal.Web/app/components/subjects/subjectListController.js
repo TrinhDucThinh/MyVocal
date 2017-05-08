@@ -45,4 +45,4 @@
         }
         $scope.getWordCategories();
     }
-})(angular.module('myvocal.subject'));
+})(angular.module('myvocal.subjects'));

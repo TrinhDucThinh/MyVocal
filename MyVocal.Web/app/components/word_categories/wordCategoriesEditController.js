@@ -34,4 +34,4 @@
         loadWordCategoryDetail();
 
     }
-})(angular.module('myvocal.word_categories'));
+})(angular.module('myvocal.wordCategories'));
