@@ -30,7 +30,7 @@ var testController = {
                     clearInterval(intervalTick);
                 }
 
-            }, 200000);
+            }, 15000);
         })
     },
     registerEvent: function () {

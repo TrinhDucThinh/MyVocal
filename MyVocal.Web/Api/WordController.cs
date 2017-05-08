@@ -23,7 +23,26 @@ namespace MyVocal.Web.Api
             this._wordService = wordService;
         }
 
-        [Route("getall")]
+        //Test
+        [Route("getAll")]
+        [HttpGet]
+        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                int totalRow = 0;
+                var model = _wordService.GetAll();
+                totalRow = model.Count();
+                var query = model.OrderBy(x => x.WordName);
+
+                var responseData = Mapper.Map<IEnumerable<Word>, IEnumerable<WordViewModel>>(query);
+               
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
+
+        [Route("getAllByPagging")]
         [HttpGet]
         public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword,int page, int pageSize = 20)
         {
@@ -104,7 +123,7 @@ namespace MyVocal.Web.Api
                 }
                 else
                 {
-                    var wordDb = _wordService.GetById(wordVm.WordCategoryId);
+                    var wordDb = _wordService.GetById(wordVm.WordId);
                     //wordCategoryDb.UpdateWord(wordCategoryVm);
                     wordDb.UpdateWord(wordVm);
                     _wordService.Update(wordDb);

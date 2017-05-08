@@ -4,21 +4,42 @@
     questionsAddController.$inject = ['apiService','$scope','notificationService','$state'];
 
     function questionsAddController(apiService,$scope,notificationService,$state) {
-        $scope.wordCategory = {
+        $scope.question = {
+           
             
         }
 
-        $scope.AddWordCategory = AddWordCategory;
+        $scope.questionAdd = questionAdd;
 
-        function AddWordCategory() {
-            apiService.post('api/wordcategory/create',$scope.wordCategory,
+        function questionAdd() {
+            apiService.post('api/question/create',$scope.question,
                 function (result) {
-                    notificationService.displaySuccess(result.data.CategoryName + ' đã được thêm mới thành công.');
-                    $state.go('word_categories');
+                    notificationService.displaySuccess(result.data.QuestionId + ' đã được thêm mới thành công.');
+                    $state.go('questions');
                 },
                 function (error) {
                     notificationService.displayError('Thêm mới không thành công');
                 });
         }
+
+        function loadQuestionCategories() {
+            apiService.get('api/questionCategory/getAllQuestion', null, function (result) {
+                $scope.questionCategories = result.data;
+                
+            }, function () {
+                console.log('Cannot get list parent');
+            });
+        }
+        
+        function loadWords() {
+            apiService.get('api/word/getAll', null, function (result) {
+                $scope.words = result.data;
+
+            }, function () {
+                console.log('Cannot get list parent');
+            });
+        }
+        loadQuestionCategories();
+        loadWords();
     }
 })(angular.module('myvocal.question'));

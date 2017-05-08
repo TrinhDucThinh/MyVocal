@@ -20,6 +20,8 @@ namespace MyVocal.Web.Infrastructure.Extensions
         {
             word.WordId = wordVm.WordId;
 
+            word.Defination = wordVm.Defination;
+
             word.Transcription = wordVm.Transcription;
 
             word.WordName = wordVm.WordName;
@@ -27,6 +29,8 @@ namespace MyVocal.Web.Infrastructure.Extensions
             word.WordCategoryId = wordVm.WordCategoryId;
 
             word.Sound = wordVm.Sound;
+
+            word.Meaning = wordVm.Meaning;
 
             word.Image = wordVm.Image;
 
@@ -48,5 +52,37 @@ namespace MyVocal.Web.Infrastructure.Extensions
 
             word.UpdateBy = wordVm.UpdateBy;
         }
+
+        public static void UpdateQuestion(this Question question, QuestionViewModel questionVm)
+        {
+            question.WordId = questionVm.WordId;
+
+            question.AnswerA = questionVm.AnswerA;
+
+            question.AnswerB = questionVm.AnswerB;
+
+            question.AnswerC = questionVm.AnswerC;
+
+            question.AnswerD = questionVm.AnswerD;
+
+            question.Solution = questionVm.Solution;
+
+            question.QuestionCategoryId = questionVm.QuestionCategoryId;
+
+            question.QuestionName= questionVm.Solution;
+
+            question.Image = questionVm.Image;
+        }
+
+        public static void UpdateQuestionCategory(this QuestionCategory questionCategory,QuestionCategoryViewModel questionCategoryVm)
+        {
+            questionCategory.QuestionCategoryId = questionCategoryVm.QuestionCategoryId;
+
+            questionCategory.QuestionCategoryName = questionCategoryVm.QuestionCategoryName;
+
+            questionCategory.Description = questionCategoryVm.Description;
+
+        }
+
     }
 }

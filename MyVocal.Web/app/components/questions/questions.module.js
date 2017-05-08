@@ -7,8 +7,8 @@
             url: "/questions",
             templateUrl: "/app/components/questions/questionsListView.html",
             controller: "questionsListController"
-        }).state('questions_add', {
-            url: "/questions_add",
+        }).state('questionAdd', {
+            url: "/questionAdd",
             templateUrl: "/app/components/questions/questionsAddView.html",
             controller: "questionsAddController"
         });

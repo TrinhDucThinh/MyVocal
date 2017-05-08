@@ -1,8 +1,8 @@
 ﻿/// <reference path="E:\Document\Đồ án\Project\Git\MyVocal\MyVocal.Web\Assets/admin/libs/angular/angular.js" />
 (function (app) {
     app.controller('wordListController', wordListController);
-    wordListController.$inject = ['$scope', 'apiService', 'notificationService'];
-    function wordListController($scope, apiService, notificationService) {
+    wordListController.$inject = ['$scope', 'apiService', 'notificationService','$ngBootbox'];
+    function wordListController($scope, apiService, notificationService, $ngBootbox) {
         $scope.words = [];
         $scope.page = 0;
         $scope.pagesCount = 0;
@@ -11,11 +11,13 @@
         var isSearch=false;
         $scope.search = search;
 
+        //searching word
         function search() {
             isSearch = true;
             getWords();
         }
 
+        //get list word
         function getWords(page) {
             page = page || 0;
             var config = {
@@ -25,7 +27,7 @@
                     pageSize: 10
                 }
             }
-            apiService.get('/api/word/getall', config, function (result) {
+            apiService.get('/api/word/getAllByPagging', config, function (result) {
                 if (isSearch) {
                     if (result.data.TotalCount == 0) {
                         notificationService.displayWarning('Không có bản ghi nào được tìm thấy.'); 
@@ -41,6 +43,25 @@
                 $scope.pagesCount = result.data.TotalPages;
             }, function () {
                 console.log('Load words failure');
+            });
+        }
+
+        //delete word
+        $scope.deleteWord = deleteWord;
+
+        function deleteWord(id) {
+            $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
+                var config = {
+                    params: {
+                        id: id
+                    }
+                }
+                apiService.del('/api/word/delete', config, function () {
+                    notificationService.displaySuccess('Xóa thành công');
+                    search();
+                }, function () {
+                    notificationService.displayError('Xóa không thành công');
+                })
             });
         }
 

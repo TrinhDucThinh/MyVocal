@@ -13,7 +13,7 @@
         $scope.UpdateWordCategory = UpdateWordCategory;
 
         function loadWordCategoryDetail() {
-            apiService.get('api/wordcategory/getbyid/' + $stateParams.id, null, function (result) {
+            apiService.get('api/wordCategory/getbyid/' + $stateParams.id, null, function (result) {
                 $scope.wordCategory = result.data;
             }, function (error) {
                 notificationService.displayError(error.data);
@@ -21,7 +21,7 @@
         }
 
         function UpdateWordCategory() {
-            apiService.put('api/wordcategory/update', $scope.wordCategory,
+            apiService.put('api/wordCategory/update', $scope.wordCategory,
                 function (result) {
                     notificationService.displaySuccess(result.data.CategoryName + ' đã được cập nhật thành công.');
                     $state.go('word_categories');

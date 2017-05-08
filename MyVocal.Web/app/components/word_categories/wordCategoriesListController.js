@@ -20,7 +20,7 @@
                         id: id
                     }
                 }
-                apiService.del('/api/WordCategory/delete', config, function () {
+                apiService.del('/api/wordCategorys/delete', config, function () {
                     notificationService.displaySuccess('Xóa thành công');
                     search();
                 }, function () {

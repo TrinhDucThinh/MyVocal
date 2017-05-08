@@ -24,7 +24,6 @@
         function loadWordCategory() {
             apiService.get('api/wordCategory/getall_for_word', null, function (result) {
                 $scope.wordCategories = result.data;
-                console.log('ad');
             }, function () {
                 console.log('Cannot get list parent');
             });
@@ -33,7 +32,6 @@
         function loadSubject() {
             apiService.get('api/subject/getallSubject', null, function (result) {
                 $scope.Subjects = result.data;
-                console.log('ad');
             }, function () {
                 console.log('Cannot get list subject');
             });

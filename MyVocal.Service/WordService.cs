@@ -25,6 +25,8 @@ namespace MyVocal.Service
         IEnumerable<Word> GetAllBySubjectId(int subjectId);
 
         IEnumerable<Word> GetAll(string keyword);
+
+        IEnumerable<Word> GetAll();
     }
 
     public class WordService : IWordService
@@ -87,6 +89,11 @@ namespace MyVocal.Service
             {
                 return _wordRepository.GetAll();
             }
+        }
+
+        public IEnumerable<Word> GetAll()
+        {
+            return _wordRepository.GetAll();
         }
     }
 }

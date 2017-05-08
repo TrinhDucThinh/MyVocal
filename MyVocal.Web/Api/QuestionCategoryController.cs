@@ -13,32 +13,32 @@ using System.Web.Http;
 
 namespace MyVocal.Web.Api
 {
-    [RoutePrefix("api/wordCategory")]
-    public class WordCategoryController : ApiControllerBase
+    [RoutePrefix("api/questionCategory")]
+    public class QuestionCategoryController : ApiControllerBase
     {
-        private IWordCategoryService _wordCategoryService;
+        private IQuestionCategoryService _questionCategoryService;
 
-        public WordCategoryController(IErrorService errorService, IWordCategoryService wordCategoryService) :
+        public QuestionCategoryController(IErrorService errorService, IQuestionCategoryService questionCategoryService) :
             base(errorService)
         {
-            this._wordCategoryService = wordCategoryService;
+            this._questionCategoryService = questionCategoryService;
         }
 
         [Route("getall")]
         [HttpGet]
-        public HttpResponseMessage GetAll(HttpRequestMessage request,string keyword, int page, int pageSize = 20)
+        public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize = 20)
         {
             return CreateHttpResponse(request, () =>
             {
                 int totalRow = 0;
-                var model = _wordCategoryService.GetAll(keyword);
+                var model = _questionCategoryService.GetAll(keyword);
 
                 totalRow = model.Count();
-                var query = model.OrderByDescending(x => x.WordCategoryId).Skip(page * pageSize).Take(pageSize);
+                var query = model.OrderByDescending(x => x.QuestionCategoryName).Skip(page * pageSize).Take(pageSize);
 
-                var responseData = Mapper.Map<IEnumerable<WordCategory>, IEnumerable<WordCategoryViewModel>>(query);
+                var responseData = Mapper.Map<IEnumerable<QuestionCategory>, IEnumerable<QuestionCategoryViewModel>>(query);
 
-                var paginationSet = new PaginationSet<WordCategoryViewModel>()
+                var paginationSet = new PaginationSet<QuestionCategoryViewModel>()
                 {
                     Items = responseData,
                     Page = page,
@@ -50,15 +50,15 @@ namespace MyVocal.Web.Api
             });
         }
 
-        [Route("getall_for_word")]
+        [Route("getAllQuestion")]
         [HttpGet]
         public HttpResponseMessage GetAll(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>
             {
-                var model = _wordCategoryService.GetAll();
+                var model = _questionCategoryService.GetAll();
 
-                var responseData = Mapper.Map<IEnumerable<WordCategory>, IEnumerable<WordCategoryViewModel>>(model);
+                var responseData = Mapper.Map<IEnumerable<QuestionCategory>, IEnumerable<QuestionCategoryViewModel>>(model);
 
                 var response = request.CreateResponse(HttpStatusCode.OK, responseData);
                 return response;
@@ -69,10 +69,10 @@ namespace MyVocal.Web.Api
         [HttpGet]
         public HttpResponseMessage GetById(HttpRequestMessage request, int id)
         {
-            return CreateHttpResponse(request,()=> 
+            return CreateHttpResponse(request, () =>
             {
-                var model = _wordCategoryService.GetById(id);
-                var responseData = Mapper.Map<WordCategory, WordCategoryViewModel>(model);
+                var model = _questionCategoryService.GetById(id);
+                var responseData = Mapper.Map<QuestionCategory, QuestionCategoryViewModel>(model);
                 var response = request.CreateResponse(HttpStatusCode.OK, responseData);
                 return response;
             });
@@ -81,7 +81,7 @@ namespace MyVocal.Web.Api
         [Route("create")]
         [HttpPost]
         [AllowAnonymous]
-        public HttpResponseMessage Create(HttpRequestMessage request, WordCategoryViewModel wordCategoryVm)
+        public HttpResponseMessage Create(HttpRequestMessage request, QuestionCategoryViewModel questionCategoryVm)
         {
             return CreateHttpResponse(request, () =>
             {
@@ -92,16 +92,16 @@ namespace MyVocal.Web.Api
                 }
                 else
                 {
-                    var newWordCategory = new WordCategory();
-                  
+                    var newQuestionCategory = new QuestionCategory();
 
-                    newWordCategory.UpdateWordCategory(wordCategoryVm);
 
-                    var category = _wordCategoryService.Add(newWordCategory);
+                    newQuestionCategory.UpdateQuestionCategory(questionCategoryVm);
 
-                    _wordCategoryService.Save();
-                    //generate Id for WordCategory and send to client
-                    var responseData = Mapper.Map<WordCategory, WordCategoryViewModel>(newWordCategory);
+                    var questionCategory = _questionCategoryService.Add(newQuestionCategory);
+
+                    _questionCategoryService.Save();
+                   
+                    var responseData = Mapper.Map<QuestionCategory, QuestionCategoryViewModel>(questionCategory);
 
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
@@ -112,23 +112,23 @@ namespace MyVocal.Web.Api
         [Route("update")]
         [HttpPut]
         [AllowAnonymous]
-        public HttpResponseMessage Update(HttpRequestMessage request, WordCategoryViewModel wordCategoryVm)
+        public HttpResponseMessage Update(HttpRequestMessage request, QuestionCategoryViewModel questionCategoryVm)
         {
             return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage response = null;
                 if (!ModelState.IsValid)
                 {
-                    response=request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                    response = request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
                 }
                 else
                 {
-                    var wordCategoryDb = _wordCategoryService.GetById(wordCategoryVm.WordCategoryId);
-                    wordCategoryDb.UpdateWordCategory(wordCategoryVm);
-                    _wordCategoryService.Update(wordCategoryDb);
-                    _wordCategoryService.Save();
+                    var questionCategoryDb = _questionCategoryService.GetById(questionCategoryVm.QuestionCategoryId);
+                    questionCategoryDb.UpdateQuestionCategory(questionCategoryVm);
+                    _questionCategoryService.Update(questionCategoryDb);
+                    _questionCategoryService.Save();
 
-                    var responseData = Mapper.Map<WordCategory, WordCategoryViewModel>(wordCategoryDb);
+                    var responseData = Mapper.Map<QuestionCategory, QuestionCategoryViewModel>(questionCategoryDb);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
                 return response;
@@ -149,16 +149,15 @@ namespace MyVocal.Web.Api
                 }
                 else
                 {
-                    var oldWordCategory = _wordCategoryService.Delete(id);
-                    _wordCategoryService.Save();
+                    var questionCategoryOld = _questionCategoryService.Delete(id);
+                    _questionCategoryService.Save();
 
-                    var responseData = Mapper.Map<WordCategory, WordCategoryViewModel>(oldWordCategory);
+                    var responseData = Mapper.Map<QuestionCategory, QuestionCategoryViewModel>(questionCategoryOld);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
 
                 return response;
             });
         }
-        
     }
 }

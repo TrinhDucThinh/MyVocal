@@ -2,22 +2,25 @@
 using MyVocal.Data.Repository;
 using MyVocal.Model.Models;
 using System.Collections.Generic;
+using System;
 
 namespace MyVocal.Service
 {
     public interface IQuestionService
     {
-        void Add(Question question);
+        Question Add(Question question);
 
         void Update(Question question);
 
-        void Delete(int id);
+        Question Delete(int id);
 
-        void SaveChange();
+        void Save();
 
         Question GetById(int id);
 
         IEnumerable<Question> GetAll();
+
+        IEnumerable<Question> GetAll(string keyword);
 
         IEnumerable<Question> GetAllPagging(int page, int pageSize, out int totalRow);
 
@@ -35,19 +38,29 @@ namespace MyVocal.Service
             this._unitOfWork = unitOfWork;
         }
 
-        public void Add(Question question)
+        public Question Add(Question question)
         {
-            _questionRepository.Add(question);
+            return _questionRepository.Add(question);
         }
 
-        public void Delete(int id)
+        public Question Delete(int id)
         {
-            _questionRepository.Delete(id);
+            return _questionRepository.Delete(id);
         }
 
         public IEnumerable<Question> GetAll()
         {
-            return _questionRepository.GetAll();
+            return _questionRepository.GetAll(new string[] {""});
+        }
+
+        public IEnumerable<Question> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                return _questionRepository.GetMulti(x => x.QuestionName.Contains(keyword) || x.Word.WordName.Contains(keyword));
+            }
+            else
+                return _questionRepository.GetAll();
         }
 
         public IEnumerable<Question> GetAllByCategoryPagging(string category, int pageIndex, int pageSize, out int toltalRow)
@@ -66,7 +79,7 @@ namespace MyVocal.Service
             return _questionRepository.GetSingleById(id);
         }
 
-        public void SaveChange()
+        public void Save()
         {
             _unitOfWork.Commit();
         }
