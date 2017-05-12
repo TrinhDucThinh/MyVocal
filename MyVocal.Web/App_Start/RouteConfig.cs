@@ -30,6 +30,22 @@ namespace MyVocal.Web
            );
 
             routes.MapRoute(
+               name: "LearnTopic",
+               url: "chu-de/hoc-chu-de/{id}",
+               defaults: new { controller = "Topic", action = "LearnTopic", id=UrlParameter.Optional},
+                 namespaces: new string[] { "MyVocal.Web.Controllers" }
+           );
+
+            routes.MapRoute(
+               name: "TestTopic",
+               url: "chu-de/kiem-tra-chu-de/{id}",
+               defaults: new { controller = "Topic", action = "TestTopic", id = UrlParameter.Optional },
+                 namespaces: new string[] { "MyVocal.Web.Controllers" }
+           );
+
+
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },

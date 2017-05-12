@@ -1,0 +1,2150 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+@section Styles{
+    <link href="~/Assets/client/css/word/word.css" rel="stylesheet" />
+}
+
+@section Scripts{
+    <script src="~/Assets/client/js/plugins/mustache.min.js"></script>
+    <script src="~/Assets/client/js/controllers/learning_workController.js"></script>
+}
+<!--Begin main-wrap-->
+<input type="hidden" id="TopicId" value=@ViewBag.Id />
+
+<div class="main-wrap">
+    @*Begin div_listword*@
+    <div id="listword">
+       @*<div id="p1" class='item active' data-word='accountant'>
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="#" class="pin-word pin-word-learning" vocabulary="96" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="accountant" src="~/UploadFiles/images/accountant.jpg" />
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">someone who keeps or examines the records of money received, paid, and owed by a company or person</p>
+                        <p class="title">Từ đồng nghĩa</p>
+                        <p class="content-synonyms">book-keeper</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="#" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="accountant" src="~/UploadFiles/images/accountant.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">kế toán viên</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /əˈkaʊntənt/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="https://drive.google.com/uc?id=0B_QESOpwSu7selBLSy1NaEFTdFE" type='audio/mpeg' />
+                                </audio>
+                            </div>
+
+                            <div class="us">
+                                <span class="spelling">/əˈkaʊntnt/</span>
+                                <span class="spelling-us">US</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-us" sound_id="us-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-us-1  audio-1">
+                                    <source src="http://www.voca.vn/assets/sounds/rch+FvuOm4mh2dmnZqZ+Y8gXTHfoTaQJHCnEpca9vG4=.mp3" type='audio/mpeg' />
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                            <img src="http://www.voca.vn/assets/assets-v2/img/turn.png" class="icon-change-page" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="#" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="accountant" src="~/UploadFiles/images/accountant.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">accountant <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /əˈkaʊntənt/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="http://www.voca.vn/assets/sounds/samples/ZPFTA0eT38NLyEFoYBtYgSDq6hpm78QWa+UdcNI+Wgg=.mp3" type='audio/mpeg' />
+                                </audio>
+                            </div>
+
+                            <div class="us">
+                                <span class="spelling-us">US</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-us" sound_id="sample-us-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-us-1">
+                                    <source src="http://www.voca.vn/assets/sounds/samples/8S+9si+iq3BiwB1dcpGp5w0LDFHK0aJTHlKLWphIZY4=.mp3" type='audio/mpeg' />
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">Her husband is an <span style="font-family: OpenSansBold;">accountant</span> of her company.</p>
+                        <p class="sentence-vi ex_vi">Người chồng chính là kế toán viên của công ty cô ta.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+                            <img src="http://www.voca.vn/assets/assets-v2/img/turn.png" class="icon-change-page" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="p2" class="item panel" data-word='actor'>
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="actor" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="actor" src="http://localhost:52762/UploadFiles\images\actor.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">someone who pretends to be someone else while performing in a film, play, or television or radio program</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="actor" src="http://localhost:52762/UploadFiles\images\actor.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Nam diễn viên</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈæktə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="0B_QESOpwSu7sUWV0VWx6RENzYTA" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="actor" src="http://localhost:52762/UploadFiles\images\actor.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">actor <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈæktə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sRnlkSU8yWnU2OVE" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">Who's your favourite actor?</p>
+                        <p class="sentence-vi ex_vi">Nam diễn viên yêu thích của bạn là ai?</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="p3" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="actress" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="actress" src="http://localhost:52762/UploadFiles\images\actress.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">a female actor</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="actress" src="http://localhost:52762/UploadFiles\images\actress.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Nữ diễn viên</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈæktrəs/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sMV9jUWpOcHRvQ0E" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="actress" src="http://localhost:52762/UploadFiles\images\actress.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">actress <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈæktrəs/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sVXV3eG90aHZxTnc" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">She's the highest-paid actress in Hollywood</p>
+                        <p class="sentence-vi ex_vi">Cô ấy là nữ diễn viên được trả cao nhất ở Hollywood.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p4" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="architect" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="architect" src="http://localhost:52762/UploadFiles\images\architect.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">a person whose job is to design new buildings and make certain that they are built correctly</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="architect" src="http://localhost:52762/UploadFiles\images\architect.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Kiến trúc sư</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈɑːkɪtekt/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sYzN3WXpOTXNPc3M" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="architect" src="http://localhost:52762/UploadFiles\images\architect.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">architect <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈɑːkɪtekt/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sb2NJTzFfbnh4M1k" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">Peter is the architect of England</p>
+                        <p class="sentence-vi ex_vi">Peter là kiến ​​trúc sư người Anh</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p5" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="artist" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="artist" src="http://localhost:52762/UploadFiles\images\artist_1.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">someone who paints, draws, or makes sculptures</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="artist" src="http://localhost:52762/UploadFiles\images\artist_1.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Họa sĩ</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈɑːtɪst/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sVVFMczdhbTFaTlU" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="artist" src="http://localhost:52762/UploadFiles\images\artist_1.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">artist <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈɑːtɪst/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sdURPM0xJVVdteGc" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">John is one of my favourite artist</p>
+                        <p class="sentence-vi ex_vi">John là một trong những họa sĩ yêu thích của tôi.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p6" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="babysitter" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="babysitter" src="http://localhost:52762/UploadFiles\images\babysitter.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">a person who takes care of babies or children while their parents are away from home and is usually paid to do this</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="babysitter" src="http://localhost:52762/UploadFiles\images\babysitter.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">người giữ trẻ</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈbeɪbiˌsɪtə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sTWppR0tQMjZJRU0" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="babysitter" src="http://localhost:52762/UploadFiles\images\babysitter.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">babysitter <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈbeɪbiˌsɪtə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sSENvQnh3cHloTGs" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">I promised the babysitter that we'd be home by midnight</p>
+                        <p class="sentence-vi ex_vi">Tôi đã hứa với người giữ trẻ, chúng tôi sẽ về nhà lúc nửa đêm.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p7" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="baker" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="baker" src="http://localhost:52762/UploadFiles\images\baker.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">a person whose job is baking and selling bread and cakes</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="baker" src="http://localhost:52762/UploadFiles\images\baker.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">thợ làm bánh</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈbeɪkə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sTmtvME9CNnM2QTg" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="baker" src="http://localhost:52762/UploadFiles\images\baker.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">baker <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈbeɪkə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sbnJWTkVZby1idW8" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">Jack is the best baker in town</p>
+                        <p class="sentence-vi ex_vi">Jack là thợ làm bánh giỏi nhất trong  thị trấn.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p8" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="barber" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="barber" src="http://localhost:52762/UploadFiles\images\barber.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">a man whose job is cutting men's hair</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="barber" src="http://localhost:52762/UploadFiles\images\barber.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Thợ cắt tóc</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈbɑːbə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sR1ROMXVkQTA5UE0" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="barber" src="http://localhost:52762/UploadFiles\images\barber.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">barber <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈbɑːbə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sSTFmZHhqQkR1VXM" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">Our hair salon should hire a skilled barber</p>
+                        <p class="sentence-vi ex_vi">Tiệm cắt tóc của chúng tôi cần tuyển một thợ hớt tóc có tay nghề.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p9" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="carpenter" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="carpenter" src="http://localhost:52762/UploadFiles\images\carpenter.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">a person whose job is making and repairing wooden objects and structures</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="carpenter" src="http://localhost:52762/UploadFiles\images\carpenter.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Thợ mộc</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈkɑːpəntə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sZFdfaDNUcnlQT2M" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="carpenter" src="http://localhost:52762/UploadFiles\images\carpenter.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">carpenter <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈkɑːpəntə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sN0ZEaXRYOTJ3ZFk" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">Tom's uncle is a skilled carpenter.</p>
+                        <p class="sentence-vi ex_vi">Chú của Tom là thợ mộc có tay nghề giỏi.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p10" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="cashier" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="cashier" src="http://localhost:52762/UploadFiles\images\cashier_1.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">a person whose job is to receive and pay out money in a shop, bank, restaurant, etc.</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="cashier" src="http://localhost:52762/UploadFiles\images\cashier_1.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Nhân viên thu ngân</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/kæʃˈɪə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sNDVUZnF3c1R0d3c" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="cashier" src="http://localhost:52762/UploadFiles\images\cashier_1.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">cashier <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /kæʃˈɪə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sWmtTMjd3R2sxVFU" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">&gt;Service attitude of the cashier is very friendly.</p>
+                        <p class="sentence-vi ex_vi">Thái độ phục vụ của nhân viên thu ngân này rất thân thiện.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p11" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="chef" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="chef" src="http://localhost:52762/UploadFiles\images\chef.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">a skilled and trained cook who works in a hotel or restaurant, especially the most important cook</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="chef" src="http://localhost:52762/UploadFiles\images\chef.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Đầu bếp</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ʃef/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sZ3h5X2hZMTVVLTA" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="chef" src="http://localhost:52762/UploadFiles\images\chef.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">chef <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ʃef/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sUC16eG1SZktfOHc" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">He is one of the top chefs in France.</p>
+                        <p class="sentence-vi ex_vi">Ông ấy là một trong những đầu bếp hàng đầu ở Pháp.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p12" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="doctor" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="doctor" src="http://localhost:52762/UploadFiles\images\doctor.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">a person with a medical degree whose job is to treat people who are ill or hurt</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="doctor" src="http://localhost:52762/UploadFiles\images\doctor.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Bác sĩ</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈdɒktə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sd3J2czFEOGFqZm8" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="doctor" src="http://localhost:52762/UploadFiles\images\doctor.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">doctor <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈdɒktə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sZy1qd1g2TW9LWjQ" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">The doctor prescribed some pills.</p>
+                        <p class="sentence-vi ex_vi">Bác sĩ kê đơn một số thuốc.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p13" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="engineer" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="engineer" src="http://localhost:52762/UploadFiles\images\engineer.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">someone who keeps or examines the records of money received, paid, and owed by a company or person</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="engineer" src="http://localhost:52762/UploadFiles\images\engineer.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Kỹ sư</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/əˈkaʊntənt/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sS1lhZEE3TU5yRWM" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="engineer" src="http://localhost:52762/UploadFiles\images\engineer.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">engineer <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /əˈkaʊntənt/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sLVlHbFloYk9yVUU" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">Her husband is an accountant of her company.</p>
+                        <p class="sentence-vi ex_vi">Người chồng chính là kế toán viên của công ty cô ta.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p14" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="farmer" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="farmer" src="http://localhost:52762/UploadFiles\images\farmer.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">someone who owns or takes care of a field.</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="farmer" src="http://localhost:52762/UploadFiles\images\farmer.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Nông dân</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈfɑːmə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sc1FuNkZaanZkRDg" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="farmer" src="http://localhost:52762/UploadFiles\images\farmer.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">farmer <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈfɑːmə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sX2FZM21zM2V2WGs" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">My father is a farmer.</p>
+                        <p class="sentence-vi ex_vi">Ba tôi là một nông dân.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p15" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="homemaker" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="homemaker" src="http://localhost:52762/UploadFiles\images\homemaker.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">a woman who manages a home and often raises children instead of earning money from a job.</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="homemaker" src="http://localhost:52762/UploadFiles\images\homemaker.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Người nội trợ</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈhəʊmmeɪkə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sQUwzaUkydTJ5T0k" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="homemaker" src="http://localhost:52762/UploadFiles\images\homemaker.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">homemaker <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈhəʊmmeɪkə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sTThwOXMwZEtIbDQ" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">My mother is a good homemaker.</p>
+                        <p class="sentence-vi ex_vi">Mẹ tôi là người nội trợ giỏi.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p16" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="lawyer" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="lawyer" src="http://localhost:52762/UploadFiles\images\lawyer.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">someone whose job is to give advice to people about the law and speak for them in court</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="lawyer" src="http://localhost:52762/UploadFiles\images\lawyer.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Luật sư</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈlɔɪ(ə)r/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sVE9LVUdfd21hLVE" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="lawyer" src="http://localhost:52762/UploadFiles\images\lawyer.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">lawyer <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈlɔɪ(ə)r/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sS3hNbDNzNWpHdHc" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">I want to see my lawyer before I say anything.</p>
+                        <p class="sentence-vi ex_vi">Tôi muốn nhìn thấy luật sư của tôi trước khi tôi nói bất cứ điều gì.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p17" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="nurse" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="nurse" src="http://localhost:52762/UploadFiles\images\nurse_1.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">a person whose job is to care for people who are ill or injured, especially in a hospital.</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="nurse" src="http://localhost:52762/UploadFiles\images\nurse_1.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Y tá</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/nərs/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sWFlyN25nR0NWN1U" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="nurse" src="http://localhost:52762/UploadFiles\images\nurse_1.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">nurse <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /nərs/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sTmJpc3RrelBNV1E" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">Her husband is an accountant of her company.</p>
+                        <p class="sentence-vi ex_vi">Người chồng chính là kế toán viên của công ty cô ta.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p18" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="photographer" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="photographer" src="http://localhost:52762/UploadFiles\images\photographer.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">someone who keeps or examines the records of money received, paid, and owed by a company or person</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="photographer" src="http://localhost:52762/UploadFiles\images\photographer.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Thợ chụp ảnh</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/əˈkaʊntənt/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sRmsycFo4Zl9lZjQ" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="photographer" src="http://localhost:52762/UploadFiles\images\photographer.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">photographer <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /əˈkaʊntənt/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sazhmVWJfQW1EUkE" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">I am very grateful to the taking care of me that day.</p>
+                        <p class="sentence-vi ex_vi">Tôi rất biết ơn cô ý tá chăm sóc tôi ngày hôm đó.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p19" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="secretary" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="secretary" src="http://localhost:52762/UploadFiles\images\secretary.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">someone who works in an office, writing letters, making phone calls, and arranging meetings for a person or for an organization.</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="secretary" src="http://localhost:52762/UploadFiles\images\secretary.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Thư ký</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈsekrətri/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7scGF1dmFpaVpyVXc" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="secretary" src="http://localhost:52762/UploadFiles\images\secretary.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">secretary <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈsekrətri/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sSUVjeDg5eW1GbEU" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">My secretary will phone you to arrange a meeting.</p>
+                        <p class="sentence-vi ex_vi">Thư ký của tôi sẽ gọi điện cho bạn để sắp xếp một cuộc họp.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="p20" class="item panel">
+            <div class="child child1" style="display: block;">
+                <div class="row face face1">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" word="teacher" data-toggle="tooltip" data-placement="right" title=""></a>
+                            <img class="img-vocabulary" alt="teacher" src="http://localhost:52762/UploadFiles\images\teacher.jpg">
+
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="title">Định nghĩa</p>
+                        <p class="content-define">someone whose job is to teach in a school or college.</p>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">1</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="child child2" style="display: none;">
+                <div class="row  face face2">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="teacher" src="http://localhost:52762/UploadFiles\images\teacher.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="meaning-vocabulary">Giáo viên</p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling">/ˈtiːtʃə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sbk96aEtnWkY1N1U" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">2</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child child3" style="display: none;">
+                <div class="row  face face3">
+                    <div class="col-md-3 col-sm-3 col-xs-4">
+                        <div class="thumbnail">
+                            <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                            <img class="img-vocabulary" alt="teacher" src="http://localhost:52762/UploadFiles\images\teacher.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                        <p class="vocabulary">teacher <span>n</span>  </p>
+                        <div class="pronoun">
+                            <div class="uk">
+                                <span class="spelling"> /ˈtiːtʃə(r)/ </span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="not-pronoun">
+                            <div class="uk">
+                                <span class="example">Ví dụ:</span>
+                                <span class="lang-vi change-sample">VI</span>
+                                <span class="spelling-uk">UK</span>
+                                <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                    <span></span>
+                                </a>
+                                <audio class="audio-sample-uk-1">
+                                    <source src="undefined0B_QESOpwSu7sRTJtODV5THZNWmc" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="sentence-vi ex_en">My dream is to become a teacher.</p>
+                        <p class="sentence-vi ex_vi">Ước mơ của tôi là trở thành một giáo viên.</p>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                        <div class="fix-col-height pull-right">
+                            <div class="number-stt">3</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+   </div>
+    @*End div_listword*@
+    <!--Begin div_learning-fill-->
+    <div class="learning-fill" style="background: rgb(255, 255, 255);">
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" class="form-control learning-fill-word" placeholder="Gõ từ vựng đoán được vào đây">
+                <a><button class="learning-btn-fill-word btn-learning-check" style="background: rgb(122, 198, 12); color: rgb(255, 255, 255);">KIỂM TRA</button></a>
+            </div>
+            <div class="col-md-7 col-md-offset-5 hidden-xs hidden-sm warning-test-group" style="margin-top: -50px;">
+                <div class="learning-right-group" style="display: none;">
+                    <span>Thật tuyệt!</span></p>
+                    <p class="learning-view-msg  hidden-sm" style="color: rgb(85, 85, 85);">Nhấn vào nút xoay để xem chi tiết bạn nhé! ^^</p>
+                </div>
+                <div class="learning-wrong-group" style="display: none;">
+                    <span>Cố lên!</span></p>
+                    <p class="learning-view-msg  hidden-sm" style="color: rgb(85, 85, 85);">Nhấn vào nút xoay để xem gợi ý bạn nhé! ^^</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End div_learning-fill-->
+</div>
+<!--End main-wrap-->
+
+<div class="col-md-12" align="center" >
+    <input type="button"  id='prev' class="btn btn-prev prevBtn" value="Quay lại">
+    <input type="button" id='next' class="btn btn-next nextBtn" value="Tiếp theo">
+</div>
+
+<!--template-->
+<script id="listWord-template" type="x-tmpl-mustache">
+    <div id="p{{Id}}" class='item {{Active}}' data-word='{{WordName}}'>
+        <div class="child child1" style="display: block;">
+            <div class="row face face1">
+                <div class="col-md-3 col-sm-3 col-xs-4">
+                    <div class="thumbnail">
+                        <a href="javascript:void(0)" class="pin-word pin-word-learning" word={{WordName}} data-toggle="tooltip" data-placement="right" title=""></a>
+                        <img class="img-vocabulary" alt="{{WordName}}" src={{Image}} />
+
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                    <p class="title">Định nghĩa</p>
+                    <p class="content-define">{{Defination}}</p>
+
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                    <div class="fix-col-height pull-right">
+                        <div class="number-stt">1</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="child child2" style="display: none;">
+            <div class="row  face face2">
+                <div class="col-md-3 col-sm-3 col-xs-4">
+                    <div class="thumbnail">
+                        <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                        <img class="img-vocabulary" alt="{{WordName}}" src="{{Image}}" />
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                    <p class="meaning-vocabulary">{{Meaning}}</p>
+                    <div class="pronoun">
+                        <div class="uk">
+                            <span class="spelling">{{Transcription}} </span>
+                            <span class="spelling-uk">UK</span>
+                            <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                <span></span>
+                            </a>
+                            <audio class="audio-uk-1" id="audioSound">
+                                <source src={{Sound}} type='audio/mpeg' />
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1" align="center">
+                    <div class="fix-col-height pull-right">
+                        <div class="number-stt">2</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="child child3" style="display: none;">
+            <div class="row  face face3">
+                <div class="col-md-3 col-sm-3 col-xs-4">
+                    <div class="thumbnail">
+                        <a href="javascript:void(0)" class="pin-word pin-word-learning" vocabulary="96" word="nHAQu44WbZSPHPmqTIInex6TWlSt7cvenvixEicV9Kk=" definition="yiBxla9MEjUHfPDem5tA/Y5hwLkCE6EGbo+9+tuIC9U=" data-toggle="tooltip" data-placement="right" title="" data-original-title="Ghim từ"></a>
+                        <img class="img-vocabulary" alt="{{WordName}}" src="{{Image}}" />
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-7 fix-col-xs-not">
+                    <p class="vocabulary">{{WordName}} <span>n</span>  </p>
+                    <div class="pronoun">
+                        <div class="uk">
+                            <span class="spelling"> {{Transcription}} </span>
+                            <span class="spelling-uk">UK</span>
+                            <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="uk-1">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="not-pronoun">
+                        <div class="uk">
+                            <span class="example">Ví dụ:</span>
+                            <span class="lang-vi change-sample">VI</span>
+                            <span class="spelling-uk">UK</span>
+                            <a href="javascript:void(0)" class="speaker-word speaker-uk" sound_id="sample-uk-1">
+                                <span></span>
+                            </a>
+                            <audio class="audio-sample-uk-1" id="soundExample">
+                                <source src={{SoundExample}} type='audio/mpeg' />
+                            </audio>
+                        </div>
+                    </div>
+                    <p class="sentence-vi ex_en">{{Example}}</p>
+                    <p class="sentence-vi ex_vi">{{ExampleTranslation}}</p>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1 text-center">
+                    <div class="fix-col-height pull-right">
+                        <div class="number-stt">3</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

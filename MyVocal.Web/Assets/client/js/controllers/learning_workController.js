@@ -61,6 +61,7 @@ var wordController = {
                             });
                     });
                     $('#listword').html(html);
+                    //Must be call registerEvent after
                     wordController.registerEvent();
                 }
             },

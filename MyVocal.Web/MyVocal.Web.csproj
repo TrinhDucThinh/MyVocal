@@ -876,9 +876,6 @@
     <Content Include="Views\Topic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Word\LearnTopic.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
@@ -891,10 +888,13 @@
     <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Word\TestTopic.cshtml" />
+    <Content Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ClassDiagram1.cd" />
+    <Content Include="Views\Topic\LearnTopic.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Topic\TestTopic.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
