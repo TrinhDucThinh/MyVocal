@@ -20,7 +20,7 @@
                         id: id
                     }
                 }
-                apiService.del('/api/wordCategorys/delete', config, function () {
+                apiService.del('/api/wordCategories/delete', config, function () {
                     notificationService.displaySuccess('Xóa thành công');
                     search();
                 }, function () {
@@ -43,7 +43,7 @@
                     pageSize: 2
                 }
             }
-            apiService.get('/api/WordCategory/getall', config, function (result) {
+            apiService.get('/api/WordCategories/getall', config, function (result) {
                 if (isSearch) {
                     if (result.data.TotalCount == 0) {
                         notificationService.displayWarning('Không có bản ghi nào được tìm thấy.'); 

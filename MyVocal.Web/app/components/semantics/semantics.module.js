@@ -5,10 +5,12 @@
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('semantics', {
             url: "/semantics",
+            parent: 'base',
             templateUrl: "/app/components/semantics/semanticsListView.html",
             controller: "semanticsListController"
         }).state('semantics_add', {
             url: "/semantics_add",
+            parent: 'base',
             templateUrl: "/app/components/semantics/semanticsAddView.html",
             controller: "semanticsAddController"
         });

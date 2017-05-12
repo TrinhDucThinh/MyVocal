@@ -13,7 +13,7 @@ using System.Web.Http;
 
 namespace MyVocal.Web.Api
 {
-    [RoutePrefix("api/wordCategory")]
+    [RoutePrefix("api/wordCategories")]
     public class WordCategoryController : ApiControllerBase
     {
         private IWordCategoryService _wordCategoryService;

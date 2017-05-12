@@ -5,14 +5,17 @@
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('words', {
             url: "/words",
+            parent: 'base',
             templateUrl: "/app/components/words/wordListView.html",
             controller: "wordListController"
         }).state('add_word', {
             url: "/add_word",
+            parent: 'base',
             templateUrl: "/app/components/words/wordAddView.html",
             controller: "wordAddController"
         }).state('edit_word', {
             url: "/edit_word/:id",
+            parent: 'base',
             templateUrl: "/app/components/words/wordEditView.html",
             controller: "wordEditController"
         });

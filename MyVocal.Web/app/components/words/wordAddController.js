@@ -22,7 +22,7 @@
         }
 
         function loadWordCategory() {
-            apiService.get('api/wordCategory/getall_for_word', null, function (result) {
+            apiService.get('api/wordCategories/getall_for_word', null, function (result) {
                 $scope.wordCategories = result.data;
             }, function () {
                 console.log('Cannot get list parent');

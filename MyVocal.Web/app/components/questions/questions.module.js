@@ -3,20 +3,24 @@
     angular.module('myvocal.questions', ['myvocal.common']).config(config);
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
     function config($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('questions', {
-            url: "/questions",
-            templateUrl: "/app/components/questions/questionsListView.html",
-            controller: "questionsListController"
-        })
+        $stateProvider
+            .state('questions', {
+                url: "/questions",
+                parent: 'base',
+                templateUrl: "/app/components/questions/questionsListView.html",
+                controller: "questionsListController"
+            })
             .state('questionAdd', {
-            url: "/questionAdd",
-            templateUrl: "/app/components/questions/questionsAddView.html",
-            controller: "questionsAddController"
-        })
+                url: "/questionAdd",
+                parent: 'base',
+                templateUrl: "/app/components/questions/questionsAddView.html",
+                controller: "questionsAddController"
+            })
             .state('questionEdit', {
                 url: "/questionEdit/:id",
+                parent: 'base',
                 templateUrl: "/app/components/questions/questionsEditView.html",
                 controller: "questionsEditController"
-        });
+            });
     }
 })();

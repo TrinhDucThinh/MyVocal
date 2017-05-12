@@ -11,7 +11,7 @@
         $scope.AddWordCategory = AddWordCategory;
 
         function AddWordCategory() {
-            apiService.post('api/wordcategory/create',$scope.wordCategory,
+            apiService.post('api/wordcategories/create',$scope.wordCategory,
                 function (result) {
                     notificationService.displaySuccess(result.data.CategoryName + ' đã được thêm mới thành công.');
                     $state.go('word_categories');

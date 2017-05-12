@@ -4,11 +4,13 @@
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('subject_group', {
-            url: "/subject_group",
+            url: "/subjectGroups",
+            parent: 'base',
             templateUrl: "/app/components/subject_group/subject_groupListView.html",
-            controller: "subject_groupListController"
+            controller: "subjectGroupListController"
         }).state('subject_group_add', {
             url: "/subject_group_add",
+            parent: 'base',
             templateUrl: "/app/components/subject_group/subject_groupAddView.html",
             controller: "subject_groupAddController"
         });

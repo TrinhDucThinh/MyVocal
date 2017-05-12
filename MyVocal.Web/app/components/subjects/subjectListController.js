@@ -25,7 +25,7 @@
                     pageSize: 2
                 }
             }
-            apiService.get('/api/WordCategory/getall', config, function (result) {
+            apiService.get('/api/wordCategories/getall', config, function (result) {
                 if (isSearch) {
                     if (result.data.TotalCount == 0) {
                         notificationService.displayWarning('Không có bản ghi nào được tìm thấy.'); 

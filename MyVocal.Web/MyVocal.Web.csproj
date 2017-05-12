@@ -228,6 +228,7 @@
     <Compile Include="Api\QuestionCategoryController.cs" />
     <Compile Include="Api\QuestionController.cs" />
     <Compile Include="Api\SubjectController.cs" />
+    <Compile Include="Api\SubjectGroupController.cs" />
     <Compile Include="Api\WordCategoryController.cs" />
     <Compile Include="Api\WordController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -267,6 +268,8 @@
     <Content Include="app\app.js" />
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeView.html" />
+    <Content Include="app\components\login\loginController.js" />
+    <Content Include="app\components\login\loginView.html" />
     <Content Include="app\components\questions\questions.module.js" />
     <Content Include="app\components\questions\questionsAddController.js" />
     <Content Include="app\components\questions\questionsAddView.html" />
@@ -322,6 +325,7 @@
     <Content Include="app\shared\modules\myvocal.common.js" />
     <Content Include="app\shared\services\apiService.js" />
     <Content Include="app\shared\services\notificationService.js" />
+    <Content Include="app\shared\views\baseView.html" />
     <Content Include="Assets\admin\css\AdminLTE.css" />
     <Content Include="Assets\admin\css\AdminLTE.min.css" />
     <Content Include="Assets\admin\css\skins\skin-black-light.css" />
