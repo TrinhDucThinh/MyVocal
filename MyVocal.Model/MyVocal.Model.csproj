@@ -75,12 +75,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MyVocal.Common\MyVocal.Common.csproj">
-      <Project>{cf46c567-cf18-4a5f-a093-0b708ef0c79e}</Project>
-      <Name>MyVocal.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

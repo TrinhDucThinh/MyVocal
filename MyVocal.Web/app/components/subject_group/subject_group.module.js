@@ -3,7 +3,7 @@
     angular.module('myvocal.subjectGroups', ['myvocal.common']).config(config);
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
     function config($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('subject_group', {
+        $stateProvider.state('subjectGroups', {
             url: "/subjectGroups",
             parent: 'base',
             templateUrl: "/app/components/subject_group/subject_groupListView.html",
@@ -16,3 +16,4 @@
         });
     }
 })();
+

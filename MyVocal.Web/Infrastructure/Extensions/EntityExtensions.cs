@@ -84,5 +84,18 @@ namespace MyVocal.Web.Infrastructure.Extensions
 
         }
 
+        public static void UpdateSubjectGroup(this SubjectGroup subjectGroup, SubjectGroupViewModel subjectGroupVm)
+        {
+            subjectGroup.SubjectGroupId = subjectGroupVm.SubjectGroupId;
+
+            subjectGroup.SubjecGroupName = subjectGroupVm.SubjecGroupName;
+
+            subjectGroup.Identify = subjectGroupVm.Description;
+
+            subjectGroup.Image = subjectGroupVm.Image;
+
+            subjectGroup.Status = subjectGroupVm.Status;           
+        }
+
     }
 }

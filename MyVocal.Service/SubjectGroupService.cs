@@ -13,15 +13,17 @@ namespace MyVocal.Service
     {
         public interface ISubjectGroupService
         {
-            void Add(SubjectGroup questionCategory);
+            SubjectGroup Add(SubjectGroup questionCategory);
 
             void Update(SubjectGroup questionCategory);
 
-            void Delete(int id);
+            SubjectGroup Delete(int id);
 
             IEnumerable<SubjectGroup> GetAll();
 
-            void SaveChange();
+            IEnumerable<SubjectGroup> GetAll(string keyword);
+
+            void Save();
 
             SubjectGroup GetById(int id);
         }
@@ -37,14 +39,14 @@ namespace MyVocal.Service
                 this._unitOfWork = unitOfWork;
             }
 
-            public void Add(SubjectGroup subjectGroup)
+            public SubjectGroup Add(SubjectGroup subjectGroup)
             {
-                _subjectGroupRepository.Add(subjectGroup);
+                return _subjectGroupRepository.Add(subjectGroup);
             }
 
-            public void Delete(int id)
+            public SubjectGroup Delete(int id)
             {
-                _subjectGroupRepository.Delete(id);
+               return _subjectGroupRepository.Delete(id);
             }
 
             public IEnumerable<SubjectGroup> GetAll()
@@ -52,12 +54,22 @@ namespace MyVocal.Service
                 return _subjectGroupRepository.GetAll();
             }
 
+            public IEnumerable<SubjectGroup> GetAll(string keyword)
+            {
+                if (!string.IsNullOrEmpty(keyword))
+                {
+                    return _subjectGroupRepository.GetMulti(x => x.SubjecGroupName.Contains(keyword));
+                }
+                else
+                    return _subjectGroupRepository.GetAll();
+            }
+
             public SubjectGroup GetById(int id)
             {
                 return _subjectGroupRepository.GetSingleById(id);
             }
 
-            public void SaveChange()
+            public void Save()
             {
                 _unitOfWork.Commit();
             }

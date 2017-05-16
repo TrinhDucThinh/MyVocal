@@ -1,163 +1,153 @@
-﻿//using MyVocal.Web.Infrastructure.Core;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Net;
-//using System.Net.Http;
-//using System.Web.Http;
+﻿using AutoMapper;
+using MyVocal.Model.Models;
+using MyVocal.Service;
+using MyVocal.Web.Api;
+using MyVocal.Web.Infrastructure.Core;
+using MyVocal.Web.Infrastructure.Extensions;
+using MyVocal.Web.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using static MyVocal.Service.SubjectGroupService;
 
-//namespace MyVocal.Web.Api
-//{
-//    [RoutePrefix("api/word")]
-//    public class SubjectGroup : ApiControllerBase
-//    {
-//        #region Initialize
+namespace MyVocal.Web.Api
+{
+    [RoutePrefix("api/subjectGroup")]
+    public class SubjectGroupController : ApiControllerBase
+    {
+        #region Initialize
 
-//        private IWordService _wordService;
+        private ISubjectGroupService _subjectGroupService;
+   
+        public SubjectGroupController(IErrorService errorService, ISubjectGroupService subjectGroupService) :
+            base(errorService)
+        {
+            this._subjectGroupService = subjectGroupService;
+        }
 
-//        public WordController(IErrorService errorService, IWordService wordService) : base(errorService)
-//        {
-//            this._wordService = wordService;
-//        }
+        #endregion Initialize
 
-//        #endregion Initialize
+        [Route("getall")]
+        [HttpGet]
+        public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize = 20)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                int totalRow = 0;
+                var model = _subjectGroupService.GetAll(keyword);
 
-//        //Get all words has include WordCategroy
-//        [Route("getAll")]
-//        [HttpGet]
-//        public HttpResponseMessage GetAll(HttpRequestMessage request)
-//        {
-//            return CreateHttpResponse(request, () =>
-//            {
-//                int totalRow = 0;
-//                var model = _wordService.GetAll();
-//                totalRow = model.Count();
-//                var query = model.OrderBy(x => x.WordName);
+                totalRow = model.Count();
+                var query = model.OrderByDescending(x => x.SubjectGroupId).Skip(page * pageSize).Take(pageSize);
 
-//                var responseData = Mapper.Map<IEnumerable<Word>, IEnumerable<WordViewModel>>(query);
+                var responseData = Mapper.Map<IEnumerable<SubjectGroup>, IEnumerable<SubjectGroupViewModel>>(query);
 
-//                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
-//                return response;
-//            });
-//        }
+                var paginationSet = new PaginationSet<SubjectGroupViewModel>()
+                {
+                    Items = responseData,
+                    Page = page,
+                    TotalCount = totalRow,
+                    TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
+                };
+                var response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
+                return response;
+            });
+        }
 
-//        [Route("getAllByPagging")]
-//        [HttpGet]
-//        public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize = 20)
-//        {
-//            return CreateHttpResponse(request, () =>
-//            {
-//                int totalRow = 0;
-//                var model = _wordService.GetAll(keyword);
-//                totalRow = model.Count();
-//                var query = model.OrderByDescending(x => x.WordId).Skip(page * pageSize).Take(pageSize);
+        [Route("getbyid/{id:int}")]
+        [HttpGet]
+        public HttpResponseMessage GetById(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _subjectGroupService.GetById(id);
+                var responseData = Mapper.Map<SubjectGroup, SubjectGroupViewModel>(model);
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
 
-//                var responseData = Mapper.Map<IEnumerable<Word>, IEnumerable<WordViewModel>>(query);
-//                var paginationSet = new PaginationSet<WordViewModel>()
-//                {
-//                    Items = responseData,
-//                    Page = page,
-//                    TotalCount = totalRow,
-//                    TotalPages = (int)Math.Ceiling((decimal)totalRow / pageSize)
-//                };
-//                var response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
-//                return response;
-//            });
-//        }
+        [Route("create")]
+        [HttpPost]
+        [AllowAnonymous]
+        public HttpResponseMessage Create(HttpRequestMessage request, SubjectGroupViewModel SubjectGroupVm)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var newSubjectGroup = new SubjectGroup();
 
-//        //get word detail
-//        [Route("getbyid/{id:int}")]
-//        [HttpGet]
-//        public HttpResponseMessage GetById(HttpRequestMessage request, int id)
-//        {
-//            return CreateHttpResponse(request, () =>
-//            {
-//                var model = _wordService.GetById(id);
-//                var responseData = Mapper.Map<Word, WordViewModel>(model);
-//                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
-//                return response;
-//            });
-//        }
+                    newSubjectGroup.UpdateSubjectGroup(SubjectGroupVm);
 
-//        //Create a word
-//        [Route("create")]
-//        [HttpPost]
-//        [AllowAnonymous]
-//        public HttpResponseMessage Create(HttpRequestMessage request, WordViewModel wordVm)
-//        {
-//            return CreateHttpResponse(request, () =>
-//            {
-//                HttpResponseMessage response = null;
-//                if (!ModelState.IsValid)
-//                {
-//                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-//                }
-//                else
-//                {
-//                    var newWord = new Word();
-//                    newWord.UpdateWord(wordVm);
-//                    var category = _wordService.Add(newWord);
-//                    _wordService.Save();
+                    var category = _subjectGroupService.Add(newSubjectGroup);
 
-//                    //generate Id for Word and send to client
-//                    var responseData = Mapper.Map<Word, WordViewModel>(newWord);
+                    _subjectGroupService.Save();
+                    //generate Id for SubjectGroup and send to client
+                    var responseData = Mapper.Map<SubjectGroup, SubjectGroupViewModel>(newSubjectGroup);
 
-//                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
-//                }
-//                return response;
-//            });
-//        }
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
+                }
+                return response;
+            });
+        }
 
-//        [Route("update")]
-//        [HttpPut]
-//        [AllowAnonymous]
-//        public HttpResponseMessage Update(HttpRequestMessage request, WordViewModel wordVm)
-//        {
-//            return CreateHttpResponse(request, () =>
-//            {
-//                HttpResponseMessage response = null;
-//                if (!ModelState.IsValid)
-//                {
-//                    response = request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-//                }
-//                else
-//                {
-//                    var wordDb = _wordService.GetById(wordVm.WordId);
-//                    //wordCategoryDb.UpdateWord(wordCategoryVm);
-//                    wordDb.UpdateWord(wordVm);
-//                    _wordService.Update(wordDb);
-//                    _wordService.Save();
+        [Route("update")]
+        [HttpPut]
+        [AllowAnonymous]
+        public HttpResponseMessage Update(HttpRequestMessage request, SubjectGroupViewModel SubjectGroupVm)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var SubjectGroupDb = _subjectGroupService.GetById(SubjectGroupVm.SubjectGroupId);
+                    SubjectGroupDb.UpdateSubjectGroup(SubjectGroupVm);
+                    _subjectGroupService.Update(SubjectGroupDb);
+                    _subjectGroupService.Save();
 
-//                    var responseData = Mapper.Map<Word, WordViewModel>(wordDb);
-//                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
-//                }
-//                return response;
-//            });
-//        }
+                    var responseData = Mapper.Map<SubjectGroup, SubjectGroupViewModel>(SubjectGroupDb);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
+                }
+                return response;
+            });
+        }
 
-//        [Route("delete")]
-//        [HttpDelete]
-//        [AllowAnonymous]
-//        public HttpResponseMessage Delete(HttpRequestMessage request, int id)
-//        {
-//            return CreateHttpResponse(request, () =>
-//            {
-//                HttpResponseMessage response = null;
-//                if (!ModelState.IsValid)
-//                {
-//                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
-//                }
-//                else
-//                {
-//                    var oldWordCategory = _wordService.Delete(id);
-//                    _wordService.Save();
+        [Route("delete")]
+        [HttpDelete]
+        [AllowAnonymous]
+        public HttpResponseMessage Delete(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var oldSubjectGroup = _subjectGroupService.Delete(id);
+                    _subjectGroupService.Save();
 
-//                    var responseData = Mapper.Map<Word, WordViewModel>(oldWordCategory);
-//                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
-//                }
+                    var responseData = Mapper.Map<SubjectGroup, SubjectGroupViewModel>(oldSubjectGroup);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
+                }
 
-//                return response;
-//            });
-//        }
-//    }
-//}
+                return response;
+            });
+        }
+    }
+}
