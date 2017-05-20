@@ -21,6 +21,12 @@ namespace MyVocal.Web
                defaults: new { controller = "Account", action = "Login" },
                  namespaces: new string[] { "MyVocal.Web.Controllers" }
            );
+            routes.MapRoute(
+              name: "Library",
+              url: "he-thong/thu-vien",
+              defaults: new { controller = "Library", action = "Index" },
+                namespaces: new string[] { "MyVocal.Web.Controllers" }
+          );
 
             routes.MapRoute(
                name: "Register",
@@ -48,7 +54,7 @@ namespace MyVocal.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional },
                   namespaces: new string[] { "MyVocal.Web.Controllers" }
             );
         }

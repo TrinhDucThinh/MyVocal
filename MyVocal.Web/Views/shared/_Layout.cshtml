@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
+@using MyVocal.Model
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,6 +51,10 @@
                 </a>
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
+                        @{ 
+                            var user = Session["USER_LOGIN"];
+                           
+                        }
                         @if (Request.IsAuthenticated)
                         {
 
@@ -110,7 +115,8 @@
 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="/Assets/admin/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">@User.Identity.GetUserName()</span>
+                                    <span>"Xac thuc"</span>
+                                    
                                 </a>
 
                             </li>
@@ -121,7 +127,7 @@
 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="/Assets/admin/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">@User.Identity.GetUserName()</span>
+                                    <span>"Chua xac thuc</span>
                                 </a>
 
                             </li>
@@ -182,23 +188,16 @@
                     </li>
                     <!--Thư viện hệ thống-->
                     <li class="treeview">
-                        <a href="#">
+                        <a href="/Library">
                             <i class="glyphicon glyphicon-th-list"></i> <span>Thư viện hệ thống</span>
                         </a>
                     </li>
                     <!--Bộ từ-->
                     <li class="treeview">
-                        <a href="#">
+                        <a href="/Library">
                             <i class="glyphicon glyphicon-th-list"></i> <span>BỘ TỪ</span>
                         </a>
                     </li>
-                    <!--Danh sách bộ từ-->
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="glyphicon glyphicon-book" style="margin-left:8px"></i><span>LET'S GO!</span>
-                        </a>
-                    </li>
-
                 </ul>
             </section>
             <!-- /.sidebar -->

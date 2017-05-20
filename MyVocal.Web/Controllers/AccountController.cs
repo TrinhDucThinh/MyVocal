@@ -72,14 +72,17 @@ namespace MyVocal.Web.Controllers
                     ClaimsIdentity identity = _userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                     AuthenticationProperties props = new AuthenticationProperties();
                     props.IsPersistent = model.RememberMe;
+                   
                     authenticationManager.SignIn(props, identity);
+                   
                     if (Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        //return RedirectToAction("Index", "Home");
+                        return Redirect("/he-thong/thu-vien");
                     }
                 }
                 else

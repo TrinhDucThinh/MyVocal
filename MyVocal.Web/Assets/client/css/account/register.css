@@ -44,7 +44,7 @@ body a,form li,input[type="submit"],input[type="text"],.sixth-login input[type="
 }
 .login-form {
 	background: #fff;
-	min-height: 670px;
+	min-height: 555px;
 	width: 30%;
 	margin: 9% auto 4% auto;
 	position: relative;
@@ -450,7 +450,7 @@ a.thank-you-button:hover {
 }
 @media (max-width:1280px){
 	.login-form {
-		width: 40%;
+		width: 35%;
 	}
 	.login-form-1 {
 		width: 40%;

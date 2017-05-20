@@ -4,10 +4,10 @@
         Thêm mới loại từ
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
-        <li><a href="#">Loại từ</a></li>
-        <li><a ui-sref="word_categories">Danh sách loại từ</a></li>
-        <li class="active">Thêm mới</li>
+        <li><a href=""><i class="fa fa-dashboard"></i> Trang chủ</a></li>
+        <li><a href="subjectGroups">Nhóm chủ đề</a></li>
+        <li><a ui-sref="subjectGroupAdd">Thêm nhóm chủ đề</a></li>
+       
     </ol>
 </section>
 <!-- Main content -->
@@ -18,29 +18,35 @@
             <h3 class="box-title">Thêm mới</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        <form class="form-horizontal" novalidate name="frmAddWordCategory" role="form" ng-submit="AddWordCategory()">
+        <form class="form-horizontal" novalidate name="frmAddSubjectGroup" role="form" ng-submit="AddSubjectGroup()">
             <div class="box-body">
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Loại từ</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="categoryName" ng-model="wordCategory.CategoryName">
+                        <input type="text" class="form-control" name="categoryName" ng-model="subjectGroup.SubjecGroupName">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">Mô tả</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" name="Description" ng-model="wordCategory.Description"></textarea>
+                        <textarea class="form-control" name="Description" ng-model="subjectGroup.Description"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Viết tắt</label>
+                    <label for="inputEmail3" class="col-sm-2 control-label">Tiêu đề</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="identify" ng-model="wordCategory.Identify">
+                        <input type="text" class="form-control" name="identify" ng-model="subjectGroup.Identify">
                     </div>
-                </div>       
+                </div>      
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Trạng thái</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="identify" ng-model="subjectGroup.Status">
+                    </div>
+                </div>   
             </div><!-- /.box-body -->
             <div class="box-footer">
-                <button ui-sref="word_categories" class="btn btn-default">Hủy</button>
+                <button ui-sref="subjectGroups" class="btn btn-default">Hủy</button>
                 <button type="submit" class="btn btn-success pull-right">Lưu</button>
             </div><!-- /.box-footer -->
         </form>

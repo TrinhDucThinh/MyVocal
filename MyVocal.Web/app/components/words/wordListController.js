@@ -23,7 +23,7 @@
                 params: {
                     keyword: $scope.keyword,
                     page: page,
-                    pageSize: 10
+                    pageSize: 4
                 }
             }
             apiService.get('/api/word/getAllByPagging', config, function (result) {

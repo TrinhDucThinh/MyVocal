@@ -3824,6 +3824,15 @@
     <Content Include="Assets\admin\libs\ng-ckeditor\src\styles\ng-ckeditor.less" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\admin\libs\angular\.bower.json" />
+    <Content Include="Assets\admin\libs\angular\angular.min.js.gzip" />
+    <Content Include="Assets\admin\libs\angular\angular.min.js.map" />
+    <Content Include="Assets\admin\libs\angular\bower.json" />
+    <Content Include="Assets\admin\libs\angular\LICENSE.md" />
+    <Content Include="Assets\admin\libs\angular\package.json" />
+    <Content Include="Assets\admin\libs\angular\README.md" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Assets\admin\libs\angular-ui-router\.bower.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\bower.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\CHANGELOG.md" />
@@ -3843,13 +3852,6 @@
     <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.min.js.map" />
     <Content Include="Assets\admin\libs\angular-ui-router\tslint.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\yarn.lock" />
-    <Content Include="Assets\admin\libs\angular\.bower.json" />
-    <Content Include="Assets\admin\libs\angular\angular.min.js.gzip" />
-    <Content Include="Assets\admin\libs\angular\angular.min.js.map" />
-    <Content Include="Assets\admin\libs\angular\bower.json" />
-    <Content Include="Assets\admin\libs\angular\LICENSE.md" />
-    <Content Include="Assets\admin\libs\angular\package.json" />
-    <Content Include="Assets\admin\libs\angular\README.md" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

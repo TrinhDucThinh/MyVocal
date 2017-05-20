@@ -8,11 +8,16 @@
             parent: 'base',
             templateUrl: "/app/components/subject_group/subject_groupListView.html",
             controller: "subjectGroupListController"
-        }).state('subject_group_add', {
-            url: "/subject_group_add",
+        }).state('subjectGroupAdd', {
+            url: "/subjectGroupAdd",
             parent: 'base',
             templateUrl: "/app/components/subject_group/subject_groupAddView.html",
             controller: "subject_groupAddController"
+        }).state('subjectGroupEdit', {
+            url: "/subjectGroupEdit/:id",
+            parent: 'base',
+            templateUrl: "/app/components/subject_group/subject_groupAddView.html",
+            controller: "subjectGroupEditController"
         });
     }
 })();

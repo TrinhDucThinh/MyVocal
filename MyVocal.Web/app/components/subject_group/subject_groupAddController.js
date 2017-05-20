@@ -4,17 +4,17 @@
     subject_groupAddController.$inject = ['apiService','$scope','notificationService','$state'];
 
     function subject_groupAddController(apiService,$scope,notificationService,$state) {
-        $scope.wordCategory = {
+        $scope.subjectGroup = {
             
         }
 
-        $scope.AddWordCategory = AddWordCategory;
+        $scope.AddSubjectGroup = AddSubjectGroup;
 
-        function AddWordCategory() {
-            apiService.post('api/wordcategories/create',$scope.wordCategory,
+        function AddSubjectGroup() {
+            apiService.post('api/subjectGroup/create', $scope.subjectGroup,
                 function (result) {
-                    notificationService.displaySuccess(result.data.CategoryName + ' đã được thêm mới thành công.');
-                    $state.go('word_categories');
+                    notificationService.displaySuccess(result.data.SubjectGroupName + ' đã được thêm mới thành công.');
+                    $state.go('subjectGroups');
                 },
                 function (error) {
                     notificationService.displayError('Thêm mới không thành công');

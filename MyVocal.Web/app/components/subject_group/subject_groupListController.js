@@ -11,9 +11,9 @@
         var isSearch = false;
         $scope.search = search;
 
-        $scope.deleteSubjectGroup = deleteSubjectGroup;
+        $scope.subjectGroupDelete = subjectGroupDelete;
 
-        function deleteSubjectGroup(id) {
+        function subjectGroupDelete(id) {
             $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
                 var config = {
                     params: {
