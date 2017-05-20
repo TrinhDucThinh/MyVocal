@@ -124,6 +124,10 @@
     <Compile Include="Migrations\201705170925071_startDb.Designer.cs">
       <DependentUpon>201705170925071_startDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705200915160_start2.cs" />
+    <Compile Include="Migrations\201705200915160_start2.Designer.cs">
+      <DependentUpon>201705200915160_start2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyVocalDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705170925071_startDb.resx">
       <DependentUpon>201705170925071_startDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705200915160_start2.resx">
+      <DependentUpon>201705200915160_start2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

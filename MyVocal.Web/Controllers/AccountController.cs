@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -72,9 +74,9 @@ namespace MyVocal.Web.Controllers
                     ClaimsIdentity identity = _userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
                     AuthenticationProperties props = new AuthenticationProperties();
                     props.IsPersistent = model.RememberMe;
-                   
+
                     authenticationManager.SignIn(props, identity);
-                   
+
                     if (Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);
@@ -124,24 +126,40 @@ namespace MyVocal.Web.Controllers
                     EmailConfirmed = true,
                 };
 
+                //Create account
+           
                 await _userManager.CreateAsync(user, model.Password);
-
-
+               
+                //check email
                 var adminUser = await _userManager.FindByEmailAsync(model.Email);
                 if (adminUser != null)
                     await _userManager.AddToRolesAsync(adminUser.Id, new string[] { "User" });
-
-                //string content = System.IO.File.ReadAllText(Server.MapPath("/Assets/client/template/newuser.html"));
-                //content = content.Replace("{{UserName}}", adminUser.FullName);
-                //content = content.Replace("{{Link}}", ConfigHelper.GetByKey("CurrentLink") + "dang-nhap.html");
-
-                //MailHelper.SendMail(adminUser.Email, "Đăng ký thành công", content);
-
 
                 ViewData["SuccessMsg"] = "Đăng ký thành công";
             }
 
             return View();
+        }
+
+        public static string MD5Hash(string text)
+        {
+            MD5 md5 = new MD5CryptoServiceProvider();
+
+            //compute hash from the bytes of text
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
+
+            //get hash result after compute it
+            byte[] result = md5.Hash;
+
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                //change it into 2 hexadecimal digits
+                //for each byte
+                strBuilder.Append(result[i].ToString("x2"));
+            }
+
+            return strBuilder.ToString();
         }
     }
 }
