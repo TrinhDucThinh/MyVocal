@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "ResultTestTopic";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+@section Scripts
+{
+    @*<script src="~/Assets/admin/libs/chart.js/dist/Chart.min.js"></script>*@
+
+    <script src="~/Assets/client/js/Chart.js.1.0.2/content/Scripts/Chart.min.js"></script>
+    <script src="~/Assets/client/js/controllers/chartLine.js"></script>
+
+}
+@section Styles{
+    <style>
+        /*.container {
+            width: 50%;
+            margin: 20px auto;
+        }*/
+
+        .p {
+            text-align: center;
+            font-size: 12px;
+            padding-top: 140px;
+        }
+    </style>
+}
+<h2>Chart Line</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h1 class="nameChart">Biểu đồ tiến bộ dựa trên số lượng từ đã thuộc</h1>
+            <div>
+                <canvas id="chartLine"></canvas>
+            </div>
+        </div>
+            
+        <div class="col-md-5">
+            <h1 class="nameChart">Biểu đồ tiến bộ dựa trên số lượng từ đã thuộc</h1>
+            <div>
+                <canvas id="chartPie" sstyle="width:300px; height:300px"></canvas>
+              
+            </div>
+           
+        </div>
+        
+    </div>
+</div>
+
+
+<p class="p">Biểu đồ tiến bộ</p>

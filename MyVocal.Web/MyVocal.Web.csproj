@@ -248,9 +248,7 @@
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LibraryController.cs" />
-    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\TopicController.cs" />
-    <Compile Include="Controllers\WordController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -263,6 +261,7 @@
     <Compile Include="Models\QuestionViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Models\SemanticViewModel.cs" />
+    <Compile Include="Models\SubjectDependUser.cs" />
     <Compile Include="Models\SubjectGroupViewModel.cs" />
     <Compile Include="Models\SubjectViewModel.cs" />
     <Compile Include="Models\WordCategoryViewModel.cs" />
@@ -3481,6 +3480,9 @@
     <Content Include="Assets\client\img\icons.png" />
     <Content Include="Assets\client\img\ln.png" />
     <Content Include="Assets\client\img\tw.png" />
+    <Content Include="Assets\client\js\Chart.js.1.0.2\content\Scripts\Chart.js" />
+    <Content Include="Assets\client\js\Chart.js.1.0.2\content\Scripts\Chart.min.js" />
+    <Content Include="Assets\client\js\controllers\chartLine.js" />
     <Content Include="Assets\client\js\controllers\learning_workController.js" />
     <Content Include="Assets\client\js\controllers\testController.js" />
     <Content Include="Assets\client\js\controllers\topicController.js" />
@@ -3495,6 +3497,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="UploadFiles\Audios\clock_tick.mp3" />
     <Content Include="UploadFiles\images\1_2.jpg" />
     <Content Include="UploadFiles\images\3000 smart words.jpg" />
@@ -3518,6 +3522,7 @@
     <Content Include="UploadFiles\images\entertainment.jpg" />
     <Content Include="UploadFiles\images\farmer.jpg" />
     <Content Include="UploadFiles\images\finalexam.jpg" />
+    <Content Include="UploadFiles\images\guess.jpg" />
     <Content Include="UploadFiles\images\hobby.jpg" />
     <Content Include="UploadFiles\images\holiday.jpg" />
     <Content Include="UploadFiles\images\homemaker.jpg" />
@@ -3553,7 +3558,6 @@
     <Folder Include="app\components\users\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
-    <Folder Include="Views\Question\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -3581,9 +3585,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Admin\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Admin\Service.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -3856,6 +3857,12 @@
     <Content Include="Assets\admin\libs\angular-ui-router\release\ui-router-angularjs.min.js.map" />
     <Content Include="Assets\admin\libs\angular-ui-router\tslint.json" />
     <Content Include="Assets\admin\libs\angular-ui-router\yarn.lock" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Topic\ResultTestTopic.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\client\js\Chart.js.1.0.2\Chart.js.1.0.2.nupkg" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

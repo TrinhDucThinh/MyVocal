@@ -24,6 +24,8 @@
 
         public bool Status { get; set; }
 
+        public bool isLearn { get; set; }
+
         public int WordTotal { get; set; }
     }
 }

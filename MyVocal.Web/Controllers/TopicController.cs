@@ -1,10 +1,14 @@
 ﻿using AutoMapper;
+using MyVocal.Data;
 using MyVocal.Model.Models;
 using MyVocal.Service;
 using MyVocal.Web.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace MyVocal.Web.Controllers
 {
@@ -12,15 +16,21 @@ namespace MyVocal.Web.Controllers
     {
         private ISubjectService _subjectService;
         private IWordService _wordService;
+        private IApplicationUserSubjectService _applicationUserSubjectService;
+      
         //Contructor
-        public TopicController(ISubjectService subjectService, IWordService wordService)
+        public TopicController(ISubjectService subjectService, IWordService wordService,IApplicationUserSubjectService applicationUserSubjectService)
         {
             this._subjectService = subjectService;
             this._wordService = wordService;
+            this._applicationUserSubjectService = applicationUserSubjectService;
         }
+        
         //Return all Subject in a subjectGroup as json
         public JsonResult LoadAllTopic(int groupId, int pageIndex = 1, int pageSize = 8)
         {
+
+            //Get subjec from database
             int totalRow = 0;
             IEnumerable<Subject> listTopic = null;
             try
@@ -33,6 +43,13 @@ namespace MyVocal.Web.Controllers
             }
 
             var listSubjectViewModel = Mapper.Map<IEnumerable<Subject>, IEnumerable<SubjectViewModel>>(listTopic);
+            //Check is learn 
+            foreach(var item in listSubjectViewModel)
+            {
+                item.isLearn = _applicationUserSubjectService.isLearn(User.Identity.GetUserId(), item.SubjectId);
+            }
+
+
             return Json(new
             {
                 data = listSubjectViewModel,
@@ -53,6 +70,21 @@ namespace MyVocal.Web.Controllers
         //Learn and practise word in a subject
         public ActionResult LearnTopic(int id)
         {
+            //Check user
+            if (!string.IsNullOrEmpty(User.Identity.GetUserId()))
+            {
+                if (!_applicationUserSubjectService.isLearn(User.Identity.GetUserId(), id))
+                {
+                    ApplicationUser_Subject newRecord = new ApplicationUser_Subject();
+                    newRecord.ApplicationUserId = User.Identity.GetUserId();
+                    newRecord.SubjectId = id;
+                    newRecord.LearnDate = DateTime.Now;
+
+                    _applicationUserSubjectService.Add(newRecord);
+                    _applicationUserSubjectService.Save();
+                }
+            }
+            
             ViewBag.Id = id;
             return View();
         }
@@ -85,5 +117,11 @@ namespace MyVocal.Web.Controllers
             ViewBag.Id = id;
             return View();
         }
+
+        public ActionResult ResultTestTopic()
+        {
+            return View();
+        }
+        
     }
 }

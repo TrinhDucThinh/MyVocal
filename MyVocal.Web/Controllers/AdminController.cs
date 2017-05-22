@@ -10,9 +10,5 @@ namespace MyVocal.Web.Controllers
             return View();
         }
 
-        public ActionResult Service()
-        {
-            return View();
-        }
     }
 }

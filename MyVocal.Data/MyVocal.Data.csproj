@@ -131,6 +131,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyVocalDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ApplicationUserSubjectRepository.cs" />
     <Compile Include="Repository\ErrorRepository.cs" />
     <Compile Include="Repository\QuestionCategoryRepository.cs" />
     <Compile Include="Repository\QuestionRepository.cs" />

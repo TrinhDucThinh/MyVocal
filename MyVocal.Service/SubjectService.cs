@@ -15,6 +15,7 @@ namespace MyVocal.Service
         void Update(Subject subject);
         void Delete(int id);
         void SaveChange();
+  
         IEnumerable<Subject> GetAll();
         IEnumerable<Subject> GetAllPagging(int pageIndex, int pageSize, out int totalRow);
         IEnumerable<Subject> GetBySubjectGroup(string subjectGroupName, int pageIndex, int pageSize, out int totalRow);
@@ -61,6 +62,7 @@ namespace MyVocal.Service
             return _subjectRepository.GetAllBySubjectGroup(subjectGroupName, pageIndex, pageSize, out totalRow);
         }
 
+       
         public void SaveChange()
         {
             _unitOfWork.Commit();

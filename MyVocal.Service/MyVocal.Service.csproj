@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ErrorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ApplicationUserSubjectService.cs" />
     <Compile Include="QuestionCategoryService.cs" />
     <Compile Include="QuestionService.cs" />
     <Compile Include="SemanticService.cs" />

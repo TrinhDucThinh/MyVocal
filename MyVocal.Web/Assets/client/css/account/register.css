@@ -5,7 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 /* reset */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;/* height: 34%; */font-size: 28%;font-size: 14px;font:inherit;vertical-align:baseline;}
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
 ol,ul{list-style:none;margin:0px;padding:0px;}
 blockquote,q{quotes:none;}
@@ -82,11 +82,11 @@ body a,form li,input[type="submit"],input[type="text"],.sixth-login input[type="
 form {
 	padding: 0% 5% 0%;
 }
-.social-icons p {
-	color: #5ca3d9;
-	font-size: 1em;
-	font-weight: 400;
-}
+/*.social-icons p {
+	color: #410000;
+	font-size: 91%;
+	font-weight: bold;
+}*/
 .social-icons {
 	padding: 0px 28px 0 28px;
 }
@@ -349,7 +349,7 @@ a.thank-you-button:hover {
 	background: #fff;
 	min-height: 514px;
 	width: 30%;
-	margin: 9% auto 4% auto;
+	margin: 6% auto 4% auto;
 	position: relative;
 	box-shadow: inset 0px 0px 10px 0px #ABABAB,-1px 1px 17px 7px #0F0000;
 	-webkit-box-shadow: inset 0px 0px 10px 0px #ABABAB,-1px 1px 17px 7px #0F0000;
@@ -432,10 +432,13 @@ a.thank-you-button:hover {
 		width: 33%;
 	}
 	.login-form-1 {
-		width: 33%;
+		width: 30%;
 	}
 	.head-info h1 {
-		padding: 0.12em;
+		padding: 3%;
+		font-weight: normal;
+		font-size: 24px;
+		font-family: inherit;
 	}
 	.thank-you p {
 		width: 85%;
@@ -653,4 +656,13 @@ a.thank-you-button:hover {
 }
 .remember{
     border:none;
+}
+
+/*style for hyperlink*/
+.hyperLink {
+    text-decoration: underline;
+    font-size: 16.5px;
+    font-family: Time News Roman;
+    color: #746594;
+    font-weight: bold;
 }

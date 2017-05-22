@@ -13,13 +13,14 @@ var wordController = {
     //Load data for list word of topic anything
     loadData: function () {
         $(document).ready(function () {
+            $('.sidebar-mini').addClass('sidebar-collapse');
             $('.carousel').carousel({
                 interval: 1200000
             })
         })
         var subjectId = $('#TopicId').val();
         $.ajax({
-            url: '/Word/ListAllBySubjectId',
+            url: '/Topic/ListAllBySubjectId',
             type: 'GET',
             dataType: 'json',
             data: {
@@ -77,11 +78,13 @@ var wordController = {
         $('#next').click(function () {
             wordController.refreshResult();
             if (wordConfig.index == 20) {
+               
                 $('#p' + wordConfig.index).slideUp("4000").removeClass("active");
                 wordConfig.index = 1;
                 $('#p' + wordConfig.index).slideDown("4000").addClass("active");
 
             } else {
+                
                 $('#p' + wordConfig.index).slideUp("slow").removeClass("active");
                 wordConfig.index++;
                 $('#p' + wordConfig.index).slideDown("slow").addClass("active");
@@ -127,6 +130,26 @@ var wordController = {
                 $(this).parent('.item').find('.child2').hide();
             });
         });
+       
+        //when enter
+        $('.learning-fill-word').on("keydown", function (event) {
+            if (event.which == 13) {
+                var answer = $('.item.active').data('word').toLowerCase();
+                var userAnswer = $('.learning-fill-word').val().toString().toLowerCase();
+                //$('.item.active audio').play();
+                //$('.item.active #audioSound').trigger('play');
+                wordController.fireSound('#audioSound');
+                var result = answer.localeCompare(userAnswer);
+                if (result == 0) {
+                    $('.learning-wrong-group').removeClass('displayNoti');
+                    $('.learning-right-group').addClass('displayNoti');
+                } else {
+                    $('.learning-right-group').removeClass('displayNoti');
+                    $('.learning-wrong-group').addClass('displayNoti');
+                }
+            }
+        });
+
         //when check result input
         $('.btn-learning-check').click(function () {
             var answer = $('.item.active').data('word').toLowerCase();
@@ -144,8 +167,6 @@ var wordController = {
             }
         });
         //when click 
-
-
     },
 
     fireSound: function (TagId) {

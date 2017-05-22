@@ -2,7 +2,8 @@
     pageSize: 8,
     pageIndex:1,
     location: window.location.origin,
-    groupId: $('#groupId').val()
+    groupId: $('#groupId').val(),
+    userId: $('#userId').val()
 }
 var topicController = {
 
@@ -11,7 +12,7 @@ var topicController = {
     },
 
     loadData: function (changePageSize) {
-      
+        alert(topicConfig.userId);
         $.ajax({
             url: '/Topic/LoadAllTopic',
             type: 'GET',
@@ -25,15 +26,26 @@ var topicController = {
                 if (response.status) {
                     var data = response.data;
                     var html = '';
-                    var template = $('#listTopic-template').html();    
+                    var templateLearn = $('#listTopic-template').html();
+                    var templateNotLearn = $('#listTopic-templateNo').html();
                     $.each(data, function (i, item) {
-                       
-                        html += Mustache.render(template, {
-                            link:location.origin+'/Word/LearnTopic?Id='+item.SubjectId,
-                            image: location.origin +'/'+ item.Image,
-                            subjectName: item.SubjectName,
-                            description: item.Description
+                      
+                        if (item.isLearn) {
+                            html += Mustache.render(templateLearn, {
+                                link: location.origin + '/chu-de/hoc-chu-de?Id=' + item.SubjectId,
+                                linkTest: location.origin + '/chu-de/kiem-tra-chu-de?Id=' + item.SubjectId,
+                                image: location.origin + '/' + item.Image,
+                                subjectName: item.SubjectName,
+                                description: item.Description
                             });
+                        }else
+                            html += Mustache.render(templateNotLearn, {
+                                link: location.origin + '/chu-de/hoc-chu-de?Id=' + item.SubjectId,  
+                                image: location.origin + '/' + item.Image,
+                                subjectName: item.SubjectName,
+                                description: item.Description
+                            });
+
                     });
                     $('#topicList').html(html);
                 }

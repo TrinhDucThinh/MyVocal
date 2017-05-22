@@ -48,13 +48,17 @@ namespace MyVocal.Web
                defaults: new { controller = "Topic", action = "TestTopic", id = UrlParameter.Optional },
                  namespaces: new string[] { "MyVocal.Web.Controllers" }
            );
-
-
+            routes.MapRoute(
+               name: "Home",
+               url: "he-thong/trang-chu",
+               defaults: new { controller = "Home", action = "Index" },
+                 namespaces: new string[] { "MyVocal.Web.Controllers" }
+           );
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional },
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                   namespaces: new string[] { "MyVocal.Web.Controllers" }
             );
         }

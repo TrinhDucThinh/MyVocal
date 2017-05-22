@@ -96,10 +96,10 @@ learning-kontext.css?n=1:13
     z-index: 1;
 }
 .learning-fill-word {
-    width: calc(100% - 110px);
+    width: 33%;
     display: block;
     float: left;
-    height: 50px;
+    height: 42px;
     border-radius: 0;
     max-width: 285px;
     font-size: 18px;
@@ -110,8 +110,8 @@ learning-kontext.css?n=1:13
 .learning-btn-fill-word {
     float: left;
     border: 0;
-    height: 50px;
-    width: 124px;
+    height: 41px;
+    width: 148px;
     background: #7AC60C;
     color: #fff;
     font-size: 15px;
@@ -142,7 +142,7 @@ learning-kontext.css?n=1:13
     color: #FFF;
     margin-right: 5px;
     font-family: OpenSansbold;
-    height: 45px;
+    height: 40px;
     line-height: 45px;
     min-width: 140px;
     padding-bottom: 0px;
@@ -155,7 +155,7 @@ learning-kontext.css?n=1:13
     color: #FFF;
     margin-left: 5px;
     font-family: OpenSansbold;
-    height: 45px;
+    height: 40px;
     line-height: 45px;
     min-width: 140px;
     padding-bottom: 0px;
@@ -165,4 +165,8 @@ learning-kontext.css?n=1:13
 }
 .displayNoti{
     display:block !important;
+}
+
+img.img-vocabulary {
+    max-width: 90%;
 }

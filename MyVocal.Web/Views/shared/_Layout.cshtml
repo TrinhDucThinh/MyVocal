@@ -20,13 +20,14 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="/Assets/admin/css/skins/_all-skins.min.css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+
     @RenderSection("Styles", false)
+    <style>
+        li.treeview {
+            border-bottom: 1px solid #85b6ce;
+        }
+    </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
     <!-- Site wrapper -->
@@ -34,26 +35,26 @@
 
         <header class="main-header" style="background-color:rgb(76, 135, 237)">
             <!-- Logo -->
-            <a href="#" class="logo">
+            <a href="#" class="logo" style="background-color: #565c5f;">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>M</b>V</span>
+                @*<span class="logo-mini"><b>M</b>V</span>*@
                 <!-- logo for regular state and mobile devices -->
                 <span class="logo-lg"><b>My</b>Vocal</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
+            <nav class="navbar navbar-static-top" role="navigation" style="background-color:#596d78">
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    @*<span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>*@
                 </a>
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        @{ 
+                        @{
                             var user = Session["USER_LOGIN"];
-                           
+
                         }
                         @if (Request.IsAuthenticated)
                         {
@@ -115,8 +116,8 @@
 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="/Assets/admin/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                    <span>@User.Identity.GetUserName()</span>
-                                    
+                                    <span>Xin chào, @User.Identity.GetUserName()</span>
+
                                 </a>
 
                             </li>
@@ -126,79 +127,69 @@
                             <li class="dropdown user user-menu">
 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="/Assets/admin/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                    <span>"Chua xac thuc"</span>
+                                    <img src="~/UploadFiles/images/guess.jpg" class="user-image" alt="User Image">
+                                    <span>Xin chào</span>
                                 </a>
-
                             </li>
                         }
-                        </ul>
-                                @*<ul class="dropdown-menu">
-
-                                    <!-- Menu Body -->
-                                    <li class="user-body">
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Followers</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Sales</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Friends</a>
-                                        </div>
-                                    </li>
-                                    <!-- Menu Footer-->
-                                    <li class="user-footer">
-                                        <div class="pull-left">
-                                            <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                        </div>
-                                        <div class="pull-right">
-                                            <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                                        </div>
-                                    </li>
-                                </ul>*@
-                         
-                                <!-- Control Sidebar Toggle Button -->
-                            @*<li>
-                                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                            </li>
-                    </ul>*@
-                   
+                    </ul>
                 </div>
             </nav>
         </header>
         <!-- =============================================== -->
         <!-- Left side column. contains the sidebar -->
-        <aside class="main-sidebar" style="background-color:#ffffff">
+        <aside class="main-sidebar" style="background-color: #596d78; height:1200px">
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <!--Trang chủ-->
                     <li class="treeview">
-                        <a href="#">
-                            <i class="glyphicon glyphicon-home"></i> <span>Trang Chủ</span>
+                        <a href="he-thong/trang-chu">
+                            <i class="glyphicon glyphicon-home"></i> <span>Trang chủ</span>
                         </a>
                     </li>
                     <!--Thư viện cá nhân-->
                     <li class="treeview">
-                        <a href="#">
-                            <i class="glyphicon glyphicon-th-list"></i> <span>Thư viện cá nhân</span>
+                        <a href="/he-thong/thu-vien">
+                            <i class="glyphicon glyphicon-education"></i> <span>Thư viện cá nhân</span>
                         </a>
                     </li>
                     <!--Thư viện hệ thống-->
                     <li class="treeview">
-                        <a href="/Library">
-                            <i class="glyphicon glyphicon-th-list"></i> <span>Thư viện hệ thống</span>
+                        <a href="/he-thong/thu-vien">
+                            <i class="glyphicon glyphicon-bookmark"></i> <span>Thư viện hệ thống</span>
                         </a>
                     </li>
-                    <!--Bộ từ-->
-                    <li class="treeview">
-                        <a href="/Library">
-                            <i class="glyphicon glyphicon-th-list"></i> <span>BỘ TỪ</span>
-                        </a>
-                    </li>
+
+                    @if (Request.IsAuthenticated)
+                    {
+
+                    <!--Đăng xuất-->
+                        <li class="treeview">
+                            <a href="javascript:document.getElementById('logOut').submit();">
+                                <i class="glyphicon glyphicon-log-out"></i> <span>Đăng xuất</span>
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <!--Đăng ký-->
+                        <li class="treeview">
+                            <a href="/tai-khoan/dang-ky">
+                                <i class="glyphicon glyphicon-cog"></i> <span>Đăng ký</span>
+                            </a>
+                        </li>
+                        <!--Đăng nhập-->
+                        <li class="treeview">
+                            <a href="/tai-khoan/dang-nhap">
+                                <i class="glyphicon glyphicon-log-in"></i> <span>Đăng nhập</span>
+                            </a>
+                        </li>
+                    }
                 </ul>
+                @using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logOut" }))
+                {@Html.AntiForgeryToken() }
             </section>
             <!-- /.sidebar -->
         </aside>
@@ -209,9 +200,9 @@
         </div><!-- /.content-wrapper -->
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
-                <b>Version</b> 2.3.0
+                <b>Version</b> 1.0.0
             </div>
-            <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 22-05-2017 by Trinh Duc Thinh<a href="http://fit.utc.edu.vn/" >- Faculty of Information Technology- UNIVERSITY OF TRANSPORT AND COMMUNICATIONS</a></strong>
         </footer>
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
