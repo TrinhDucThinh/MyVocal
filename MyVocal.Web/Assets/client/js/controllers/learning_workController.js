@@ -87,9 +87,11 @@ var wordController = {
                 
                 $('#p' + wordConfig.index).slideUp("slow").removeClass("active");
                 wordConfig.index++;
+                
                 $('#p' + wordConfig.index).slideDown("slow").addClass("active");
+               
             }
-
+            wordController.fireSound('#audioSound');
         });
         $('#prev').click(function () {
 

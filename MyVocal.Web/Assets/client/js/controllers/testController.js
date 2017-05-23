@@ -68,20 +68,11 @@ var testController = {
     },
 
     nextSlide: function () {
-            
-            //if (testConfig.index < 20) {
-            //    $('.type-' + testConfig.index).slideUp("slow").removeClass("show");
-            //    testConfig.index++;
-            //    $('.type-' + testConfig.index).slideDown("slow").addClass("show");
-        //}
         if (testConfig.index < 20) {
             $('.layer#item' + testConfig.index).removeClass('show');
             testConfig.index++;
             $('.layer#item' + testConfig.index).addClass('show');
-            //$('#tick').src = "";
-
         }
-
     }
 }
 testController.init();

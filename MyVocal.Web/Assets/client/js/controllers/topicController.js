@@ -12,7 +12,7 @@ var topicController = {
     },
 
     loadData: function (changePageSize) {
-        alert(topicConfig.userId);
+       
         $.ajax({
             url: '/Topic/LoadAllTopic',
             type: 'GET',

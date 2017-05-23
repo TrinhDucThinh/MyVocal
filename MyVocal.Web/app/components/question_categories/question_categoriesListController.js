@@ -1,22 +1,40 @@
 ﻿/// <reference path="E:\Document\Đồ án\Project\Git\MyVocal\MyVocal.Web\Assets/admin/libs/angular/angular.js" />
 (function (app) {
-    app.controller('question_categoriesListController', question_categoriesListController);
-    question_categoriesListController.$inject = ['$scope', 'apiService', 'notificationService'];
-    function question_categoriesListController($scope, apiService, notificationService) {
-        $scope.wordCategories = [];
+    app.controller('questionCategoriesListController', questionCategoriesListController);
+    questionCategoriesListController.$inject = ['$scope', 'apiService', 'notificationService','$ngBootbox'];
+    function questionCategoriesListController($scope, apiService, notificationService,$ngBootbox) {
+        $scope.questionCategories = [];
         $scope.page = 0;
         $scope.pagesCount = 0;
-        $scope.getWordCategories = getWordCategories;
+        $scope.getQuestionCategories = getQuestionCategories;
         $scope.keyword = '';
         var isSearch=false;
         $scope.search = search;
 
-        function search() {
-            isSearch = true;
-            getWordCategories();
+        $scope.deleteQuestionCategory = deleteQuestionCategory;
+
+        function deleteQuestionCategory(id) {
+            $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
+                var config = {
+                    params: {
+                        id: id
+                    }
+                }
+                apiService.del('/api/questionCategory/delete', config, function () {
+                    notificationService.displaySuccess('Xóa thành công');
+                    search();
+                }, function () {
+                    notificationService.displayError('Xóa không thành công');
+                })
+            });
         }
 
-        function getWordCategories(page) {
+        function search() {
+            isSearch = true;
+            getQuestionCategories();
+        }
+
+        function getQuestionCategories(page) {
             page = page || 0;
             var config = {
                 params: {
@@ -25,7 +43,7 @@
                     pageSize: 2
                 }
             }
-            apiService.get('/api/WordCategories/getall', config, function (result) {
+            apiService.get('/api/questionCategory/getall', config, function (result) {
                 if (isSearch) {
                     if (result.data.TotalCount == 0) {
                         notificationService.displayWarning('Không có bản ghi nào được tìm thấy.'); 
@@ -35,7 +53,7 @@
                     isSearch = false;
                 }
 
-                $scope.wordCategories = result.data.Items;
+                $scope.questionCategories = result.data.Items;
                 $scope.page = result.data.Page;
                 $scope.totalCount = result.data.TotalCount;
                 $scope.pagesCount = result.data.TotalPages;
@@ -43,6 +61,6 @@
                 console.log('Load word categories failure');
             });
         }
-        $scope.getWordCategories();
+        $scope.getQuestionCategories();
     }
 })(angular.module('myvocal.questionCategories'));

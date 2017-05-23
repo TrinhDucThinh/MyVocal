@@ -52,10 +52,7 @@
                 </a>
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        @{
-                            var user = Session["USER_LOGIN"];
-
-                        }
+                        
                         @if (Request.IsAuthenticated)
                         {
 
@@ -145,7 +142,7 @@
                 <ul class="sidebar-menu">
                     <!--Trang chủ-->
                     <li class="treeview">
-                        <a href="he-thong/trang-chu">
+                        <a href="/he-thong/trang-chu">
                             <i class="glyphicon glyphicon-home"></i> <span>Trang chủ</span>
                         </a>
                     </li>

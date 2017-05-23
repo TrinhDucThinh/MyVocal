@@ -51,7 +51,12 @@ namespace MyVocal.Service
 
         public IEnumerable<QuestionCategory> GetAll(string keyword)
         {
-            throw new NotImplementedException();
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                return _questionCategoryRepository.GetMulti(x => x.QuestionCategoryName.Contains(keyword));
+            }
+            else
+                return _questionCategoryRepository.GetAll();
         }
 
         public QuestionCategory GetById(int id)

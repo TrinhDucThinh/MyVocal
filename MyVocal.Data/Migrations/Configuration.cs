@@ -57,31 +57,32 @@ namespace MyVocal.Data.Migrations
             #endregion
             //  This method will be called after migrating to the latest version.
             #region add user
-            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new MyVocalDbContext()));
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new MyVocalDbContext()));
-            //Add user
-            var user = new ApplicationUser()
-            {
-                UserName = "admin",
-                Email = "tdthinh1995@gmail.com",
-                EmailConfirmed = true,
-                FullName = @"Trịnh Đức Thịnh",
-                Description = "Admin",
-                CreateDate = DateTime.Now,
-                WordRememeber = 0
-            };
+            
+            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new MyVocalDbContext()));
+            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new MyVocalDbContext()));
+            ////Add user
+            //var user = new ApplicationUser()
+            //{
+            //    UserName = "admin",
+            //    Email = "tdthinh1995@gmail.com",
+            //    EmailConfirmed = true,
+            //    FullName = @"Trịnh Đức Thịnh",
+            //    Description = "Admin",
+            //    CreateDate = DateTime.Now,
+            //    WordRememeber = 0
+            //};
 
-            manager.Create(user, "123456$");
+            //manager.Create(user, "123456$");
 
-            if (!roleManager.Roles.Any())
-            {
-                roleManager.Create(new IdentityRole { Name = "Admin" });
-                roleManager.Create(new IdentityRole { Name = "User" });
-            }
+            //if (!roleManager.Roles.Any())
+            //{
+            //    roleManager.Create(new IdentityRole { Name = "Admin" });
+            //    roleManager.Create(new IdentityRole { Name = "User" });
+            //}
 
-            var adminUser = manager.FindByEmail("tdthinh1995@gmail.com");
+            //var adminUser = manager.FindByEmail("tdthinh1995@gmail.com");
 
-            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+            //manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
             #endregion
             // context.Database.ExecuteSqlCommand("Delete FROM WordCategories;");
             //Add Word

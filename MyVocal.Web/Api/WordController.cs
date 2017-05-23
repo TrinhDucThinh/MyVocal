@@ -70,7 +70,7 @@ namespace MyVocal.Web.Api
             });
         }
 
-        //get word detail
+        //get word detail by Id
         [Route("getbyid/{id:int}")]
         [HttpGet]
         public HttpResponseMessage GetById(HttpRequestMessage request, int id)
@@ -83,7 +83,20 @@ namespace MyVocal.Web.Api
                 return response;
             });
         }
-
+        //get all word in a subject by subject id
+        [Route("getAllBySubjectId/{id:int}")]
+        [HttpGet]
+        public HttpResponseMessage GetAllBySubjectId(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _wordService.GetAllBySubjectId(id);
+                var query = model.OrderByDescending(x => x.WordName);
+                var responseData = Mapper.Map<IEnumerable<Word>, IEnumerable<WordViewModel>>(query);
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
         //Create a word
         [Route("create")]
         [HttpPost]

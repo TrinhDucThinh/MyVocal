@@ -4,11 +4,13 @@
     questionsAddController.$inject = ['apiService','$scope','notificationService','$state'];
 
     function questionsAddController(apiService,$scope,notificationService,$state) {
-        $scope.question = {
-           
-            
-        }
+        //variable question scope is Model
+        $scope.question = {}
+        
+        //variable quesion scope subjectId
+        $scope.subjectId = '';
 
+        //function add question
         $scope.questionAdd = questionAdd;
 
         function questionAdd() {
@@ -22,6 +24,21 @@
                 });
         }
 
+        //function to load all subjects
+        function loadSubjects() {
+            apiService.get('api/subject/getallSubject', null, function (result) {
+                $scope.subjects = result.data;
+
+            }, function () {
+                console.log('Cannot get list subject');
+            });
+        }
+
+        //change subject
+        $scope.hasChanged = function () {
+            loadWords($scope.subjectId);
+        }
+        //function to load question category
         function loadQuestionCategories() {
             apiService.get('api/questionCategory/getAllQuestion', null, function (result) {
                 $scope.questionCategories = result.data;
@@ -31,15 +48,18 @@
             });
         }
         
-        function loadWords() {
-            apiService.get('api/word/getAll', null, function (result) {
+        //function to load all word
+        function loadWords(subjectId) {
+            apiService.get('api/word/getAllBySubjectId/' + subjectId, null, function (result) {
                 $scope.words = result.data;
 
             }, function () {
                 console.log('Cannot get list parent');
             });
         }
+
         loadQuestionCategories();
-        loadWords();
+        loadWords(1);
+        loadSubjects();
     }
 })(angular.module('myvocal.questions'));

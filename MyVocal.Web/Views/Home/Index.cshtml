@@ -1,8 +1,126 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/shared/_Layout.cshtml";
 }
 
-<h2>Home</h2>
+@{
+    ViewBag.Title = "Thư viện hệ thống";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+ 
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Các bước để bắt đầu
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-hand-o-right"></i>Trang chủ</a></li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- row -->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- The time line -->
+            <ul class="timeline">
+                <!-- timeline time label -->
+                <li class="time-label">
+                    <span class="bg-red">
+                        Bước 1:
+                    </span>
+                </li>
+                <!-- /.timeline-label -->
+                <!-- timeline item -->
+                <li>
+                    <i class="fa fa-hand-o-right bg-blue"></i>
+                    <div class="timeline-item">
+                        @*<span class="time"><i class="fa fa-clock-o"></i> 12:05</span>*@
+                        <h3 class="timeline-header"><a href="#">Đăng ký tài khoản</a> <i class="fa fa-arrow-right"></i>Sử dụng chức năng Đăng ký ở thanh menu bên</h3>
+                        
+                        <div class="timeline-footer bg-blue">
+                        </div>
+                    </div>
+                </li>
 
+                <li>
+                    <i class="fa fa-hand-o-right bg-blue"></i>
+                    <div class="timeline-item">
+                        @*<span class="time"><i class="fa fa-clock-o"></i> 12:05</span>*@
+                        <h3 class="timeline-header"><a href="#">Đăng ký tài khoản</a> <i class="fa fa-arrow-right"></i>Sử dụng chức năng Đăng ký ở thanh menu bên</h3>
+
+                        <div class="timeline-footer btn-primary">
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+                <!-- timeline time label -->
+                <li class="time-label">
+                    <span class="bg-yellow-gradient">
+                        Bước 2
+                    </span>
+                </li>
+                <!-- /.timeline-label -->
+                <!-- timeline item -->
+                <li>
+                    <i class="fa fa-hand-o-right bg-yellow-gradient"></i>
+                    <div class="timeline-item">
+                        @*<span class="time"><i class="fa fa-clock-o"></i> 12:05</span>*@
+                        <h3 class="timeline-header"><a href="#">Chọn nhóm chủ đề</a> <i class="fa fa-arrow-right"></i>Sử dụng chức năng thư viện hệ thống để hiển thị danh sách nhóm bài học</h3>
+
+                        <div class="timeline-footer bg-yellow-gradient">
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+                <!-- timeline item -->
+                <li>
+                    <i class="fa fa-hand-o-right bg-yellow-gradient"></i>
+                    <div class="timeline-item">
+                        @*<span class="time"><i class="fa fa-clock-o"></i> 12:05</span>*@
+                        <h3 class="timeline-header"><a href="#">Chọn bài học để bắt đầu học</a> <i class="fa fa-arrow-right"></i>Click chọn một bài học (chủ đề) để bắt đầu quá trình học</h3>
+
+                        <div class="timeline-footer bg-yellow-gradient">
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+                <li class="time-label">
+                    <span class="bg-aqua-gradient">
+                        Bước 3
+                    </span>
+                </li>
+                <!-- /.timeline-label -->
+                <!-- timeline item -->
+                <li>
+                    <i class="fa fa-hand-o-right bg-aqua-gradient"></i>
+                    <div class="timeline-item">
+                        @*<span class="time"><i class="fa fa-clock-o"></i> 12:05</span>*@
+                        <h3 class="timeline-header"><a href="#">Kiểm tra</a> <i class="fa fa-arrow-right"></i>Sau khi đã học xong các từ trong bài học, bạn có thể chuyển sang bước kiểm tra</h3>
+
+                        <div class="timeline-footer bg-aqua-gradient">
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+                <!-- timeline item -->
+                <li>
+                    <i class="fa fa-hand-o-right bg-aqua-gradient"></i>
+                    <div class="timeline-item">
+                        @*<span class="time"><i class="fa fa-clock-o"></i> 12:05</span>*@
+                        <h3 class="timeline-header"><a href="#">Kết thúc quá trình học và kiểm tra</a> <i class="fa fa-arrow-right"></i>Bạn có thể học lại, kiểm tra lại hoặc có thể học chủ để mới nếu bạn đã cảm thấy chủ đề vừa kiểm tra đã tốt.</h3>
+
+                        <div class="timeline-footer bg-aqua-gradient">
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+                <li>
+                    <i class="fa fa-clock-o bg-gray"></i>
+                </li>
+            </ul>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>

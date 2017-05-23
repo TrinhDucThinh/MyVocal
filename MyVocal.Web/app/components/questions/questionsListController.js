@@ -9,7 +9,7 @@
         $scope.keyword = '';
         var isSearch = false;
         $scope.search = search;
-
+        //function searching
         function search() {
             isSearch = true;
             getQuestions();
@@ -42,6 +42,7 @@
                 console.log('Load words failure');
             });
         }
+
         //delete question
         $scope.deleteQuestion = deleteQuestion;
         function deleteQuestion(id) {
@@ -59,6 +60,61 @@
                 })
             });
         }
+
+        //function to load all subjects
+        function loadSubjects() {
+            apiService.get('api/subject/getallSubject', null, function (result) {
+                $scope.subjects = result.data;
+            }, function () {
+                console.log('Cannot get list subject');
+            });
+        }
+
+        //change subject
+        $scope.hasChangedSubject = function () {
+            loadWords($scope.subjectId);
+        }
+
+        //change subject
+        //$scope.hasChangeWord = function (item) {
+        //    isSearch = true;
+        //    alert($scope.word);
+        //    $scope.words.push(item.text);
+        //    //$scope.keyword=
+        //    //getQuestions();
+        //}
+      
+        $scope.changedValue = function (item) {
+            isSearch = true;
+            if (item != null) {
+                $scope.keyword = item.WordName;
+                getQuestions();
+                $scope.keyword = '';
+            }
+        }
+        //function to load all word
+        function loadWords(subjectId) {
+            if (typeof subjectId == 'undefined') {
+                apiService.get('api/word/getAllBySubjectId/1', null, function (result) {
+                    $scope.words = result.data;
+
+                }, function () {
+                    console.log('Cannot get list parent');
+                });
+            } else {
+                apiService.get('api/word/getAllBySubjectId/' + subjectId, null, function (result) {
+                    $scope.words = result.data;
+
+                }, function () {
+                    console.log('Cannot get list parent');
+                });
+            }
+            
+        }
+
+        loadWords();
+        loadSubjects();
+
         $scope.getQuestions();
     }
 })(angular.module('myvocal.questions'));

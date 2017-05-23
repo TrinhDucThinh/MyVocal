@@ -1,18 +1,22 @@
-﻿/// <reference path="E:\Document\Đồ án\Project\Git\MyVocal\MyVocal.Web\Assets/admin/libs/angular/angular.js" />
-(function () {
+﻿(function () {
     angular.module('myvocal.questionCategories', ['myvocal.common']).config(config);
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
     function config($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('question_categories', {
-            url: "/question_categories",
+        $stateProvider.state('questionCategories', {
+            url: "/questionCategories",
             parent: 'base',
             templateUrl: "/app/components/question_categories/question_categoriesListView.html",
-            controller: "question_categoriesListController"
-        }).state('question_categories_add', {
-            url: "/question_categories_add",
+            controller: "questionCategoriesListController"
+        }).state('questionCategoriesAdd', {
+            url: "/questionCategoriesAdd",
             parent: 'base',
             templateUrl: "/app/components/question_categories/question_categoriesAddView.html",
-            controller: "question_categoriesAddController"
+            controller: "questionCategoriesAddController"
+        }).state('questionCategoriesEdit', {
+            url: "/questionCategoriesEidt/:id",
+            parent: 'base',
+            templateUrl: "/app/components/question_categories/question_categoriesEditView.html",
+            controller: "questionCategoriesEditController"
         });
     }
 })();

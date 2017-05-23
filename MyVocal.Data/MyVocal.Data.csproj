@@ -128,6 +128,14 @@
     <Compile Include="Migrations\201705200915160_start2.Designer.cs">
       <DependentUpon>201705200915160_start2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705230039590_addRegister.cs" />
+    <Compile Include="Migrations\201705230039590_addRegister.Designer.cs">
+      <DependentUpon>201705230039590_addRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231328446_AddColumn_Audio_Question.cs" />
+    <Compile Include="Migrations\201705231328446_AddColumn_Audio_Question.Designer.cs">
+      <DependentUpon>201705231328446_AddColumn_Audio_Question.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyVocalDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,6 +212,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705200915160_start2.resx">
       <DependentUpon>201705200915160_start2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705230039590_addRegister.resx">
+      <DependentUpon>201705230039590_addRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231328446_AddColumn_Audio_Question.resx">
+      <DependentUpon>201705231328446_AddColumn_Audio_Question.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

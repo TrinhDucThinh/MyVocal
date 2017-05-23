@@ -69,9 +69,12 @@ namespace MyVocal.Web.Infrastructure.Extensions
 
             question.QuestionCategoryId = questionVm.QuestionCategoryId;
 
-            question.QuestionName= questionVm.Solution;
+            question.QuestionName= questionVm.QuestionName;
 
             question.Image = questionVm.Image;
+
+            question.Audio = questionVm.Audio;
+
         }
 
         public static void UpdateQuestionCategory(this QuestionCategory questionCategory,QuestionCategoryViewModel questionCategoryVm)

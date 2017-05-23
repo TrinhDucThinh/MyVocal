@@ -1,4 +1,4 @@
-﻿
+﻿   
 @{
     ViewBag.Title = "TestTopic";
     Layout = "~/Views/shared/_Layout.cshtml";
@@ -1920,4 +1920,455 @@
         </div>
     </div>
     </div><!---End .container-fluid-->
+<!--Cate 1-->
+<script id="listTopicCate1" type="x-tmpl-mustache">
+    <div class="layer two item type-{{index}} right show" type-20="2" id="item{{index}}">
+        <div class="selected-letter text-center">
+            <!--begin definition-->
+            <div class="test-question-20">
+                <p class="testing-title">Chọn từ đúng với định nghĩa sau</p>
+                <p class="testing-definition">
+                    <span class="testing-definition-content">
+                        {{QuestionName}}
+                        <br>
+                        @*<i>(N)</i>*@
+                    </span>
+                </p>
+            </div>
+            <div class="test-result-20 result-testing-hide">
+                <div class="testing-img hidden-xs">
+                    <img src={{Image}}>
+                </div>
+                <p class="result-img-text">
+                    <span class="test-result-right-answer test-result-answer-20">Đáp án</span>
+                    <span class="test-result-right-answer test-result-right-answer-20">Đáp án đúng</span>
+                </p>
+                <p class="text-left result-testing-word"><span>{{Solution}}</span> <i> (n) </i></p>
+                @*<p class="text-left result-testing-pronounce"> /ˈbeɪ.biˌsɪt.ər/ </p>*@
+                @*<p class="text-left result-testing-definition">người giữ trẻ</p>*@
+            </div>
+            <!--end definition-->
+            <audio class="audio">
+                <source class="src-20" src={{Audio}} type="audio/mpeg">
+            </audio>
+            <div class="timer-group">
+                <span id="secondsCountdown-20" class="text-center count-timer" time="15" style="display: none;">15</span>
+                <div id="circle-20" class="circle-count">
+                    <span class="circle-count-down">15</span>
+                </div>
+            </div>
+        </div>
 
+        <div class="select-vocabulary">
+            <!--begin btn learning group-->
+            <div class="row btn-testing-group text-center">
+                <!--begin writing testing-->
+                <input type="text" class="txt-check  txt-check-19" placeholder="Gõ từ vựng đoán được vào đây">
+                <button class="btn-check  btn-check-19">KIỂM TRA</button>
+                <!--end writing testing-->
+            </div>
+            <!--begin btn learning group-->
+        </div>
+        <div class="dimmer"></div>
+    </div>
+</script>
+    <!--Cate 2-->
+<script id="listTopicCate2" type="x-tmpl-mustache">
+    <div class="layer two item type-{{index}} right" type-4="1" id="item{{index}}">
+        <div class="selected-letter text-center main-wrap-wrong">
+            <!--begin image-->
+            <div class="test-question-4">
+                <div class="testing-img hidden-xs">
+                    <img src="{{Image}}">
+                </div>
+                <p class="testing-img-text">
+                    <span class="testing-title hidden-xs  hidden-sm">Chọn từ phù hợp với hình ảnh và nghĩa tiếng Việt sau</span>
+                    <br class="hidden-xs  hidden-sm">
+                    <span class="testing-img-content">
+                        {{QuestionName}}
+                    </span>
+                </p>
+            </div>
+            <div class="test-result-4 result-testing-hide">
+                <div class="testing-img hidden-xs">
+                    <img src="{{Image}}">
+                </div>
+                <p class="result-img-text">
+                    <span class="test-result-right-answer test-result-answer-4 result-testing-hide">Đáp án</span>
+                    <span class="test-result-right-answer test-result-right-answer-4">Đáp án đúng</span>
+                </p>
+                <p class="text-left result-testing-word"><span>{{Solution}}</span> <i> (n) </i></p>
+                @*<p class="text-left result-testing-pronounce"> /ˈfɑː.mər/ </p>
+                <p class="text-left result-testing-definition">nông dân</p>*@
+            </div>
+            <!--end image-->
+            <audio class="audio">
+                <source class="src-4" src="http://www.voca.vn/assets/sounds/yPK6nmmvTlZPb4A2KzfMlOEIdN521Mmdyzp1FiQmL_0=.mp3" type="audio/mpeg">
+            </audio>
+            <div class="timer-group">
+                <span id="secondsCountdown-4" class="text-center count-timer is-countdown highlight" style="display: none;" time="15"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">0</span><span class="countdown-period"></span></span></span></span>
+                <div id="circle-4" class="circle-count">
+                    <canvas width="35" height="35"></canvas>
+                    <span class="circle-count-down" style="left: 14px;">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="select-vocabulary">
+            <!--begin btn learning group-->
+            <div class="row btn-testing-group">
+                <!--begin word-->
+                <div class="col-xs-12 col-md-6  text-right btn-test-group-left">
+                    <button class="btn-check-test  btn-test-1 btn-answer" synset="1gNtgM6YZepRK+2YuNRtIfnliw45490oFQui/C1wlug=" word="2/f+oUytm+BZSP4frh4QqCd2ckkY+Vf3X9WNLLFfv1A=" pos="1" card="3" style="width: 222.222px; background-color: rgb(122, 198, 12); color: rgb(255, 255, 255); border-color: rgb(122, 198, 12);">{{AnswerA}}</button>
+                </div>
+                <div class="col-xs-12 col-md-6  btn-test-group-right">
+                    <button class="btn-check-test  btn-test-2 btn-answer" synset="1gNtgM6YZepRK+2YuNRtIfnliw45490oFQui/C1wlug=" word="2/f+oUytm+BZSP4frh4QqCd2ckkY+Vf3X9WNLLFfv1A=" pos="2" card="3" style="width: 222.222px;">{{AnswerB}}</button>
+                </div>
+                <div class="col-xs-12 col-md-6  text-right btn-test-group-left">
+                    <button class="btn-check-test  btn-test-3 btn-answer" synset="1gNtgM6YZepRK+2YuNRtIfnliw45490oFQui/C1wlug=" word="2/f+oUytm+BZSP4frh4QqCd2ckkY+Vf3X9WNLLFfv1A=" pos="3" card="3" style="width: 222.222px;">{{AnswerC}}</button>
+                </div>
+                <div class="col-xs-12 col-md-6  btn-test-group-right">
+                    <button class="btn-check-test  btn-test-4 btn-answer" synset="1gNtgM6YZepRK+2YuNRtIfnliw45490oFQui/C1wlug=" word="2/f+oUytm+BZSP4frh4QqCd2ckkY+Vf3X9WNLLFfv1A=" pos="4" card="3" otheranswer="mountain" style="width: 222.222px;">{{AnswerD}}</button>
+                </div>
+                <!--end word-->
+
+            </div>
+            <!--begin btn learning group-->
+        </div>
+
+        <div class="dimmer"></div>
+    </div>
+</script>
+    <!--Cate 3-->
+<script id="listTopicCate3" type="x-tmpl-mustache">
+    <div class="layer two item type-{{index}} right" type-9="1" id="item{{index}}">
+        <div class="selected-letter text-center">
+            <!--begin sentence-->
+            <div class="test-question-9">
+                <p class="testing-title">Chọn câu dịch tiếng Việt phù hợp nhất với câu tiếng Anh sau</p>
+                <p class="testing-definition">
+                    <span class="testing-definition-content">
+                        {{QuestionName}}
+                    </span>
+                </p>
+            </div>
+            <div class="test-result-9 result-testing-hide">
+
+                @*<p class="result-sentence-text">
+                    <span class="test-result-right-answer test-result-answer-9">Đáp án</span>
+                    <span class="test-result-right-answer test-result-right-answer-9">Đáp án đúng</span>
+                </p>
+                <p class="text-left result-testing-sentence">The <span style="font-family: OpenSansBold; text-decoration: underline;">doctor</span> prescribed some pills.</p>
+                <p class="text-left result-testing-sentence_vi">Bác sĩ kê đơn một số thuốc.</p>*@
+            </div>
+            <!--end sentence-->
+            <audio class="audio">
+                <source class="src-9" src="{{Audio}}" type="audio/mpeg">
+            </audio>
+            <div class="timer-group">
+                <span id="secondsCountdown-9" class="text-center count-timer is-countdown" style="display: none;" time="15"><span class="countdown-row countdown-show1"><span class="countdown-section"><span class="countdown-amount">8</span><span class="countdown-period"></span></span></span></span>
+                <div id="circle-9" class="circle-count">
+                    <canvas width="35" height="35"></canvas>
+                    <span class="circle-count-down" style="left: 14px;">8</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="select-vocabulary">
+            <!--begin btn learning group-->
+            <div class="row btn-testing-group">
+                <!--begin sentence-->
+                <div class="col-xs-12 col-md-6  text-right btn-test-group-left">
+                    <button class="btn-check-test  btn-test-8-1 btn-sentence" pos="1" card="8">Chú của Tom là thợ mộc có tay nghề giỏi.</button>
+                </div>
+                <div class="col-xs-12 col-md-6  btn-test-group-right">
+                    <button class="btn-check-test  btn-test-8-2 btn-sentence" pos="2" card="8">Tôi muốn nhìn thấy luật sư của tôi trước khi tôi nói bất cứ điều gì.</button>
+                </div>
+                <div class="col-xs-12 col-md-6  text-right btn-test-group-left">
+                    <button class="btn-check-test  btn-test-8-3 btn-sentence" pos="3" card="8">Cô ấy là nữ diễn viên được trả cao nhất ở Hollywood.</button>
+                </div>
+                <div class="col-xs-12 col-md-6  btn-test-group-right">
+                    <button class="btn-check-test  btn-test-8-4 btn-sentence" pos="4" card="8" otheranswer="Bác sĩ kê đơn một số thuốc.">Đáp án khác</button>
+                </div>
+                <!--end sentence-->
+
+            </div>
+            <!--begin btn learning group-->
+        </div>
+
+        <div class="dimmer"></div>
+    </div>
+</script>
+    <!--Cate 4-->
+<script id="listTopicCate4" type="x-tmpl-mustache">
+    <div class="layer two item type-14 right" type-14="2" id="item14">
+        <div class="selected-letter text-center">
+            <!--begin pronounce-->
+            <div class="test-question-14">
+                <p class="testing-title">Lựa chọn từ đúng nhất với phiên âm sau</p>
+                <p class="testing-pronounce">/ˈkɑrpəntər/ </p>
+                <p class="pronounce-img"><span class="test-speaker" attr="14"></span></p>
+            </div>
+            <div class="test-result-14 result-testing-hide">
+                <div class="testing-img hidden-xs">
+                    <img src="http://www.voca.vn/assets/assets-v2/img/library/carpenter.jpg">
+                </div>
+                <p class="result-img-text">
+                    <span class="test-result-right-answer test-result-answer-14">Đáp án</span>
+                    <span class="test-result-right-answer test-result-right-answer-14">Đáp án đúng</span>
+                </p>
+                <p class="text-left result-testing-word"><span>carpenter</span> <i> (n) </i></p>
+                <p class="text-left result-testing-pronounce">/ˈkɑrpəntər/ </p>
+                <p class="text-left result-testing-definition">thợ mộc</p>
+            </div>
+            <!--end pronounce-->
+            <audio class="audio">
+                <source class="src-14" src="http://www.voca.vn/assets/sounds/Dfz4mR3b7_OXIvEkRnEyl0hwW8hwBdgkDAtG+tUfPD0=.mp3" type="audio/mpeg">
+            </audio>
+
+            <!--begin pronounce-->
+            <!--
+            <p class="testing-title">Lựa chọn từ đúng nhất với phiên âm sau</p>
+            <p class="testing-pronounce">/mo:ter/</p>
+            <p class="pronounce-img"><span  class="speaker" sound_id="6"></span></p>
+            -->
+            <!--end pronounce-->
+            <!--begin definition-->
+            <!--
+            <p class="testing-title">Chọn từ đúng với định nghĩa sau</p>
+            <p class="testing-definition">
+                <span class="testing-definition-content">
+                    a animal very big, it’s two leg very beautiful a pencil very beautiful
+                    <br/>
+                    <i>(n)</i>
+                </span>
+            </p>
+            -->
+            <!--end definition-->
+            <!--begin sound-->
+            <!--
+            <p class="testing-title">Chọn từ đúng nhất với âm thanh sau</p>
+            <p class="testing-sound">
+                <span class="speaker" sound_id="12"></span>
+            </p>
+            -->
+            <!--end sound-->
+            <!--begin sentence-->
+            <!--
+            <p class="testing-title">Chọn câu tiếng Anh phù hợp nhất với câu tiếng Việt sau</p>
+            <p class="testing-definition">
+                <span class="testing-definition-content">
+                    a animal very big, it’s two leg very beautiful a pencil very beautiful
+                </span>
+            </p>
+            -->
+            <!--end sentence-->
+            <!--begin image-->
+            <!--
+            <div class="testing-img hidden-xs">
+                <img src="http://music.voca.vn/assets/img/library/bird.jpg" />
+            </div>
+            <p class="testing-img-text">
+                <span class="testing-title hidden-xs  hidden-sm">Chọn từ phù hợp với hình ảnh và nghĩa tiếng Việt sau</span>
+                <br class="hidden-xs  hidden-sm"/>
+                <span class="testing-img-content">
+                    a animal very big, it’s two leg very beautiful a pencil very beautiful
+                    <br/>
+                    <i>(n)</i>
+                </span>
+            </p>
+            -->
+            <!--end image-->
+
+            <div class="timer-group">
+                <span id="secondsCountdown-14" class="text-center count-timer" time="15" style="display: none;">15</span>
+                <div id="circle-14" class="circle-count">
+                    <span class="circle-count-down">15</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="select-vocabulary">
+            <!--begin btn learning group-->
+            <div class="row btn-testing-group text-center">
+                <!--begin writing testing-->
+                <input type="text" class="txt-check  txt-check-13" card="13" placeholder="Gõ từ vựng đoán được vào đây">
+                <button class="btn-check  btn-check-13" synset="9qvWvFNBrEYFkFtz/3dGHyDgu6ZRkbz0/vrWhBF/G34=" word="H45jJRwV3tYRH6oYPB7D3NCYNYNsZ03hvEWTCfnwVj4=" pos="1" card="13">KIỂM TRA</button>
+                <!--end writing testing-->
+            </div>
+            <!--begin btn learning group-->
+        </div>
+
+        <div class="dimmer"></div>
+    </div>
+</script>
+    <!--Cate 5-->
+<script id="listTopicCate5" type="x-tmpl-mustache">
+    <div class="layer two item type-16 right" type-16="2" id="item16">
+        <div class="selected-letter text-center">
+            <!--begin image-->
+            <div class="test-question-16">
+                <div class="testing-img hidden-xs">
+                    <img src="http://www.voca.vn/assets/assets-v2/img/library/artist_1.jpg">
+                </div>
+                <p class="testing-img-text">
+                    <span class="testing-title hidden-xs  hidden-sm">Chọn từ phù hợp với hình ảnh và nghĩa tiếng Việt sau</span>
+                    <br class="hidden-xs  hidden-sm">
+                    <span class="testing-img-content">
+                        họa sĩ
+                        <br>
+                        <i>(n) </i>
+                    </span>
+                </p>
+            </div>
+            <div class="test-result-16 result-testing-hide">
+                <div class="testing-img hidden-xs">
+                    <img src="http://www.voca.vn/assets/assets-v2/img/library/artist_1.jpg">
+                </div>
+                <p class="result-img-text">
+                    <span class="test-result-right-answer test-result-answer-16">Đáp án</span>
+                    <span class="test-result-right-answer test-result-right-answer-16">Đáp án đúng</span>
+                </p>
+                <p class="text-left result-testing-word"><span>artist</span> <i> (n) </i></p>
+                <p class="text-left result-testing-pronounce"> /ˈɑːrtɪst/ </p>
+                <p class="text-left result-testing-definition">họa sĩ</p>
+            </div>
+            <!--end image-->
+            <audio class="audio">
+                <source class="src-16" src="http://www.voca.vn/assets/sounds/ZkuO2OOa79ImW6acK68XtX4jEUzutqkzyao+S_Mds5k=.mp3" type="audio/mpeg">
+            </audio>
+
+            <!--begin pronounce-->
+            <!--
+            <p class="testing-title">Lựa chọn từ đúng nhất với phiên âm sau</p>
+            <p class="testing-pronounce">/mo:ter/</p>
+            <p class="pronounce-img"><span  class="speaker" sound_id="6"></span></p>
+            -->
+            <!--end pronounce-->
+            <!--begin definition-->
+            <!--
+            <p class="testing-title">Chọn từ đúng với định nghĩa sau</p>
+            <p class="testing-definition">
+                <span class="testing-definition-content">
+                    a animal very big, it’s two leg very beautiful a pencil very beautiful
+                    <br/>
+                    <i>(n)</i>
+                </span>
+            </p>
+            -->
+            <!--end definition-->
+            <!--begin sound-->
+            <!--
+            <p class="testing-title">Chọn từ đúng nhất với âm thanh sau</p>
+            <p class="testing-sound">
+                <span class="speaker" sound_id="12"></span>
+            </p>
+            -->
+            <!--end sound-->
+            <!--begin sentence-->
+            <!--
+            <p class="testing-title">Chọn câu tiếng Anh phù hợp nhất với câu tiếng Việt sau</p>
+            <p class="testing-definition">
+                <span class="testing-definition-content">
+                    a animal very big, it’s two leg very beautiful a pencil very beautiful
+                </span>
+            </p>
+            -->
+            <!--end sentence-->
+            <!--begin image-->
+            <!--
+            <div class="testing-img hidden-xs">
+                <img src="http://music.voca.vn/assets/img/library/bird.jpg" />
+            </div>
+            <p class="testing-img-text">
+                <span class="testing-title hidden-xs  hidden-sm">Chọn từ phù hợp với hình ảnh và nghĩa tiếng Việt sau</span>
+                <br class="hidden-xs  hidden-sm"/>
+                <span class="testing-img-content">
+                    a animal very big, it’s two leg very beautiful a pencil very beautiful
+                    <br/>
+                    <i>(n)</i>
+                </span>
+            </p>
+            -->
+            <!--end image-->
+
+            <div class="timer-group">
+                <span id="secondsCountdown-16" class="text-center count-timer" time="15" style="display: none;">15</span>
+                <div id="circle-16" class="circle-count">
+                    <span class="circle-count-down">15</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="select-vocabulary">
+            <!--begin btn learning group-->
+            <div class="row btn-testing-group text-center">
+                <!--begin writing testing-->
+                <input type="text" class="txt-check  txt-check-15" card="15" placeholder="Gõ từ vựng đoán được vào đây">
+                <button class="btn-check  btn-check-15" synset="R01RSrbiT514+lyh7IF410dpr8O3gpifLe6PHJ0pNW4=" word="/V+cs5itiJ7A2ZexCtDwiTdzxNoNl8I9rSiuZX1XDS8=" pos="1" card="15">KIỂM TRA</button>
+                <!--end writing testing-->
+            </div>
+            <!--begin btn learning group-->
+        </div>
+
+        <div class="dimmer"></div>
+    </div>
+</script>
+    <!--Cate 6-->
+<script id="listTopicCate6" type="x-tmpl-mustache">
+    <div class="layer two item type-15 right" type-15="2" id="item15">
+        <div class="selected-letter text-center">
+            <!--begin image-->
+            <div class="test-question-15">
+                <div class="testing-img hidden-xs">
+                    <img src="http://www.voca.vn/assets/assets-v2/img/library/baker.jpg">
+                </div>
+                <p class="testing-img-text">
+                    <span class="testing-title hidden-xs  hidden-sm">Chọn từ phù hợp với hình ảnh và nghĩa tiếng Việt sau</span>
+                    <br class="hidden-xs  hidden-sm">
+                    <span class="testing-img-content">
+                        thợ làm bánh
+                        <br>
+                        <i>(n) </i>
+                    </span>
+                </p>
+            </div>
+            <div class="test-result-15 result-testing-hide">
+                <div class="testing-img hidden-xs">
+                    <img src="http://www.voca.vn/assets/assets-v2/img/library/baker.jpg">
+                </div>
+                <p class="result-img-text">
+                    <span class="test-result-right-answer test-result-answer-15">Đáp án</span>
+                    <span class="test-result-right-answer test-result-right-answer-15">Đáp án đúng</span>
+                </p>
+                <p class="text-left result-testing-word"><span>baker</span> <i> (n) </i></p>
+                <p class="text-left result-testing-pronounce">/ˈbeɪ.kər/&nbsp;</p>
+                <p class="text-left result-testing-definition">thợ làm bánh</p>
+            </div>
+            <!--end image-->
+            <audio class="audio">
+                <source class="src-15" src="http://www.voca.vn/assets/sounds/j70qu5f8mgJHECmRObasQ7yJXdgVp0tmPJtbFZYXeLk=.mp3" type="audio/mpeg">
+            </audio>
+            <div class="timer-group">
+                <span id="secondsCountdown-15" class="text-center count-timer" time="15" style="display: none;">15</span>
+                <div id="circle-15" class="circle-count">
+                    <span class="circle-count-down">15</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="select-vocabulary">
+            <!--begin btn learning group-->
+            <div class="row btn-testing-group text-center">
+                <!--begin writing testing-->
+                <input type="text" class="txt-check  txt-check-14" card="14" placeholder="Gõ từ vựng đoán được vào đây">
+                <button class="btn-check  btn-check-14" synset="27+k8j8ocokXZHw+2boenBJLmODrN5DddbIBLPgm/Xo=" word="UOMoczb+l9FfHY9Aw3C9oZhpwAthyeUEyMHPlcoFTrI=" pos="1" card="14">KIỂM TRA</button>
+                <!--end writing testing-->
+            </div>
+            <!--begin btn learning group-->
+        </div>
+
+        <div class="dimmer"></div>
+    </div>
+</script>
+    <!--Cate 7-->

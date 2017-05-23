@@ -26,6 +26,8 @@ namespace MyVocal.Model.Models
 
         public string Image { get; set; }
 
+        public string Audio { get; set; }
+
         public bool Status { get; set; }
 
         public int WordId { get; set; }

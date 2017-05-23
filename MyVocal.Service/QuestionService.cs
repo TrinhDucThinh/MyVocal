@@ -56,7 +56,7 @@ namespace MyVocal.Service
         {
             if (!string.IsNullOrEmpty(keyword))
             {
-                return _questionRepository.GetMulti(x => x.QuestionName.Contains(keyword) || x.Word.WordName.Contains(keyword), "QuestionCategory", "Word");
+                return _questionRepository.GetMulti(x => x.Word.WordName.Contains(keyword), "QuestionCategory", "Word");
             }
             else
                 return _questionRepository.GetAll("QuestionCategory", "Word");
