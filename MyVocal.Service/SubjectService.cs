@@ -11,13 +11,17 @@ namespace MyVocal.Service
 {
     public interface ISubjectService
     {
-        void Add(Subject subject);
+        Subject Add(Subject subject);
         void Update(Subject subject);
-        void Delete(int id);
-        void SaveChange();
-  
+        Subject Delete(int id);
+        void Save();
+        IEnumerable<Subject> GetAll(string keyword);
+     
+        IEnumerable<Subject> GetAllBySubjectId(int subjectGroupId);
+        Subject GetById(int id);
+        //IEnumerable<Question> GetAllPagging(int page, int pageSize, out int totalRow);
         IEnumerable<Subject> GetAll();
-        IEnumerable<Subject> GetAllPagging(int pageIndex, int pageSize, out int totalRow);
+       
         IEnumerable<Subject> GetBySubjectGroup(string subjectGroupName, int pageIndex, int pageSize, out int totalRow);
         IEnumerable<Subject> GetByGroupId(int groupId, int pageIndex, int pageSize, out int totalRow);
     }
@@ -32,14 +36,14 @@ namespace MyVocal.Service
             this._unitOfWork = unitOfWork;
         }
 
-        public void Add(Subject subject)
+        public Subject Add(Subject subject)
         {
-            _subjectRepository.Add(subject);
+            return _subjectRepository.Add(subject);
         }
 
-        public void Delete(int id)
+        public Subject Delete(int id)
         {
-            _subjectRepository.Delete(id);
+            return _subjectRepository.Delete(id);
         }
 
         public IEnumerable<Subject> GetAll()
@@ -47,14 +51,29 @@ namespace MyVocal.Service
             return _subjectRepository.GetAll();
         }
 
-        public IEnumerable<Subject> GetAllPagging(int pageIndex, int pageSize, out int totalRow)
+        public IEnumerable<Subject> GetAll(string keyword)
         {
-            return _subjectRepository.GetMultiPaging(x=>x.Status,out totalRow,pageIndex, pageSize,new string[] { "SubjectGroup" });
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                return _subjectRepository.GetMulti(x => x.SubjectName.Contains(keyword), "SubjectGroup");
+            }
+            else
+                return _subjectRepository.GetAll("SubjectGroup");
+        }
+
+        public IEnumerable<Subject> GetAllBySubjectId(int subjectGroupId)
+        {
+            return _subjectRepository.GetAllBySubjectId(subjectGroupId);
         }
 
         public IEnumerable<Subject> GetByGroupId(int groupId, int pageIndex, int pageSize, out int totalRow)
         {
             return _subjectRepository.GetAllByGroup(groupId, pageIndex, pageSize, out totalRow);
+        }
+
+        public Subject GetById(int id)
+        {
+            return _subjectRepository.GetSingleById(id);
         }
 
         public IEnumerable<Subject> GetBySubjectGroup(string subjectGroupName, int pageIndex, int pageSize, out int totalRow)
@@ -63,7 +82,7 @@ namespace MyVocal.Service
         }
 
        
-        public void SaveChange()
+        public void Save()
         {
             _unitOfWork.Commit();
         }

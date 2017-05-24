@@ -30,8 +30,8 @@
             .state('home', {
                 url: "/admin",
                 parent: 'base',
-                templateUrl: "/app/components/home/homeView.html",
-                controller: "homeController"
+                templateUrl: "/app/components/subject_group/subject_groupListView.html",
+                controller: "subjectGroupListController"
             });
         $urlRouterProvider.otherwise('/login');
     }

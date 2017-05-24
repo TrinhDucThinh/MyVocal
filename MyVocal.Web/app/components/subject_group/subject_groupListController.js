@@ -62,6 +62,25 @@
             });
         }
 
+        //delete subject group
+        $scope.deleteSubject = deleteSubject;
+
+        function deleteSubject(id) {
+            $ngBootbox.confirm('Bạn có chắc muốn xóa?').then(function () {
+                var config = {
+                    params: {
+                        id: id
+                    }
+                }
+                apiService.del('/api/subjectGroup/delete', config, function () {
+                    notificationService.displaySuccess('Xóa thành công');
+                    search();
+                }, function () {
+                    notificationService.displayError('Xóa không thành công');
+                })
+            });
+        }
+
         $scope.getSubjectGroups();
     }
 })(angular.module('myvocal.wordCategories'));

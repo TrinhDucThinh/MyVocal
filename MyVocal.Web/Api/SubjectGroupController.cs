@@ -29,6 +29,25 @@ namespace MyVocal.Web.Api
         }
 
         #endregion Initialize
+        [Route("getAllForSubject")]
+        [HttpGet]
+        public HttpResponseMessage getAllForSubject(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                int totalRow = 0;
+                var model = _subjectGroupService.GetAll();
+
+                totalRow = model.Count();
+                var query = model.OrderByDescending(x => x.SubjecGroupName);
+
+                var responseData = Mapper.Map<IEnumerable<SubjectGroup>, IEnumerable<SubjectGroupViewModel>>(query);
+
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
+
 
         [Route("getall")]
         [HttpGet]
@@ -88,8 +107,14 @@ namespace MyVocal.Web.Api
                     newSubjectGroup.UpdateSubjectGroup(SubjectGroupVm);
 
                     var category = _subjectGroupService.Add(newSubjectGroup);
+                    try
+                    {
+                        _subjectGroupService.Save();
+                    }
+                    catch(Exception ex)
+                    {
 
-                    _subjectGroupService.Save();
+                    }
                     //generate Id for SubjectGroup and send to client
                     var responseData = Mapper.Map<SubjectGroup, SubjectGroupViewModel>(newSubjectGroup);
 
@@ -114,7 +139,15 @@ namespace MyVocal.Web.Api
                 else
                 {
                     var SubjectGroupDb = _subjectGroupService.GetById(SubjectGroupVm.SubjectGroupId);
-                    SubjectGroupDb.UpdateSubjectGroup(SubjectGroupVm);
+                    try
+                    {
+                        SubjectGroupDb.UpdateSubjectGroup(SubjectGroupVm);
+                    }
+                    catch(Exception ex)
+                    {
+
+                    }
+                    
                     _subjectGroupService.Update(SubjectGroupDb);
                     _subjectGroupService.Save();
 

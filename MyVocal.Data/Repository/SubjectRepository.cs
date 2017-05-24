@@ -10,6 +10,7 @@ namespace MyVocal.Data.Repository
     {
         IEnumerable<Subject> GetAllBySubjectGroup(string subjecGroupName, int pageIndex, int pageSize, out int totalRow);
         IEnumerable<Subject> GetAllByGroup(int groupId, int pageIndex, int pageSize, out int totalRow);
+        IEnumerable<Subject> GetAllBySubjectId(int subjectId);
 
     }
 
@@ -43,6 +44,14 @@ namespace MyVocal.Data.Repository
                         select s;
             totalRow = query.Count();
             query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            return query;
+        }
+
+        public IEnumerable<Subject> GetAllBySubjectId(int subjectId)
+        {
+            var query = from s in DbContext.Subjects
+                        where s.SubjectId == subjectId
+                        select s;
             return query;
         }
     }

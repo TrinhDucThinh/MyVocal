@@ -100,16 +100,28 @@ namespace MyVocal.Web.Infrastructure.Extensions
             subjectGroup.Status = subjectGroupVm.Status;           
         }
 
-        public static void UpdateSubjectDepen(this Subject subject, SubjectDependUser subjectDep)
-        {
-            subjectDep.SubjectId = subject.SubjectId;
-            subjectDep.SubjectName = subject.SubjectName;
-            subjectDep.SubjectGroupId = subject.SubjectGroupId;
-            subjectDep.Description = subject.Description;
-            subjectDep.Identify = subjectDep.Identify;
-            subjectDep.Image = subject.Image;
-            subjectDep.WordTotal = subject.WordTotal;
+        //public static void UpdateSubjectDepen(this Subject subject, SubjectDependUser subjectDep)
+        //{
+        //    subjectDep.SubjectId = subject.SubjectId;
+        //    subjectDep.SubjectName = subject.SubjectName;
+        //    subjectDep.SubjectGroupId = subject.SubjectGroupId;
+        //    subjectDep.Description = subject.Description;
+        //    subjectDep.Identify = subjectDep.Identify;
+        //    subjectDep.Image = subject.Image;
+        //    subjectDep.WordTotal = subject.WordTotal;
            
+        //}
+
+        public static void UpdateSubject(this Subject subject, SubjectViewModel subjectVm)
+        {
+            subject.SubjectId = subjectVm.SubjectId;
+            subject.SubjectName = subjectVm.SubjectName;
+            subject.SubjectGroupId = subjectVm.SubjectGroupId;
+            subject.Description = subjectVm.Description;
+            subject.Identify = subjectVm.Identify;
+            subject.Image = subjectVm.Image;
+            subject.WordTotal = subjectVm.WordTotal;
+
         }
     }
 }

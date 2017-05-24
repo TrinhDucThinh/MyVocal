@@ -6,12 +6,24 @@
     function subjectGroupEditController(apiService, $scope, notificationService, $state, $stateParams) {
 
         //Initial $scope variable to save wordCategory in View
-        $scope.subjectGroup = {
+        $scope.subjetGroup = {
 
         }
+        //update
+        $scope.subjectGroupUpdate = subjectGroupUpdate;
 
-        $scope.UpdateSubjectGroup = UpdateSubjectGroup;
-
+        function subjectGroupUpdate() {
+            apiService.put('api/subjectGroup/update', $scope.subjetGroup,
+                function (result) {
+                    notificationService.displaySuccess(result.data.SubjectGroupName + ' đã được cập nhật thành công.');
+                    $state.go('subjectGroups');
+                },
+                function (error) {
+                    notificationService.displayError('Thêm mới không thành công');
+                });
+        }
+    
+        //Load detail
         function loadSubjectGroupDetail() {
             apiService.get('api/subjectGroup/getbyid/' + $stateParams.id, null, function (result) {
                 $scope.subjectGroup = result.data;
@@ -20,18 +32,10 @@
             });
         }
 
-        function UpdateSubjectGroup() {
-            apiService.put('api/subjectGroup/update', $scope.subjectGroup,
-                function (result) {
-                    notificationService.displaySuccess(result.data.CategoryName + ' đã được cập nhật thành công.');
-                    $state.go('subjectGroups');
-                },
-                function (error) {
-                    notificationService.displayError('Thêm mới không thành công');
-                });
-        }
-
+       
         loadSubjectGroupDetail();
 
     }
 })(angular.module('myvocal.subjectGroups'));
+
+

@@ -12,11 +12,11 @@
             url: "/subjectGroupAdd",
             parent: 'base',
             templateUrl: "/app/components/subject_group/subject_groupAddView.html",
-            controller: "subject_groupAddController"
+            controller: "subjectGroupAddController"
         }).state('subjectGroupEdit', {
             url: "/subjectGroupEdit/:id",
             parent: 'base',
-            templateUrl: "/app/components/subject_group/subject_groupAddView.html",
+            templateUrl: "/app/components/subject_group/subject_groupEditView.html",
             controller: "subjectGroupEditController"
         });
     }

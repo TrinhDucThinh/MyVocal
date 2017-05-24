@@ -1,9 +1,9 @@
 ﻿/// <reference path="E:\Document\Đồ án\Project\Git\MyVocal\MyVocal.Web\Assets/admin/libs/angular/angular.js" />
 (function (app) {
-    app.controller('subject_groupAddController', subject_groupAddController);
-    subject_groupAddController.$inject = ['apiService','$scope','notificationService','$state'];
+    app.controller('subjectGroupAddController', subjectGroupAddController);
+    subjectGroupAddController.$inject = ['apiService','$scope','notificationService','$state'];
 
-    function subject_groupAddController(apiService,$scope,notificationService,$state) {
+    function subjectGroupAddController(apiService,$scope,notificationService,$state) {
         $scope.subjectGroup = {
             
         }
