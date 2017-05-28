@@ -47,8 +47,15 @@
                         <tr ng-repeat="item in subjectGroups ">
                             <td>{{item.SubjectGroupId}}</td>
                             <td>{{item.SubjecGroupName}}</td>
-                            <td>{{item.Description}}</td>
-                            <td>{{item.Image}}</td>
+                            <td>
+                                    {{item.Description}}
+                            </td>
+                            <td>
+                                <div style="display: table-cell;">
+                                    <img src={{item.Image}} style="max-width: 80%; height:50px"/>
+
+                                </div>
+                            </td>
                             <td>
                                 <button class="btn-sm btn-primary" ui-sref="subjectGroupEdit({id:item.SubjectGroupId})"><i class="fa fa-pencil"></i></button>
                                 <button class="btn-sm btn-danger" ng-click="subjectGroupDelete(item.SubjectGroupId)"><i class="fa fa-trash"></i></button>

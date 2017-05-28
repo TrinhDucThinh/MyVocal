@@ -230,10 +230,12 @@
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
     <Compile Include="Api\HomeController.cs" />
+    <Compile Include="Api\OxfordApiController.cs" />
     <Compile Include="Api\QuestionCategoryController.cs" />
     <Compile Include="Api\QuestionController.cs" />
     <Compile Include="Api\SubjectController.cs" />
     <Compile Include="Api\SubjectGroupController.cs" />
+    <Compile Include="Api\TestController.cs" />
     <Compile Include="Api\WordCategoryController.cs" />
     <Compile Include="Api\WordController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -274,6 +276,10 @@
     <Content Include="app\components\home\homeView.html" />
     <Content Include="app\components\login\loginController.js" />
     <Content Include="app\components\login\loginView.html" />
+    <Content Include="app\components\oxfordApi\getWordView.html" />
+    <Content Include="app\components\oxfordApi\getWord.js" />
+    <Content Include="app\components\oxfordApi\oxford.module.js" />
+    <Content Include="app\components\oxfordApi\test.html" />
     <Content Include="app\components\questions\questions.module.js" />
     <Content Include="app\components\questions\questionsAddController.js" />
     <Content Include="app\components\questions\questionsAddView.html" />

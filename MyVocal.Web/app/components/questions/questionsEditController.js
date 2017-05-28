@@ -10,7 +10,7 @@
         $scope.questionUpdate = questionUpdate;
 
         function loadQuestionDetail() {
-            apiService.get('api/question/getbyid/' + $stateParams.id, null, function (result) {
+            apiService.get('/api/question/getbyid/' + $stateParams.id, null, function (result) {
                 $scope.question = result.data;
             }, function (error) {
                 notificationService.displayError(error.data);
@@ -18,7 +18,7 @@
         }
 
         function questionUpdate() {
-            apiService.put('api/question/update', $scope.question,
+            apiService.put('/api/question/update', $scope.question,
                 function (result) {
                     notificationService.displaySuccess(result.data.QuestionId + ' đã được cập nhật thành công.');
                     $state.go('questions');
@@ -29,7 +29,7 @@
         }
 
         function loadQuestionCategories() {
-            apiService.get('api/questionCategory/getAllQuestion', null, function (result) {
+            apiService.get('/api/questionCategory/getAllQuestion', null, function (result) {
                 $scope.questionCategories = result.data;
 
             }, function () {
@@ -38,7 +38,7 @@
         }
 
         function loadWords() {
-            apiService.get('api/word/getAll', null, function (result) {
+            apiService.get('/api/word/getAll', null, function (result) {
                 $scope.words = result.data;
 
             }, function () {

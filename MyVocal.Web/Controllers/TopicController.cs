@@ -29,7 +29,6 @@ namespace MyVocal.Web.Controllers
         //Return all Subject in a subjectGroup as json
         public JsonResult LoadAllTopic(int groupId, int pageIndex = 1, int pageSize = 8)
         {
-
             //Get subjec from database
             int totalRow = 0;
             IEnumerable<Subject> listTopic = null;
@@ -65,8 +64,6 @@ namespace MyVocal.Web.Controllers
             return View();
         }
 
-        ///
-
         //Learn and practise word in a subject
         public ActionResult LearnTopic(int id)
         {
@@ -88,6 +85,7 @@ namespace MyVocal.Web.Controllers
             ViewBag.Id = id;
             return View();
         }
+
         //Get all word in a subject and return result is json array
         public JsonResult ListAllBySubjectId(int SubjectId)
         {
@@ -111,6 +109,7 @@ namespace MyVocal.Web.Controllers
                 status = true
             }, JsonRequestBehavior.AllowGet);
         }
+
         //Test word in a Subject(Topic)
         public ActionResult TestTopic(int id)
         {

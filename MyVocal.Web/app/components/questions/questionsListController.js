@@ -21,7 +21,7 @@
                 params: {
                     keyword: $scope.keyword,
                     page: page,
-                    pageSize: 10
+                    pageSize: 2
                 }
             }
             apiService.get('/api/question/getall', config, function (result) {
@@ -63,7 +63,7 @@
 
         //function to load all subjects
         function loadSubjects() {
-            apiService.get('api/subject/getallSubject', null, function (result) {
+            apiService.get('/api/subject/getallSubject', null, function (result) {
                 $scope.subjects = result.data;
             }, function () {
                 console.log('Cannot get list subject');
@@ -95,14 +95,14 @@
         //function to load all word
         function loadWords(subjectId) {
             if (typeof subjectId == 'undefined') {
-                apiService.get('api/word/getAllBySubjectId/1', null, function (result) {
+                apiService.get('/api/word/getAllBySubjectId/1', null, function (result) {
                     $scope.words = result.data;
 
                 }, function () {
                     console.log('Cannot get list parent');
                 });
             } else {
-                apiService.get('api/word/getAllBySubjectId/' + subjectId, null, function (result) {
+                apiService.get('/api/word/getAllBySubjectId/' + subjectId, null, function (result) {
                     $scope.words = result.data;
 
                 }, function () {

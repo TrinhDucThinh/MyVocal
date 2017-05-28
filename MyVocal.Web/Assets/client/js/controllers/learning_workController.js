@@ -12,6 +12,7 @@ var wordController = {
     },
     //Load data for list word of topic anything
     loadData: function () {
+        //create sidebar
         $(document).ready(function () {
             $('.sidebar-mini').addClass('sidebar-collapse');
             $('.carousel').carousel({
@@ -31,6 +32,7 @@ var wordController = {
                     var data = response.data;
                     var html = '';
                     var template = $('#listWord-template').html();
+                    //Draw html tag and display
                     $.each(data, function (i, item) {
                         if (i == 0) {
                             html += Mustache.render(template, {
@@ -44,7 +46,8 @@ var wordController = {
                                 Sound: wordConfig.path + '' + item.Sound,
                                 SoundExample: wordConfig.path + '' + item.SoundExample,
                                 Example: item.Example,
-                                ExampleTranslation: item.ExampleTranslation
+                                ExampleTranslation: item.ExampleTranslation,
+                                Meaning:item.Meaning
                             });
                         } else
                             html += Mustache.render(template, {
@@ -138,8 +141,7 @@ var wordController = {
             if (event.which == 13) {
                 var answer = $('.item.active').data('word').toLowerCase();
                 var userAnswer = $('.learning-fill-word').val().toString().toLowerCase();
-                //$('.item.active audio').play();
-                //$('.item.active #audioSound').trigger('play');
+                
                 wordController.fireSound('#audioSound');
                 var result = answer.localeCompare(userAnswer);
                 if (result == 0) {
@@ -156,8 +158,7 @@ var wordController = {
         $('.btn-learning-check').click(function () {
             var answer = $('.item.active').data('word').toLowerCase();
             var userAnswer = $('.learning-fill-word').val().toString().toLowerCase();
-            //$('.item.active audio').play();
-            //$('.item.active #audioSound').trigger('play');
+          
             wordController.fireSound('#audioSound');
             var result = answer.localeCompare(userAnswer);
             if (result == 0) {
@@ -168,13 +169,14 @@ var wordController = {
                 $('.learning-wrong-group').addClass('displayNoti');
             }
         });
-        //when click 
+      
     },
 
     fireSound: function (TagId) {
         var soundID = '.item.active ' + TagId;
         $(soundID).trigger('play');
     },
+
     refreshResult: function () {
         $('.learning-fill-word').val('');
         $('.learning-right-group').removeClass('displayNoti');

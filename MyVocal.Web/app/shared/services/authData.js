@@ -1,4 +1,5 @@
-﻿(function (app) {
+﻿//container information user logined
+(function (app) {
     'use strict';
     app.factory('authData', [function () {
         var authDataFactory = {};

@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    $.ajax({
+    url: "https://od-api.oxforddictionaries.com/api/v1/entries/en/test",
+    headers: { 'app_id':'5a70d539','app_key':'b51d905b4ce6338773c9839def5b4121','Access-Control-Allow-Origin':'*' },
+    type: "GET",
+    dataType: 'jsonp',
+    success: function () { alert('success'); },
+    error: function (error) { alert('err'); },
+
+    });
+</body>
+</html>

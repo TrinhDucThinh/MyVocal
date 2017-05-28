@@ -22,15 +22,16 @@ namespace MyVocal.Web.App_Start
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
             app.CreatePerOwinContext(MyVocalDbContext.Create);
-
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
-            app.CreatePerOwinContext<UserManager<ApplicationUser>>(CreateManager);
 
+            //configure to validate and set token
+            app.CreatePerOwinContext<UserManager<ApplicationUser>>(CreateManager);
             app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
             {
                 TokenEndpointPath = new PathString("/oauth/token"),
                 Provider = new AuthorizationServerProvider(),
+                //expire session
                 AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
                 AllowInsecureHttp = true,
 
@@ -74,10 +75,12 @@ namespace MyVocal.Web.App_Start
         }
         public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
         {
+            //get all request to validate
             public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
             {
                 context.Validated();
             }
+            //accept access domain difficult and return information user 
             public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
             {
                 var allowedOrigin = context.OwinContext.Get<string>("as:clientAllowedOrigin");
@@ -115,7 +118,7 @@ namespace MyVocal.Web.App_Start
         }
 
 
-
+            //create userManager to manage integrate with login
         private static UserManager<ApplicationUser> CreateManager(IdentityFactoryOptions<UserManager<ApplicationUser>> options, IOwinContext context)
         {
             var userStore = new UserStore<ApplicationUser>(context.Get<MyVocalDbContext>());

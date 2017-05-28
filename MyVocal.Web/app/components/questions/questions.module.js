@@ -11,7 +11,7 @@
                 controller: "questionsListController"
             })
             .state('questionAdd', {
-                url: "/questionAdd",
+                url: "/questionAdd/:subjectId/:wordId",
                 parent: 'base',
                 templateUrl: "/app/components/questions/questionsAddView.html",
                 controller: "questionsAddController"

@@ -11,8 +11,15 @@ var testController = {
         testController.registerEvent();
     },
 
-    //load data len view
+    //load data display view
     loadData: function () {
+        //load data
+
+        //auto next slide
+        testController.autoSlide();
+
+    },
+    autoSlide: function(){
         $(document).ready(function () {
             var intervalTick = window.setInterval(function () {
                 $('#tick').trigger('play');
@@ -34,7 +41,6 @@ var testController = {
             }, 15000);
         })
     },
-
     //register all event
     registerEvent: function () {
 

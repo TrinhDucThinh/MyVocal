@@ -9,8 +9,8 @@
         'myvocal.semantics',
         'myvocal.questions',
         'myvocal.questionCategories',
-        'myvocal.common'
-
+        'myvocal.common',
+        'myvocal.oxfordDictionary'
         ])
         .config(config)
         .config(configAuthentication);

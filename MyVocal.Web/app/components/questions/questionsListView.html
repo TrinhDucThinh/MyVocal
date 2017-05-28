@@ -34,7 +34,7 @@
                 <!--endSearching-->
                 <!--AddQuestion-->
                 <div class="col-md-6">
-                    <button class="btn btn-success" ui-sref="questionAdd">Thêm mới</button>
+                    <button class="btn btn-success" ui-sref="questionAdd({subjectId:subjectId,wordId:word.WordId})">Thêm mới</button>
                 </div>
                 <!--endAddQuestion-->
             </div>
@@ -64,6 +64,7 @@
                                 data-ng-options="word as word.WordName for word in words">
                             <option value="">Select Account</option>
                         </select>
+                       
                         <!--<select name="WordId" required class="form-control" ng-model="word" ng-options="option.WordId as option.WordName for option in words" ng-change="hasChangeWord()">
                             <option value="">Chọn từ vựng</option>
                         </select>
